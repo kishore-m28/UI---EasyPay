@@ -1,0 +1,54 @@
+<div id="wrapper">
+    <aside id="sidebar-wrapper">
+        <div class="sidebar-brand">
+            <h2>EasyPay - Recruitment</h2>
+        </div>
+        <ul class="sidebar-nav">
+            <li>
+                <a href="#"><i class="fa fa-home"></i>Dashboard</a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-plug"></i>Jobs</a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-user"></i>Applications</a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-home"></i>Application Processing</a>
+                <ul class="list-unstyled" style="padding-left: 20px;">
+                    <li><a href="#"><i class="fa fa-user"></i>Screen Test</a></li>
+                    <li><a routerLink="/recruitment/technical-scoresheet"><i class="fa fa-user"></i>Technical Round</a></li>
+                    <li><a routerLink="/recruitment/hr-scoresheet"><i class="fa fa-user"></i>HR Round</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-plug"></i>Offers</a>
+            </li>
+        </ul>
+    </aside>
+
+    <div class="content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="position: fixed; top: 0; left: 250px; right: 0; z-index: 1030; height: 60px;">
+            <div class="container-fluid">
+                <div class="d-flex justify-content-between d-md-none d-block">
+                 <button class="btn px-1 py-0 open-btn me-2"><i class="fal fa-stream"></i></button>
+                    <a class="navbar-brand fs-4" href="#"><span class="bg-dark rounded px-2 py-0 text-white">CL</span></a>
+                   
+                </div>
+                <button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fal fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse justify-content-start" id="navbarSupportedContent">
+                    <label>Welcome Recruiter</label>
+                </div>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <a class="nav-link active" aria-current="page" href="#">Profile</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <button class="btn btn-outline-success btn-sm">Logout</button>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
