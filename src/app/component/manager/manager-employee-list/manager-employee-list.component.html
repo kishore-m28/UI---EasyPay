@@ -1,0 +1,29 @@
+<app-manager-navbar></app-manager-navbar>
+<div class="container-fluid " style= "position: fixed; top: 110px; left: 250px; right: 0; z-index: 1030; height: 60px;">
+    <div class="row">
+        <div class="col-md-10">
+                <table id="example" class="table table-striped" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th class="text-center">Employee ID</th>
+                            <th class="text-center">Name</th>
+                            <th class="text-center">Gender</th>
+                            <th class="text-center">Contact</th>
+                            <th class="text-center">Job Role</th>
+                            <th class="text-center">Date Of Joining</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let employee of employees">
+                          <td class="text-center">{{ employee.id }}</td>
+                          <td class="text-center">{{ employee.name }}</td>
+                          <td class="text-center">{{ employee.gender }}</td>
+                          <td class="text-center">{{ employee.contact }}</td>
+                          <td class="text-center">{{ employee.jobRole }}</td>
+                          <td class="text-center">{{ employee.dateOfJoining }}</td>
+                        </tr>
+                    </tbody>   
+                </table>
+        </div>
+    </div>
+</div>

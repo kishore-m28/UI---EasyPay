@@ -7,6 +7,9 @@ import { JobseekerDashboardComponent } from './component/jobseeker/jobseeker-das
 import { TechnicalScoresheetComponent } from './component/recruitment/technical-scoresheet/technical-scoresheet.component';
 import { HrScoresheetComponent } from './component/recruitment/hr-scoresheet/hr-scoresheet.component';
 import { ManagerDashboardComponent } from './component/manager/manager-dashboard/manager-dashboard.component';
+import { ManagerEmployeeListComponent } from './component/manager/manager-employee-list/manager-employee-list.component';
+import { LogoutComponent } from './component/auth/logout/logout.component';
+import { LeaveRequestsComponent } from './component/manager/leave-requests/leave-requests.component';
 
 export const routes: Routes = [
     {
@@ -32,5 +35,14 @@ export const routes: Routes = [
     },
     {
         "path":"manager/dashboard",component:ManagerDashboardComponent
-    }
+    },
+    {
+        "path":"manager/employee-list",component:ManagerEmployeeListComponent
+    },
+    {
+        "path":"manager/leave-requests", component:LeaveRequestsComponent
+    },
+    {
+        "path":"logout",component:LogoutComponent
+    },
 ]
