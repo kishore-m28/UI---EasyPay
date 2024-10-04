@@ -10,6 +10,7 @@ import { ManagerDashboardComponent } from './component/manager/manager-dashboard
 import { ManagerEmployeeListComponent } from './component/manager/manager-employee-list/manager-employee-list.component';
 import { LogoutComponent } from './component/auth/logout/logout.component';
 import { LeaveRequestsComponent } from './component/manager/leave-requests/leave-requests.component';
+import { ManagerIssueListComponent } from './component/manager/manager-issue-list/manager-issue-list.component';
 
 export const routes: Routes = [
     {
@@ -41,6 +42,9 @@ export const routes: Routes = [
     },
     {
         "path":"manager/leave-requests", component:LeaveRequestsComponent
+    },
+    {
+        "path":"manager/issue-list", component: ManagerIssueListComponent
     },
     {
         "path":"logout",component:LogoutComponent

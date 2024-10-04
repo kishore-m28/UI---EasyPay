@@ -33,5 +33,13 @@ export class ManagerService {
     });
   }
 
+  getAllIssues():Observable<any>{
+    return this.http.get('http://localhost:8081/issue/all' , {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+    });
+  }
+
+  
+
 
 }
