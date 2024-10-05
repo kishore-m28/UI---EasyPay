@@ -1,0 +1,105 @@
+<app-jobseeker-navbar></app-jobseeker-navbar>
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-md-7">
+            <div class="card">
+                <div class="card-header">
+                    Personal Details               
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-dark" role="alert" *ngIf="successMsg">
+                         {{successMsg}}
+                      </div>
+                      <div class="alert alert-primary" role="alert" *ngIf="errorMsg">
+                        {{errorMsg}}
+                      </div>
+                    <div>
+                        <label>Name: </label>
+                        <input class="form-control" type="string" [(ngModel)]="jobseeker.name" (change)="resetmsg()">
+                    </div>
+                    <div>
+                        <label>Contact: </label>
+                        <input class="form-control" type="string" [(ngModel)]="jobseeker.contact" (change)="resetmsg()">
+                    </div>
+                    <div>
+                        <label>Date of Birth: </label>
+                        <input class="form-control" type="date" [(ngModel)]="jobseeker.dateOfBirth" (change)="resetmsg()">
+                    </div>
+                    <div>
+                        <label>Gender: </label>
+                        <input class="form-control" type="string" [(ngModel)]="jobseeker.gender" (change)="resetmsg()">
+                    </div>                 
+                    <div> 
+                        <label>Experience in yrs: </label>
+                        <input class="form-control" type="number" [(ngModel)]="jobseeker.experience" (change)="resetmsg()">
+                    </div>
+                    <div>
+                        <label>Current Employer: </label>
+                        <input class="form-control" type="string" [(ngModel)]="jobseeker.currentEmployer" (change)="resetmsg()">
+                    </div>
+                    <div> 
+                        <label>Current CTC: </label>
+                        <input class="form-control" type="number" [(ngModel)]="jobseeker.currentCtc" (change)="resetmsg()">
+                    </div>
+                </div>
+                <div class="card-footer" >
+                    
+                </div>
+            </div>
+            <div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="card">
+                    <div class="card-header">
+                       Resume            
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <label>Enter SSLC mark: </label>
+                            <input class="form-control" type="number" [(ngModel)]="jobseeker.resume.sslc" (change)="resetmsg()">
+                        </div>
+                        <div>
+                            <label>Enter HSC mark: </label>
+                            <input class="form-control" type="number" [(ngModel)]="jobseeker.resume.hsc" (change)="resetmsg()">
+                        </div>
+                        <div>
+                            <label>Enter CGPA: </label>
+                            <input class="form-control" type="number" [(ngModel)]="jobseeker.resume.cgpa" (change)="resetmsg()">
+                        </div>
+                        <div>
+                            <label>Skill 1: </label>
+                            <input class="form-control" type="string" [(ngModel)]="jobseeker.resume.skill1" (change)="resetmsg()">
+                        </div> 
+                        <div>
+                            <label>Skill 2: </label>
+                            <input class="form-control" type="string" [(ngModel)]="jobseeker.resume.skill2" (change)="resetmsg()">
+                        </div>
+                        <div>
+                            <label>Skill 3: </label>
+                            <input class="form-control" type="string" [(ngModel)]="jobseeker.resume.skill3" (change)="resetmsg()">
+                        </div> 
+                        <div>
+                            <label>Cerification 1: </label>
+                            <input class="form-control" type="string" [(ngModel)]="jobseeker.resume.certification1" (change)="resetmsg()">
+                        </div>    
+                        <div>
+                            <label>Cerification 2: </label>
+                            <input class="form-control" type="string" [(ngModel)]="jobseeker.resume.certification2" (change)="resetmsg()">
+                        </div> 
+                        <div>
+                            <label>Project: </label>
+                            <input class="form-control" type="string" [(ngModel)]="jobseeker.resume.project" (change)="resetmsg()">
+                        </div>            
+                        
+                    </div>
+                    <div class="card-footer" >
+                        <button type="button" class="btn btn-success" (click)="onClick()">SUBMIT</button>       
+                    </div>     
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+ </div>

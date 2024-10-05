@@ -6,6 +6,9 @@ import { LoginComponent } from './component/auth/login/login.component';
 import { JobseekerDashboardComponent } from './component/jobseeker/jobseeker-dashboard/jobseeker-dashboard.component';
 import { TechnicalScoresheetComponent } from './component/recruitment/technical-scoresheet/technical-scoresheet.component';
 import { HrScoresheetComponent } from './component/recruitment/hr-scoresheet/hr-scoresheet.component';
+import { PersonalDetailsComponent } from './component/jobseeker/jobseeker-register/personal-details/personal-details.component';
+import { JobListComponent } from './component/jobseeker/job-list/job-list.component';
+import { JobseekerProfileComponent } from './component/jobseeker/jobseeker-profile/jobseeker-profile.component';
 import { ManagerDashboardComponent } from './component/manager/manager-dashboard/manager-dashboard.component';
 import { ManagerEmployeeListComponent } from './component/manager/manager-employee-list/manager-employee-list.component';
 import { LogoutComponent } from './component/auth/logout/logout.component';
@@ -13,6 +16,7 @@ import { LeaveRequestsComponent } from './component/manager/leave-requests/leave
 import { ManagerIssueListComponent } from './component/manager/manager-issue-list/manager-issue-list.component';
 import { ManagerIssueReplyComponent } from './component/manager/manager-issue-reply/manager-issue-reply.component';
 import { AssignWorkComponent } from './component/manager/assign-work/assign-work.component';
+
 
 export const routes: Routes = [
     {
@@ -30,6 +34,15 @@ export const routes: Routes = [
     {
         "path":"jobseeker/dashboard",component:JobseekerDashboardComponent
     },
+    {
+        "path":"jobseeker/personalDetails",component:PersonalDetailsComponent
+    },  
+    {
+        "path":"job/allJobs",component:JobListComponent
+    },   
+    {
+        "path":"jobseeker/myProfile",component:JobseekerProfileComponent
+    },   
     {
         "path":"recruitment/technical-scoresheet",component:TechnicalScoresheetComponent
     },
@@ -58,3 +71,4 @@ export const routes: Routes = [
         "path":"logout",component:LogoutComponent
     },
 ]
+
