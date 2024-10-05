@@ -11,6 +11,8 @@
                             <th class="text-center">Contact</th>
                             <th class="text-center">Job Role</th>
                             <th class="text-center">Date Of Joining</th>
+                            <th class="text-center">Task Status</th>
+                            <th class="text-center">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -21,6 +23,10 @@
                           <td class="text-center">{{ employee.contact }}</td>
                           <td class="text-center">{{ employee.jobRole }}</td>
                           <td class="text-center">{{ employee.dateOfJoining }}</td>
+                          <td class="text-center"> </td>
+                          <td class="text-center">
+                            <button type="button" class="btn btn-primary btn-sm" (click)="assign(employee.id)">Assign Work</button> 
+                          </td>
                         </tr>
                     </tbody>   
                 </table>

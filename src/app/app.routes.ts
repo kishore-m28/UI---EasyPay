@@ -11,6 +11,8 @@ import { ManagerEmployeeListComponent } from './component/manager/manager-employ
 import { LogoutComponent } from './component/auth/logout/logout.component';
 import { LeaveRequestsComponent } from './component/manager/leave-requests/leave-requests.component';
 import { ManagerIssueListComponent } from './component/manager/manager-issue-list/manager-issue-list.component';
+import { ManagerIssueReplyComponent } from './component/manager/manager-issue-reply/manager-issue-reply.component';
+import { AssignWorkComponent } from './component/manager/assign-work/assign-work.component';
 
 export const routes: Routes = [
     {
@@ -41,10 +43,16 @@ export const routes: Routes = [
         "path":"manager/employee-list",component:ManagerEmployeeListComponent
     },
     {
+        "path": "assignWork/:id", component:AssignWorkComponent
+    },
+    {
         "path":"manager/leave-requests", component:LeaveRequestsComponent
     },
     {
         "path":"manager/issue-list", component: ManagerIssueListComponent
+    },
+    {
+        "path": "reply/:id", component:ManagerIssueReplyComponent
     },
     {
         "path":"logout",component:LogoutComponent

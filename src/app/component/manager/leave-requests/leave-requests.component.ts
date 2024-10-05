@@ -45,7 +45,11 @@ export class LeaveRequestsComponent {
   approveLeave(id:number){
     this.managerService.approveLeave(id).subscribe({
       next:(data)=>{
-        console.log(data);
+       console.log(data);
+       const leave = this.leaveRequests.find(request => request.id === id); // find() is a javascript array method that returns the first element in an array that satisfies the condition
+       if (leave) {
+         leave.status = 'APPROVED';
+       }
       },
       error:(err)=>{
         console.log(err)
@@ -56,6 +60,10 @@ export class LeaveRequestsComponent {
     this.managerService.rejectLeave(id).subscribe({
       next:(data)=>{
         console.log(data);
+        const leave = this.leaveRequests.find(request => request.id === id);
+        if (leave) {
+        leave.status = 'REJECTED';
+        }
       },
       error:(err)=>{
         console.log(err)

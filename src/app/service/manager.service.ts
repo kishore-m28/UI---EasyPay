@@ -39,7 +39,17 @@ export class ManagerService {
     });
   }
 
-  
+  getIssueById(id:number):Observable<any>{
+    return this.http.get('http://localhost:8081/issue/'+id , {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+    });
+  }
+
+  getEmployeeProjectByEmployeeId(id:number):Observable<any>{
+    return this.http.get('http://localhost:8081/manager/employee/project/'+id , {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+    });
+  }
 
 
 }

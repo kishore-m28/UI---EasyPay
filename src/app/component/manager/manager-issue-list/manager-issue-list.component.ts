@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { ManagerNavbarComponent } from "../manager-navbar/manager-navbar.component";
 import { NgFor } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { ManagerService } from '../../../service/manager.service';
 
 @Component({
   selector: 'app-manager-issue-list',
   standalone: true,
-  imports: [ManagerNavbarComponent,NgFor],
+  imports: [ManagerNavbarComponent,NgFor,RouterLink],
   templateUrl: './manager-issue-list.component.html',
   styleUrl: './manager-issue-list.component.css'
 })
@@ -38,5 +38,10 @@ export class ManagerIssueListComponent {
      }
    })
  }
+
+ onClick(id: number) {
+  this.router.navigate(['/reply',id]);
+  }
+
 
 }

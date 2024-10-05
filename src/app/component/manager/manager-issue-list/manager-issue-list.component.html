@@ -9,7 +9,6 @@
                             <th class="text-center">Employee Name</th>
                             <th class="text-center">Description</th>
                             <th class="text-center">Date</th>
-                            <th class="text-center">Status</th>
                             <th class="text-center">Action</th>
                         </tr>
                     </thead>
@@ -19,11 +18,8 @@
                           <td class="text-center">{{ issue.employeeName }}</td>
                           <td class="text-center">{{ issue.description }}</td>
                           <td class="text-center">{{ issue.date }}</td>
-                          <td class="text-center">{{ issue.status }}</td>
                           <td class="text-center">
-                            <button type="button" class="btn btn-success btn-sm">Note</button> 
-                             &nbsp;&nbsp;&nbsp;
-                            <button type="button" class="btn btn-danger btn-sm">Reject</button>
+                            <button type="button" class="btn btn-success btn-sm" (click)="onClick(issue.id)">Reply</button>                            
                           </td>
                         </tr>
                     </tbody>   

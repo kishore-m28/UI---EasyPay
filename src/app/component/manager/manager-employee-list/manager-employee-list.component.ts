@@ -40,4 +40,8 @@ export class ManagerEmployeeListComponent {
     })
   }
 
+  assign(id: number) {
+    this.router.navigate(['/assignWork',id]);
+  }
+
 }
