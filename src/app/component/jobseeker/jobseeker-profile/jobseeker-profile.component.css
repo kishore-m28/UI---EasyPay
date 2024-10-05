@@ -1,0 +1,24 @@
+.card {
+    border-radius: 8px; /* Rounded corners for the card */
+    margin-top: 20px; /* Spacing from the top */
+  }
+  
+  .card-header {
+    border-bottom: 2px solid #fff; /* White bottom border for the header */
+  }
+  
+  .card-body {
+    background-color: #f8f9fa; /* Light background for the card body */
+    color: #343a40; /* Dark text color */
+  }
+  
+  .card-body p {
+    margin: 10px 0; /* Space between paragraphs */
+    font-size: 16px; /* Slightly larger font size */
+  }
+  
+  .card-title {
+    font-weight: bold; /* Bold title */
+    font-size: 20px; /* Larger font size for the title */
+  }
+  
