@@ -5,6 +5,12 @@
         <div class="col-md-6">
             <div class="card fixed-card">
                 <div class="card-body">
+                    <div class="alert  alert-info" role="alert" *ngIf="successMsg">
+                        {{successMsg}}
+                     </div>
+                     <div class="alert alert-danger" role="alert" *ngIf="errorMsg">
+                       {{errorMsg}}
+                     </div>
                     <div class="mt-2">
                         <label>Employee Name: </label>
                         <input class="form-control mt-1" type="text" [(ngModel)]="employeeName">
@@ -23,7 +29,7 @@
                     </div>
                 </div>
                 <div class="card-footer text-center">
-                    <button type="button" class="btn btn-success">Reply</button>
+                    <button type="button" class="btn btn-success" (click)="reply(id)">Reply</button>
                 </div>
             </div>
         </div>

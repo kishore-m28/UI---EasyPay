@@ -3,11 +3,12 @@ import { ManagerNavbarComponent } from "../manager-navbar/manager-navbar.compone
 import { ActivatedRoute } from '@angular/router';
 import { ManagerService } from '../../../service/manager.service';
 import { FormsModule } from '@angular/forms';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-manager-issue-reply',
   standalone: true,
-  imports: [ManagerNavbarComponent, FormsModule],
+  imports: [ManagerNavbarComponent, FormsModule, NgIf],
   templateUrl: './manager-issue-reply.component.html',
   styleUrl: './manager-issue-reply.component.css'
 })
@@ -18,6 +19,9 @@ export class ManagerIssueReplyComponent implements OnInit{
   description:string='';
   date:string='';
   replyMsg:string='';
+
+  successMsg:string=undefined;
+  errorMsg:string=undefined;
 
   constructor(private actRoute:ActivatedRoute, private managerService:ManagerService){
   }
@@ -38,6 +42,24 @@ export class ManagerIssueReplyComponent implements OnInit{
         console.log(err);
       }
     })
+  }
+
+  reply(id: number) {
+    this.managerService.replyIssue(id,{
+      "replyMessage":this.replyMsg
+   }).subscribe({
+    next:(data)=>{
+      this.successMsg = 'Reply sent';
+      this.errorMsg = undefined
+    },
+    error:(err)=>{
+      this.successMsg = undefined;
+      if(err.status == 304){
+       this.errorMsg = err.message;
+      }
+      console.log(err)
+    }
+  })
   }
 
 

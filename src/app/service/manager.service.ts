@@ -51,5 +51,19 @@ export class ManagerService {
     });
   }
 
+  assignWork(id:number,obj:any):Observable<any>{
+    return this.http.post('http://localhost:8081/work/assign/'+id, obj, {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+    })
+  }
+
+  replyIssue(id:number,obj:any):Observable<any>{
+    return this.http.post('http://localhost:8081/issue/reply/'+id, obj, {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+    })
+  }
+
+
+
 
 }
