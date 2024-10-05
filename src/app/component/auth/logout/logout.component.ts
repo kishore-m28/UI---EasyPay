@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-logout',
@@ -8,5 +9,13 @@ import { Component } from '@angular/core';
   styleUrl: './logout.component.css'
 })
 export class LogoutComponent {
+
+  constructor(private router: Router){
+    localStorage.clear();
+  }
+
+  login(){
+    this.router.navigateByUrl("/");
+  }
 
 }

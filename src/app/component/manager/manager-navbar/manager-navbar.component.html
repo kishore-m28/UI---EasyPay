@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #242475;
+  position: fixed;
+  height: 100%;
+  margin-top: 80px;
+  overflow: auto;
+  z-index: 1000;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+}
+ 
+.sidebar a.active {
+  background-color: #1111B7;
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #242475;
+  color: white;
+}
+
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+</style>
+</head>
+<body>
+
+<app-brand-navbar></app-brand-navbar>
+<div class="sidebar">
+     <a routerLink="/manager/dashboard"><i class="fa fa-home"></i>Dashboard</a>
+     <a routerLink="/manager/employee-list"><i class="fa fa-home"></i>Employees</a>
+     <a routerLink="/manager/leave-requests"><i class="fa fa-home"></i>Leave Approval</a>
+     <a href="/manager/issue-list"><i class="fa fa-home"></i>Track Issues</a>
+</div>
+</body>
+</html>

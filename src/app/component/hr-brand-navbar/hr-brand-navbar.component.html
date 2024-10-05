@@ -1,0 +1,68 @@
+<div class="navbar mb-2">
+  <!-- Logo -->
+  <a routerLink="/home" class="logo">EasyPay</a>
+
+  <!-- Log Out Button -->
+  <a routerLink="/logout" class="logout">Log Out</a>
+</div>
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  /* Navigation bar styles */
+  .navbar {
+    background-color: #242475;  /* Dark blue background */
+    overflow: hidden;  /* Ensure no content overflows */
+    display: flex;
+    justify-content: space-between;  /* Space between logo and logout */
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  /* Styling for links */
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+  }
+
+  /* Logo styling */
+  .navbar a.logo {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  /* Log out button styling */
+  .navbar a.logout {
+    background-color: #f44336;  /* Red background */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
+
+  /* Responsive styling for screens 700px and below */
+  @media screen and (max-width: 700px) {
+    .navbar {
+      flex-direction: column;
+    }
+    .navbar a.logout {
+      margin-top: 10px;
+    }
+  }
+
+  /* Center logout button for very small screens (400px and below) */
+  @media screen and (max-width: 400px) {
+    .navbar a.logout {
+      width: 100%;
+      text-align: center;
+    }
+  }
+</style>
