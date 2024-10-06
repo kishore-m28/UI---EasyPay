@@ -52,6 +52,18 @@ export class ManagerService {
     });
   }
 
+  getEmployeesCount():Observable<any>{
+    return this.http.get('http://localhost:8081/manager/employee/count', {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+    })
+  }
+
+  getLeaveRequestsCount():Observable<any>{
+    return this.http.get('http://localhost:8081/manager/leave/requests', {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token')) 
+    })
+  }
+
   assignWork(id:number,obj:any):Observable<any>{
     return this.http.post('http://localhost:8081/work/assign/'+id, obj, {
       headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
