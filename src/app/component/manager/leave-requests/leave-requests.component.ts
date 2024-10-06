@@ -14,34 +14,71 @@ import { NgFor } from '@angular/common';
 export class LeaveRequestsComponent {
 
   leaveRequests:any[]=[];
+  totalPages : number =0;  
+  numArry:number[]=[];
+  counter: number=0;
+  page:number =0;
+  size:number =2; 
+  last:boolean=false; 
+  first:boolean=false;
 
   constructor(private managerService:ManagerService, private router:Router){
     this.fetchData();
   }
 
-  fetchData(){
-    this.managerService.getAllLeaveRequests().subscribe({
-      next:(data)=>{
-         for(let i=0;i<data.length;i++){
+  fetchData() {
+    this.managerService.getAllLeaveRequests(this.page, this.size).subscribe({
+      next: (data) => {
+        
+        this.leaveRequests = [];
+
+        for (let i = 0; i < data.content.length; i++) {
           const leaveRequest = {
-            id: data[i].id,
-            name: data[i].employee.name,
-            applyDate: data[i].applyDate,
-            startDate: data[i].startDate,
-            endDate: data[i].endDate,
-            leaveType:data[i].leaveType,
-            status: data[i].status
+            id: data.content[i].id,
+            name: data.content[i].employee.name,
+            applyDate: data.content[i].applyDate,
+            startDate: data.content[i].startDate,
+            endDate: data.content[i].endDate,
+            leaveType: data.content[i].leaveType,
+            status: data.content[i].status
           };
           this.leaveRequests.push(leaveRequest);
-         }
+        }
+        this.totalPages=data.totalPages;
+        this.first=data.first;
+        this.last=data.last;
+        if(this.counter === 0){
+          let i=0;
+          while(i<this.totalPages){
+              this.numArry.push(i);  
+              i++;
+            };
+          }
+        this.counter = this.counter+1;
       },
-      error:(err)=>{
+      error: (err) => {
         console.log(err);
       }
 
     })
   }
 
+  onPageNumberClick(n:number){
+    this.page = n; 
+    this.fetchData();
+   }
+
+   onNext(){
+    this.page = this.page + 1; 
+    this.fetchData();
+
+   }
+
+   onPrev(){
+    this.page = this.page - 1;
+    this.fetchData();
+   }
+  
   approveLeave(id:number){
     this.managerService.approveLeave(id).subscribe({
       next:(data)=>{

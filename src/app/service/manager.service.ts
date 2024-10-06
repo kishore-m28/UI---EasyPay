@@ -15,10 +15,11 @@ export class ManagerService {
     });
   }
 
-  getAllLeaveRequests():Observable<any>{
-    return this.http.get('http://localhost:8081/leave/all' , {
-      headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
-    });
+  getAllLeaveRequests(page:number, size:number):Observable<any>{
+    return this.http.get('http://localhost:8081/leave/all?page='+page+'&size='+size,
+      {
+        headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+      })
   }
 
   approveLeave(id:number):Observable<any>{
@@ -33,8 +34,8 @@ export class ManagerService {
     });
   }
 
-  getAllIssues():Observable<any>{
-    return this.http.get('http://localhost:8081/issue/all' , {
+  getAllIssues(page:number, size:number):Observable<any>{
+    return this.http.get('http://localhost:8081/issue/all?page='+page+'&size='+size , {
       headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
     });
   }
