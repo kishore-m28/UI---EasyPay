@@ -22,6 +22,9 @@ import { HrMainPageComponent } from './component/hr/hr-main-page/hr-main-page.co
 import { HrRecruitDashboardComponent } from './component/hr/recruitment/hr-recruit-dashboard/hr-recruit-dashboard.component';
 import { HrInterviewComponent } from './component/hr/recruitment/hr-interview/hr-interview.component';
 import { HrScoresheetComponent } from './component/hr/recruitment/hr-scoresheet/hr-scoresheet.component';
+import { ScheduleInterviewComponent } from './component/hr/recruitment/schedule-interview/schedule-interview.component';
+import { ScheduleTechInterviewComponent } from './component/hr/recruitment/schedule-tech-interview/schedule-tech-interview.component';
+import { ScheduleHrInterviewComponent } from './component/hr/recruitment/schedule-hr-interview/schedule-hr-interview.component';
 
 
 export const routes: Routes = [
@@ -42,6 +45,15 @@ export const routes: Routes = [
     },
     {
         "path": "recruitment/hr-scoresheet", component:HrScoresheetComponent
+    },
+    {
+        "path":"recruitment/schedule-interview", component:ScheduleInterviewComponent
+    },
+    {
+        "path":"recruitment/schedule-tech-interview", component:ScheduleTechInterviewComponent
+    },
+    {
+        "path":"recruitment/schedule-hr-interview", component:ScheduleHrInterviewComponent
     },
     {
         "path" : "compliance" , component:ComplianceComponent
