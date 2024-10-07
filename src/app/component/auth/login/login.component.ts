@@ -45,7 +45,7 @@ export class LoginComponent {
                         this.router.navigateByUrl('/jobseeker/dashboard')
                         break;
                      case 'ROLE_HR':
-                        this.router.navigateByUrl('/hr/dashboard')
+                        this.router.navigateByUrl('/hr/main-page')
                         break;
                      case 'ROLE_EMPLOYEE':
                         this.router.navigateByUrl('/employee/dashboard')

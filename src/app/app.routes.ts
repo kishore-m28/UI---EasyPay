@@ -18,6 +18,10 @@ import { RecruitDashboardComponent } from './component/manager/recruitment/recru
 import { ManagerMainpageComponent } from './component/manager/manager-mainpage/manager-mainpage.component';
 import { TechnicalScoresheetComponent } from './component/manager/recruitment/technical-scoresheet/technical-scoresheet.component';
 import { TechnicalInterviewComponent } from './component/manager/recruitment/technical-interview/technical-interview.component';
+import { HrMainPageComponent } from './component/hr/hr-main-page/hr-main-page.component';
+import { HrRecruitDashboardComponent } from './component/hr/recruitment/hr-recruit-dashboard/hr-recruit-dashboard.component';
+import { HrInterviewComponent } from './component/hr/recruitment/hr-interview/hr-interview.component';
+import { HrScoresheetComponent } from './component/hr/recruitment/hr-scoresheet/hr-scoresheet.component';
 
 
 export const routes: Routes = [
@@ -25,7 +29,19 @@ export const routes: Routes = [
         "path":"",component:LoginComponent
     },
     {
+        "path" : "hr/main-page" , component:HrMainPageComponent
+    },
+    {
         "path" : "hr/dashboard" , component:HrDashboardComponent
+    },
+    {
+        "path" : "recruitment/hr-dashboard" , component:HrRecruitDashboardComponent
+    },
+    {
+        "path": "recruitment/hr-interview", component:HrInterviewComponent
+    },
+    {
+        "path": "recruitment/hr-scoresheet", component:HrScoresheetComponent
     },
     {
         "path" : "compliance" , component:ComplianceComponent

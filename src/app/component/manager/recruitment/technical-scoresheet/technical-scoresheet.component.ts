@@ -13,10 +13,10 @@ export class TechnicalScoresheetComponent {
 
   id:number=0;
   jobTitle:string='';
-  problemSolvingScore:number=0;
-  communicationScore:number=0;
-  codingSkillScore:number=0;
-  technicalKnowledgeScore:number=0;
+  problemSolvingScore:number;
+  communicationScore:number;
+  codingSkillScore:number;
+  technicalKnowledgeScore:number;
   scores:number[]=[1,2,3,4,5];
 
 }

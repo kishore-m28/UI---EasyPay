@@ -1,0 +1,47 @@
+<div id="wrapper">
+    <aside id="sidebar-wrapper">
+        <div class="sidebar-brand">
+            <h2>EasyPay - Recruitment</h2>
+        </div>
+        <ul class="sidebar-nav" style="margin-left:5%;">
+            <li>
+                <a routerLink="/hr/recruitment/dashboard"><i class="fa fa-home"></i>Dashboard</a>
+            </li>
+           <!-- <li>
+                <a routerLink="/hr/jobs"><i class="fa fa-home"></i>Jobs</a>
+            </li> -->
+            <li>
+                <a routerLink="/recruitment/hr-interview"><i class="fa fa-home"></i>HR Interviews</a>
+            </li>
+            <li>
+                <a routerLink="/recruitment/hr-scoresheet"><i class="fa fa-plug"></i>HR Scoresheet</a>
+            </li>
+            <li>
+                <a><i class="fa fa-plug"></i>Offers</a>
+            </li>
+        </ul>
+    </aside>
+
+    <div class="content">
+        <nav class="navbar navbar-expand-lg navbar-light" style="position: fixed; top: 0; left: 250px; right: 0; z-index: 1030; height: 60px;">
+            <div class="container-fluid">
+                <div class="d-flex justify-content-between d-md-none d-block">
+                 <button class="btn px-1 py-0 open-btn me-2"><i class="fal fa-stream"></i></button>
+                    <a class="navbar-brand fs-4" href="#"><span class="bg-dark rounded px-2 py-0 text-white">CL</span></a>
+                   
+                </div>
+                <button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fal fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse justify-content-start" id="navbarSupportedContent">
+                    <a><strong>Welcome HR: {{username}}</strong></a>
+                </div>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <button class="btn btn-outline-success btn-sm" (click)="onLogout()">Logout</button>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
