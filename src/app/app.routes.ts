@@ -4,8 +4,6 @@ import { ComplianceComponent } from './component/hr/compliance/compliance.compon
 import { EmployeeListComponent } from './component/employee-list/employee-list.component';
 import { LoginComponent } from './component/auth/login/login.component';
 import { JobseekerDashboardComponent } from './component/jobseeker/jobseeker-dashboard/jobseeker-dashboard.component';
-import { TechnicalScoresheetComponent } from './component/recruitment/technical-scoresheet/technical-scoresheet.component';
-import { HrScoresheetComponent } from './component/recruitment/hr-scoresheet/hr-scoresheet.component';
 import { PersonalDetailsComponent } from './component/jobseeker/jobseeker-register/personal-details/personal-details.component';
 import { JobListComponent } from './component/jobseeker/job-list/job-list.component';
 import { JobseekerProfileComponent } from './component/jobseeker/jobseeker-profile/jobseeker-profile.component';
@@ -16,6 +14,10 @@ import { LeaveRequestsComponent } from './component/manager/leave-requests/leave
 import { ManagerIssueListComponent } from './component/manager/manager-issue-list/manager-issue-list.component';
 import { ManagerIssueReplyComponent } from './component/manager/manager-issue-reply/manager-issue-reply.component';
 import { AssignWorkComponent } from './component/manager/assign-work/assign-work.component';
+import { RecruitDashboardComponent } from './component/manager/recruitment/recruit-dashboard/recruit-dashboard.component';
+import { ManagerMainpageComponent } from './component/manager/manager-mainpage/manager-mainpage.component';
+import { TechnicalScoresheetComponent } from './component/manager/recruitment/technical-scoresheet/technical-scoresheet.component';
+import { TechnicalInterviewComponent } from './component/manager/recruitment/technical-interview/technical-interview.component';
 
 
 export const routes: Routes = [
@@ -42,12 +44,18 @@ export const routes: Routes = [
     },   
     {
         "path":"jobseeker/myProfile",component:JobseekerProfileComponent
-    },   
+    }, 
     {
-        "path":"recruitment/technical-scoresheet",component:TechnicalScoresheetComponent
+        "path":"manager/main-page", component:ManagerMainpageComponent
     },
     {
-        "path":"recruitment/hr-scoresheet",component:HrScoresheetComponent
+        "path":"manager/recruitment/dashboard",component:RecruitDashboardComponent
+    },
+    {
+        "path":"recruitment/technical-interview",component:TechnicalInterviewComponent
+    },
+    {
+        "path":"recruitment/technical-scoresheet",component:TechnicalScoresheetComponent
     },
     {
         "path":"manager/dashboard",component:ManagerDashboardComponent

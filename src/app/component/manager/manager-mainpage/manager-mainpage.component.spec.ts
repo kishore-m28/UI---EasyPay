@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HrScoresheetComponent } from './hr-scoresheet.component';
+import { ManagerMainpageComponent } from './manager-mainpage.component';
 
-describe('HrScoresheetComponent', () => {
-  let component: HrScoresheetComponent;
-  let fixture: ComponentFixture<HrScoresheetComponent>;
+describe('ManagerMainpageComponent', () => {
+  let component: ManagerMainpageComponent;
+  let fixture: ComponentFixture<ManagerMainpageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HrScoresheetComponent]
+      imports: [ManagerMainpageComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(HrScoresheetComponent);
+    fixture = TestBed.createComponent(ManagerMainpageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

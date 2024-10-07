@@ -51,7 +51,7 @@ export class LoginComponent {
                         this.router.navigateByUrl('/employee/dashboard')
                         break;
                      case 'ROLE_MANAGER':
-                        this.router.navigateByUrl('/manager/dashboard')
+                        this.router.navigateByUrl('/manager/main-page')
                         break;
                      default:
                         this.router.navigateByUrl('/page-not-found')
