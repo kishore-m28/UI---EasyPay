@@ -13,6 +13,7 @@ import { NgFor } from '@angular/common';
 })
 export class ManagerEmployeeListComponent {
 
+
   employees:any[]=[];
 
   constructor(private managerService:ManagerService, private router:Router){
@@ -42,6 +43,10 @@ export class ManagerEmployeeListComponent {
 
   assign(id: number) {
     this.router.navigate(['/assignWork',id]);
+  }
+
+  OnViewStatus(id: any) {
+    this.router.navigate(['/getStatus',id]);
   }
 
 }

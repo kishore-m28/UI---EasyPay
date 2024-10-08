@@ -25,6 +25,7 @@ import { HrScoresheetComponent } from './component/hr/recruitment/hr-scoresheet/
 import { ScheduleInterviewComponent } from './component/hr/recruitment/schedule-interview/schedule-interview.component';
 import { ScheduleTechInterviewComponent } from './component/hr/recruitment/schedule-tech-interview/schedule-tech-interview.component';
 import { ScheduleHrInterviewComponent } from './component/hr/recruitment/schedule-hr-interview/schedule-hr-interview.component';
+import { ViewWorkStatusComponent } from './component/manager/view-work-status/view-work-status.component';
 
 
 export const routes: Routes = [
@@ -93,6 +94,9 @@ export const routes: Routes = [
     },
     {
         "path": "assignWork/:id", component:AssignWorkComponent
+    },
+    {
+        "path":"getStatus/:id", component:ViewWorkStatusComponent
     },
     {
         "path":"manager/leave-requests", component:LeaveRequestsComponent

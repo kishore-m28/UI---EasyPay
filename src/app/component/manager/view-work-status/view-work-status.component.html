@@ -1,1 +1,42 @@
-<p>view-work-status works!</p>
+<app-manager-navbar></app-manager-navbar>
+<div class="container mt-4" style= "position: fixed; top: 110px; left: 50px; right: 0; z-index: 1030; height: 60px;">
+    <div class="row ">
+        <div class="col-sm-3 mt-4"></div>
+        <div class="col-md-6">
+            <div class="card fixed-card" style="width:800px">
+                <div class="card-body">
+                    <table id="example" class="table table-striped" style="width:100%; border: 1px solid black; border-collapse: collapse;">
+                        <thead>
+                            <tr>
+                                <th class="text-center">Work assigned</th>
+                                <th class="text-center">Assigned Date</th>
+                                <th class="text-center">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let work of works">
+                              <td class="text-center">{{ work.details}}</td>
+                              <td class="text-center">{{ work.assignedDate }}</td>
+                              <td class="text-center" [ngClass]="{'status-pending': work.status === 'PENDING', 'status-completed': work.status === 'COMPLETED'}">{{ work.status }}</td>
+                            </tr>
+                        </tbody>   
+                    </table>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center">
+                          <li class="page-item">
+                            <button class="page-link"  [disabled]="first == true" (click)="onPrev()"> Prev</button>
+                          </li>
+                          <span *ngFor="let n of numArry">
+                            <button class="page-link"   (click)="onPageNumberClick(n)"> {{n+1}}</button>
+                          </span>
+                          <li class="page-item">
+                            <button class="page-link"  [disabled]="last == true" (click)="onNext()"> Next</button>
+                          </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+

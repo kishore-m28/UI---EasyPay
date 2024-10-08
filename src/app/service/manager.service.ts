@@ -70,6 +70,12 @@ export class ManagerService {
     })
   }
 
+  viewWork(id:any, page:number, size:number):Observable<any>{
+    return this.http.get('http://localhost:8081/work/get/'+id+'?page='+page+'&size='+size , {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token')) 
+    })
+  }
+
   replyIssue(id:number,obj:any):Observable<any>{
     return this.http.post('http://localhost:8081/issue/reply/'+id, obj, {
       headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
