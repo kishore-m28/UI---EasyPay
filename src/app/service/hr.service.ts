@@ -40,4 +40,10 @@ export class HrService {
       headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
     })
   }
+
+  performScreenTest(id:any):Observable<any>{
+    return this.http.get('http://localhost:8081/hr/screentest/'+id, {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+    })
+  }
 }
