@@ -5,7 +5,7 @@
                 <table id="example" class="table table-striped" style="width:100%">
                     <thead>
                         <tr>
-                            <th class="text-center">Applicant ID</th>
+                            <th class="text-center">Application ID</th>
                             <th class="text-center">Applicant Name</th>
                             <th class="text-center">JobTitle</th>
                             <th class="text-center">Screen Test Status</th>
@@ -15,17 +15,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                          <td class="text-center"></td>
-                          <td class="text-center"></td>
-                          <td class="text-center"></td>
-                          <td class="text-center"></td>
-                          <td class="text-center"></td>
-                          <td class="text-center"></td>
+                        <tr *ngFor="let details of jobSeekerDetails">
+                          <td class="text-center">{{details.applicationId}}</td>
+                          <td class="text-center">{{details.applicantName}}</td>
+                          <td class="text-center">{{details.jobTitle}}</td>
+                          <td class="text-center">{{details.screenTestStatus}}</td>
+                          <td class="text-center">{{details.techStatus}}</td>
+                          <td class="text-center">{{details.hrStatus}}</td>
                           <td class="text-center">
-                            <button type="button" class="btn btn-success btn-sm" (click)="onTechInterview()">Schedule Tech Interview</button>
-                            &nbsp;&nbsp;&nbsp;&nbsp;   
-                            <button type="button" class="btn btn-success btn-sm" (click)="onHrInterview()">Schedule HR Interview</button>                        
+                            <button type="button" class="btn btn-success btn-sm" [disabled]="details.screenTestStatus === 'CLEARED' || details.screenTestStatus === 'REJECTED'" >Perform Screen Test</button>
+                            &nbsp;&nbsp;&nbsp;&nbsp; 
+                            <button type="button" class="btn btn-info btn-sm" [disabled]="details.techStatus === 'CLEARED' || details.techStatus === 'REJECTED'"(click)="onTechInterview()">Schedule Tech Interview</button>
+                            <br><br>
+                            <button type="button" class="btn btn-warning btn-sm" [disabled]="details.hrStatus === 'CLEARED' || details.hrStatus === 'REJECTED'"(click)="onHrInterview()">Schedule HR Interview</button>                        
                           </td>
                         </tr>
                     </tbody>  

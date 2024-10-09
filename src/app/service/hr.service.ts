@@ -34,4 +34,10 @@ export class HrService {
       headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
     })
   }
+
+  getJobSeekerDetails():Observable<any>{
+    return this.http.get('http://localhost:8081/hr/jobseeker/status', {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+    })
+  }
 }
