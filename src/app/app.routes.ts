@@ -19,13 +19,15 @@ import { ManagerMainpageComponent } from './component/manager/manager-mainpage/m
 import { TechnicalScoresheetComponent } from './component/manager/recruitment/technical-scoresheet/technical-scoresheet.component';
 import { TechnicalInterviewComponent } from './component/manager/recruitment/technical-interview/technical-interview.component';
 import { HrMainPageComponent } from './component/hr/hr-main-page/hr-main-page.component';
-import { HrRecruitDashboardComponent } from './component/hr/recruitment/hr-recruit-dashboard/hr-recruit-dashboard.component';
 import { HrInterviewComponent } from './component/hr/recruitment/hr-interview/hr-interview.component';
 import { HrScoresheetComponent } from './component/hr/recruitment/hr-scoresheet/hr-scoresheet.component';
 import { ScheduleInterviewComponent } from './component/hr/recruitment/schedule-interview/schedule-interview.component';
 import { ScheduleTechInterviewComponent } from './component/hr/recruitment/schedule-tech-interview/schedule-tech-interview.component';
 import { ScheduleHrInterviewComponent } from './component/hr/recruitment/schedule-hr-interview/schedule-hr-interview.component';
 import { ViewWorkStatusComponent } from './component/manager/view-work-status/view-work-status.component';
+import { JobsListComponent } from './component/hr/recruitment/jobs-list/jobs-list.component';
+import { AddJobComponent } from './component/hr/recruitment/add-job/add-job.component';
+import { EditJobComponent } from './component/hr/recruitment/edit-job/edit-job.component';
 
 
 export const routes: Routes = [
@@ -39,7 +41,13 @@ export const routes: Routes = [
         "path" : "hr/dashboard" , component:HrDashboardComponent
     },
     {
-        "path" : "recruitment/hr-dashboard" , component:HrRecruitDashboardComponent
+        "path" : "recruitment/jobs-list" , component:JobsListComponent
+    },
+    {
+        "path" : "hr/add-job" , component:AddJobComponent
+    },
+    {
+        "path" : "hr/edit-job/:id" , component:EditJobComponent
     },
     {
         "path": "recruitment/hr-interview", component:HrInterviewComponent

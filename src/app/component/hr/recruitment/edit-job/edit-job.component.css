@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    justify-content: center;  /* Horizontally centers the card */
+    align-items: center;      /* Vertically centers the card */
+    min-height: 100vh;        /* Full height of the viewport */
+  }
+
+  /* Add styles for the card to have a max height and allow scrolling */
+  .card {
+    width: 100%;              /* Make the card responsive */
+    width: 600px;          /* Limit the maximum width of the card */
+    max-height: 80vh;          /* Limit the height to 80% of the viewport */
+    overflow-y: auto;          /* Add vertical scrolling if content overflows */
+  }
+
+  /* Optional: To give the card a nicer look */
+  .card-body {
+    overflow-y: auto;          /* Enable scroll for the card body */
+  }
