@@ -1,0 +1,54 @@
+<div class="row">
+    <div class="col-sm-3">
+
+    </div>
+    <div class="col-md-9">
+        <div class="row">
+            <div class="col-md-9">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col" style="width: 5%" class="text-center">#</th>
+                            <th scope="col" style="width: 15%" class="text-center">Title</th>
+                            <th scope="col" style="width: 20%" class="text-center">Type</th>
+                            <th scope="col" style="width: 25%" class="text-center">Status</th>
+                            <th scope="col" class="text-center" class="text-center">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let proj of projects">
+                            <th scope="row" class="text-center">{{proj.id}}</th>
+                            <td class="text-center">{{proj.name}}</td>
+                            <td class="text-center">{{proj.contact}}</td>
+                            <td class="text-center">{{proj.jobRole}}</td>
+                            <td class="text-center"> <span>
+                                    <!-- <button [routerLink]="['/delete/', emp.id]" class="btn btn-danger bn-small" (click)="delete(emp.id)">Mark Inactive / Delete</button>  -->
+                                    <button class="btn btn-danger bn-small" (click)="markstart(proj.id)">Mark
+                                        Start</button>
+                                    &nbsp;&nbsp;&nbsp;
+                                    <!-- <button [routerLink]="['/project/edit/',emp.id]" class="btn btn-secondary bn-small">Edit</button> -->
+                                </span>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item">
+                            <button class="page-link" [disabled]="first == true" (click)="onPrev()"> Prev</button>
+                        </li>
+                        <span *ngFor="let n of numArry">
+                            <button class="page-link" (click)="onPageNumberClick(n)"> {{n+1}}</button>
+                        </span>
+
+
+                        <li class="page-item">
+                            <button class="page-link" [disabled]="last == true" (click)="onNext()"> Next</button>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+        </div>

@@ -1,0 +1,112 @@
+<div class="row mb-2">
+    <app-hr-brand-navbar></app-hr-brand-navbar>
+</div>
+<br><br><br>
+
+<div class="row">
+    <div class="col-sm-2">
+        <app-navbar></app-navbar>
+    </div>
+    <div class="col-lg-8">
+        <div class="row mt-2">
+            <div class="col-md-5">
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check" routerLink="/overall-compliance" name="btnradio1"
+                        id="btnradio1" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio1">Overall Compliance</label>
+
+                    <input type="radio" class="btn-check" routerLink="/detailed-compliance" name="btnradio1"
+                        id="btnradio2" autocomplete="off" checked>
+                    <label class="btn btn-outline-primary" for="btnradio2">Detailed Compliance</label>
+
+                </div>
+
+            </div>
+        </div>
+        <br>
+        <div class="row mb-2">
+            <div>
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check" routerLink="/detailed-compliance" name="btnradio2"
+                        id="btnradio3" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio3">Gratuity</label>
+
+                    <input type="radio" class="btn-check" routerLink="/detailed-compliance/bonus" name="btnradio2"
+                        id="btnradio4" autocomplete="off" checked>
+                    <label class="btn btn-outline-primary" for="btnradio4">Bonus</label>
+
+                    <input type="radio" class="btn-check" routerLink="/detailed-compliance/other" name="btnradio2"
+                        id="btnradio5" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio5">Other</label>
+                </div>
+            </div>
+        </div>
+        <div>
+            <p><strong>Bonus Payment Compliance</strong></p>
+            <div class="row row-cols-1 row-cols-md-4 g-3">
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Total Bonuses Paid</h5>
+                            <p class="card-text">Rs. 5,00,000</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">No. of Employees eligible for Bonus</h5>
+                            <p class="card-text">95 %</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Adherence to the Payment of Bonus Act, 1965</h5>
+                            <p class="card-text"><strong>100 % </strong></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <p><strong>Bonus Criteria</strong></p>
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="card">
+                        <!-- <div class="card-header">
+        
+                        </div> -->
+                        <div class="card-body">
+                            <div>
+                                <label>Base Pay: </label>
+                                <input class="form-control" type="text" [(ngModel)]="basePay">
+                            </div>
+                            <div>
+                                <label>Minimum Work Duartion</label>
+                                <input class="form-control" type="text" [(ngModel)]="minimunWorkDuration">
+                            </div>
+                            <div>
+                                <label>Bonus Percentage</label>
+                                <input class="form-control" type="text" [(ngModel)]="bonusPercenatge">
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn btn-warning">Run Compliance Check</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button type="button" class="btn btn-danger">Update Criteria</button>
+                            <p>Last Checked On 09/10/2024 &nbsp;&nbsp; Last Updated On 09/10/2024</p>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="col-sm-2">
+        
+    </div>
+
+</div>
