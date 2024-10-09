@@ -1,0 +1,41 @@
+<app-manager-navbar></app-manager-navbar>
+<div class="container mt-4" style= "position: fixed; top: 110px; left: 250px; right: 0; z-index: 1030; height: 60px;">
+    <div class="row ">
+        <div class="col-sm-3 mt-4"></div>
+        <div class="col-md-6">
+            <div class="card fixed-card">
+                <div class="card-body">
+                    <div class="alert  alert-info" role="alert" *ngIf="successMsg">
+                        {{successMsg}}
+                     </div>
+                     <div class="alert alert-danger" role="alert" *ngIf="errorMsg">
+                       {{errorMsg}}
+                     </div>
+                    <div class="mt-2">
+                        <label>Employee Name: </label>
+                        <input class="form-control mt-1" type="text" [(ngModel)]="employeeName">
+                    </div>
+                    <div class="mt-2">
+                        <label>Job Role: </label>
+                        <input class="form-control mt-1" type="text" [(ngModel)]="jobRole">
+                    </div>
+                    <div class="mt-2">
+                        <label>Project Type: </label>
+                        <input class="form-control mt-1" type="text" [(ngModel)]="projectType">
+                    </div>
+                    <div class="mt-2">
+                        <label>Name of the Project: </label>
+                        <input class="form-control mt-1" type="text" [(ngModel)]="project">
+                    </div>
+                    <div class="mt-2">
+                        <label>Work: </label>
+                        <textarea class="form-control mt-1" type="text" [(ngModel)]="work"></textarea>
+                    </div>
+                </div>
+                <div class="card-footer text-center">
+                    <button type="button" class="btn btn-info" (click)="assignWork(id)">Assign</button>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>

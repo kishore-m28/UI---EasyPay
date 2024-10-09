@@ -10,13 +10,12 @@ import { Router } from '@angular/router';
 })
 export class LogoutComponent {
 
-  email : string = "easypay.admin@gmail.com";
-  
-constructor(private router : Router){
-  localStorage.clear();
-}
+  constructor(private router: Router){
+    localStorage.clear();
+  }
 
   login(){
-    this.router.navigateByUrl('/'); 
+    this.router.navigateByUrl("/");
   }
+
 }

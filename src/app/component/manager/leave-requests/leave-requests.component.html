@@ -1,0 +1,50 @@
+<app-manager-navbar></app-manager-navbar>
+<div class="container-fluid " style= "position: fixed; top: 110px; left: 250px; right: 0; z-index: 1030; height: 60px;">
+    <div class="row">
+        <div class="col-md-10">
+                <table id="example" class="table table-striped" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th class="text-center">ID</th>
+                            <th class="text-center">Employee Name</th>
+                            <th class="text-center">Apply Date</th>
+                            <th class="text-center">Start Date</th>
+                            <th class="text-center">End Date</th>
+                            <th class="text-center">Leave Type</th>
+                            <th class="text-center">Status</th>
+                            <th class="text-center">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let leaveRequest of leaveRequests">
+                          <td class="text-center">{{ leaveRequest.id }}</td>
+                          <td class="text-center">{{ leaveRequest.name }}</td>
+                          <td class="text-center">{{ leaveRequest.applyDate }}</td>
+                          <td class="text-center">{{ leaveRequest.startDate }}</td>
+                          <td class="text-center">{{ leaveRequest.endDate }}</td>
+                          <td class="text-center">{{ leaveRequest.leaveType }}</td>
+                          <td class="text-center">{{ leaveRequest.status }}</td>
+                          <td class="text-center">
+                            <button type="button" class="btn btn-success btn-sm" (click)="approveLeave(leaveRequest.id)">Approve</button> 
+                             &nbsp;&nbsp;&nbsp;
+                            <button type="button" class="btn btn-danger btn-sm" (click)="rejectLeave(leaveRequest.id)">Reject</button>
+                          </td>
+                        </tr>
+                    </tbody>   
+                </table>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                      <li class="page-item">
+                        <button class="page-link"  [disabled]="first == true" (click)="onPrev()"> Prev</button>
+                      </li>
+                      <span *ngFor="let n of numArry">
+                        <button class="page-link"   (click)="onPageNumberClick(n)"> {{n+1}}</button>
+                      </span>
+                      <li class="page-item">
+                        <button class="page-link"  [disabled]="last == true" (click)="onNext()"> Next</button>
+                      </li>
+                    </ul>
+                  </nav>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<app-brand-navbar></app-brand-navbar>
+<div class="welcome-container mt-4" style= "position: fixed; top: 100px; left: 450px; right: 0; z-index: 1030; height: 60px;">
+    <div class="card fixed-card" style="width:650px; height: 400px;">
+        <div class="card-body" style="background-color: bisque;">
+            <div class="welcome-header">
+                <h1>Welcome, Manager!</h1>
+                <p>Manage your team or recruit new talents efficiently.</p>
+              </div>
+                  
+                <div class="mt-4" >
+                    <button type="button" class="btn btn-primary btn-lg" (click)="OnRecruitClick()">Go to Recruitment</button>
+                  <p>Start a new recruitment process, schedule interviews, and update scoresheets</p>
+                </div>
+            
+                <div class="mt-4" >
+                    <button type="button" class="btn btn-primary btn-lg" (click)="OnDashboardClick()">Go to Dashboard</button>
+                  <p>View your team, manage tasks, approve leave requests, and track performance.</p>
+                </div>
+        
+    </div>
+</div>
+  

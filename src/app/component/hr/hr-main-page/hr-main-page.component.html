@@ -1,0 +1,22 @@
+<app-brand-navbar></app-brand-navbar>
+<div class="welcome-container mt-4" style= "position: fixed; top: 100px; left: 450px; right: 0; z-index: 1030; height: 60px;">
+    <div class="card fixed-card" style="width:650px; height: 400px;">
+        <div class="card-body" style="background-color: bisque;">
+            <div class="welcome-header">
+                <h1>Welcome, HR!</h1>
+                <p>Manage recruitment, job postings, and payroll with ease.</p>
+              </div>
+                  
+                <div class="mt-4" >
+                    <button type="button" class="btn btn-primary btn-lg" (click)="OnRecruitClick()">Go to Recruitment</button>
+                  <p>Recruit employees, add job postings.</p>
+                </div>
+            
+                <div class="mt-4" >
+                    <button type="button" class="btn btn-primary btn-lg" (click)="OnDashboardClick()">Go to Dashboard</button>
+                  <p>Manage employee payroll, process salaries, and handle deductions.</p>
+                </div>
+        
+    </div>
+</div>
+  

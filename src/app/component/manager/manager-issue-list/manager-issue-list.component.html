@@ -1,0 +1,42 @@
+<app-manager-navbar></app-manager-navbar>
+<div class="container-fluid " style= "position: fixed; top: 110px; left: 250px; right: 0; z-index: 1030; height: 60px;">
+    <div class="row">
+        <div class="col-md-10">
+                <table id="example" class="table table-striped" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th class="text-center">ID</th>
+                            <th class="text-center">Employee Name</th>
+                            <th class="text-center">Description</th>
+                            <th class="text-center">Date</th>
+                            <th class="text-center">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let issue of issues">
+                          <td class="text-center">{{ issue.id }}</td>
+                          <td class="text-center">{{ issue.employeeName }}</td>
+                          <td class="text-center">{{ issue.description }}</td>
+                          <td class="text-center">{{ issue.date }}</td>
+                          <td class="text-center">
+                            <button type="button" class="btn btn-success btn-sm" (click)="onClick(issue.id)">Reply</button>                            
+                          </td>
+                        </tr>
+                    </tbody>   
+                </table>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                      <li class="page-item">
+                        <button class="page-link"  [disabled]="first == true" (click)="onPrev()"> Prev</button>
+                      </li>
+                      <span *ngFor="let n of numArry">
+                        <button class="page-link"   (click)="onPageNumberClick(n)"> {{n+1}}</button>
+                      </span>
+                      <li class="page-item">
+                        <button class="page-link"  [disabled]="last == true" (click)="onNext()"> Next</button>
+                      </li>
+                    </ul>
+                </nav>
+        </div>
+    </div>
+</div>
