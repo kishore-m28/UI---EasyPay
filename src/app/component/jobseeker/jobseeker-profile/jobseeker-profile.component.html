@@ -1,35 +1,97 @@
 <app-jobseeker-navbar></app-jobseeker-navbar>
 <div class="container">
   <div class="row">
+    <p></p>
+    <p></p>
+    <p></p>
+</div>
+  <div class="row">
     <div class="col-sm-2"></div>
     <div class="col-md-3">
-      <div class="card shadow-lg border-primary">
+      <div class="card shadow-lg">
         <div class="card-header bg-primary text-white text-center">
           <h5 class="card-title">Profile</h5>
         </div>
         <div class="card-body">
           <p><strong>Name:</strong> <span class="text-muted">{{ basicJobseekerDetails.name }}</span></p>
-          <p><strong>Date of Birth:</strong> <span class="text-muted">{{ basicJobseekerDetails.dateOfBirth}}</span></p>
+          <p><strong>Date of Birth:</strong> <span class="text-muted">{{ basicJobseekerDetails.dateOfBirth }}</span></p>
           <p><strong>Gender:</strong> <span class="text-muted">{{ basicJobseekerDetails.gender }}</span></p>
-          <p><strong>Current Employer:</strong> <span class="text-muted">{{ basicJobseekerDetails.currentEmployer }}</span></p>
-          <p><strong>Contact:</strong> <span class="text-muted">{{ basicJobseekerDetails.contact }}</span></p>
+          <p><strong>Degree:</strong> <span class="text-muted">{{ basicJobseekerDetails.degree }}</span></p>
+          <p><strong>Batch:</strong> <span class="text-muted">{{ basicJobseekerDetails.batch }}</span></p>
           <p><strong>EasyPay ID:</strong> <span class="text-muted">{{ basicJobseekerDetails.easyPayId }}</span></p>
         </div>
       </div>
     </div>
-    <div class="col-md-5"></div>
-    <div class="container-fluid">
-    <div class="card">
-      <div class="card-body">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Applied jobs</strong> 
-        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <div class="col-md-6">
+      <div class="card shadow-lg mb-4">
+        <div class="card-header bg-primary text-white text-center">
+          <h5 class="card-title">Status</h5>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-6">
+              <p><strong>Screening Test:</strong> <span class="text-success">Cleared</span></p>
+              <p><strong>Technical Round:</strong> <span class="text-success">Cleared</span></p>
+              <p><strong>HR Round:</strong> <span class="text-warning">Pending</span></p>
+            </div>
+            <div class="col-sm-6">
+              <p></p>
+              <h6>Overall Status:</h6>
+              <p class="text-success">Selected</p>
+              <!--<p class="text-danger">Rejected</p>-->
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="card">
-      <div class="card-body">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Interview status</strong> 
+
+    <div class="row">
+      <p></p>
+      <div class="col-sm-2"></div>
+      <div class="col-md-6">
+        <div class="card shadow-lg mb-4">
+          <div class="card-header bg-black text-white text-center">
+            <h5 class="card-title">Jobs Applied</h5>
+          </div>
+          <div class="card-body">
+            <div class="job-card">
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <h6>Java Full Stack Engineer - Professional - Angular</h6>
+                  <p>
+                    <strong>
+                    Posted on: 09-09-2024 <br />
+                    Location: Chennai 
+                  </strong>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
       </div>
     </div>
-  </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+

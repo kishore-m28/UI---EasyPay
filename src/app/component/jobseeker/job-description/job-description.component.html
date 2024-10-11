@@ -1,0 +1,87 @@
+<app-jobseeker-navbar></app-jobseeker-navbar>
+<div class="container">
+    <div class="row">
+        <p></p>
+        <p></p>
+    </div>
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <!-- Modal Header with Job Title and Close Button -->
+                <div class="card-header bg-light">
+                    <h5 class="card-title text-center font-weight-bold">
+                        {{ job.jobTitle}} <!-- Dynamic title and skill -->
+                    </h5>
+                    <button type="button" class="close" aria-label="Close" (click)="navigateToJobList()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <!-- Modal Body with Job Details -->
+                <div class="card-body">
+                    <h6 class="font-weight-bold">Job Description</h6>
+                    <p>{{ job.description }}</p>
+
+                    <p><strong>Role:</strong> {{ job.jobTitle }}</p>
+
+                    <h6 class="font-weight-bold">Essential Skills :</h6>
+                    <ul>
+                        <li>{{job.skill1}}</li>
+                        <li>{{job.skill2}}</li>
+                        <li>{{job.skill3}}</li>
+                    </ul>
+
+                    <h6 class="font-weight-bold">Essential Qualification :</h6>
+                    <ul>
+                        <li>{{ job.requirements }}</li>
+                    </ul>
+
+                    <h6 class="font-weight-bold">Salary Range :</h6>
+                    <p>CTC: {{ job.ctc}}</p>
+
+                    <h6 class="font-weight-bold">Location :</h6>
+                    <p>{{job.location}}</p>
+                </div>
+
+                <!-- Apply Button -->
+                <div class="card-footer text-center">
+                    <button class="btn btn-primary">Apply</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

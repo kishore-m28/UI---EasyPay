@@ -13,5 +13,8 @@ export class JobseekerNavbarComponent {
   username:any=localStorage.getItem('username');
   constructor(private router:Router){}
 
+  onLogout(){
+    this.router.navigateByUrl("");
+  }
 
 }

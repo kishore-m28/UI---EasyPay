@@ -1,0 +1,66 @@
+body {
+    background-color: #f8f9fa; /* Light gray background for contrast */
+    font-family: Arial, sans-serif; /* Clean, modern font */
+}
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.card {
+    border-radius: 8px; /* Rounded corners for the card */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for card */
+}
+
+.card-header {
+    background-color: #ffffff; /* Bootstrap primary color */
+    color: rgb(0, 0, 0); /* White text on header */
+    font-size: 1.5rem; /* Larger font size for header */
+    text-align: center; /* Centered text */
+    border-top-left-radius: 8px; /* Rounded corners for header */
+    border-top-right-radius: 8px; /* Rounded corners for header */
+}
+
+.card-body {
+    padding: 20px; /* Add padding inside the card body */
+}
+
+.form-label {
+    font-weight: bold; /* Bold label for better readability */
+}
+
+.btn-primary {
+    width: 100%; /* Full width for the button */
+    padding: 10px; /* Increase padding for a larger button */
+    border-radius: 5px; /* Slightly rounded corners */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darken button on hover */
+    border-color: #0056b3; /* Match border to the new background */
+}
+
+.alert {
+    margin-bottom: 20px; /* Space above the alert box */
+}
+
+.card-footer {
+    text-align: center; /* Center footer text */
+    padding: 10px; /* Add padding */
+    background-color: #f8f9fa; /* Match the body background */
+}
+
+.card-footer span {
+    color: #007bff; /* Link color */
+    cursor: pointer; /* Pointer cursor for links */
+}
+
+.card-footer span:hover {
+    text-decoration: underline; /* Underline on hover for interactivity */
+}
+
+@media (max-width: 768px) {
+    .col-md-6 {
+        margin-top: 20px; /* Add margin for smaller screens */
+    }
+}
