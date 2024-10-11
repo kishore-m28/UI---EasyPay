@@ -1,0 +1,73 @@
+<app-hr-recruit-navbar></app-hr-recruit-navbar>
+<div class="container mt-4" style= "position: fixed; top: 0px; left: 0px; right: 0; z-index: 1030; height: 60px;">
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header text-center" style="background-color:beige">
+                    Add New Job
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-success" role="alert" *ngIf="successMsg">
+                         {{successMsg}}
+                      </div>
+                      <div class="alert alert-warning" role="alert" *ngIf="errorMsg">
+                        {{errorMsg}}
+                      </div>
+                    <div>
+                        <label>Enter Job Title: </label>
+                        <input class="form-control" type="text" [(ngModel)]="jobTitle" (change)="resetmsg()">
+                    </div>
+                    <div>
+                        <label>Enter Job Type: </label>
+                        <input class="form-control" type="text" [(ngModel)]="jobType" (change)="resetmsg()">
+                    </div>
+                    <div>
+                        <label>Enter Job Description: </label>
+                        <textarea class="form-control mt-1" type="text" [(ngModel)]="description" (change)="resetmsg()"></textarea>
+                    </div>
+                    <div>
+                        <label>Enter Requirements: </label>
+                        <textarea class="form-control mt-1" type="text" [(ngModel)]="requirements" (change)="resetmsg()"></textarea>
+                    </div>
+                    <div>
+                        <label>Select Start Date: </label>
+                        <input class="form-control" type="date" [(ngModel)]="startDate" (change)="resetmsg()">
+                    </div>
+                    <div>
+                        <label>Select End Date: </label>
+                        <input class="form-control" type="date" [(ngModel)]="endDate" (change)="resetmsg()">
+                    </div>
+                    <div>
+                        <label>Enter Location: </label>
+                        <input class="form-control" type="text" [(ngModel)]="location" (change)="resetmsg()">
+                    </div>
+                    <div>
+                        <label>Enter CTC provided: </label>
+                        <input class="form-control" type="number" [(ngModel)]="ctc" (change)="resetmsg()">
+                    </div>
+                    <div>
+                        <label>Enter Experience required(in years): </label>
+                        <input class="form-control" type="number" [(ngModel)]="experienceRequired" (change)="resetmsg()">
+                    </div>
+                    <div>
+                        <label>Enter Skill 1: </label>
+                        <input class="form-control" type="text" [(ngModel)]="skill1" (change)="resetmsg()">
+                    </div>
+                    <div>
+                        <label>Enter Skill 2: </label>
+                        <input class="form-control" type="text" [(ngModel)]="skill2" (change)="resetmsg()">
+                    </div>
+                    <div>
+                        <label>Enter Skill 3: </label>
+                        <input class="form-control" type="text" [(ngModel)]="skill3" (change)="resetmsg()">
+                    </div>              
+                </div>
+                <div class="card-footer text-center" style="background-color:beige">
+                    <button type="button" class="btn btn-warning btn-sm"(click)="onClickAdd()">Add Job</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+ </div>

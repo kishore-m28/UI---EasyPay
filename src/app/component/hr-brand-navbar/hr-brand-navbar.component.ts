@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-hr-brand-navbar',
@@ -9,4 +10,13 @@ import { Component } from '@angular/core';
 })
 export class HrBrandNavbarComponent {
 
+  username:any;
+
+  constructor(private router : Router){
+    this.username = window.localStorage.getItem('username');
+  }
+
+  onLogout(){
+    this.router.navigateByUrl('/logout');
+  }
 }

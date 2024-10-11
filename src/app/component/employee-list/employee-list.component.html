@@ -1,46 +1,59 @@
 
 
-<div class="row mb-4">
+<div class="row mb-2">
     <app-hr-brand-navbar></app-hr-brand-navbar>
   </div>
-  <br>
-  <div class="row mt-5">
+  <br><br><br>
+  <div class="row">
     <div class="col-sm-3">
       <app-navbar></app-navbar>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-9">
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-md-9">
             <table class="table">
                 <thead>
                   <tr>
-                    <th scope="col" style="width: 5%">#</th>
-                    <th scope="col" style="width: 15%">Name</th>
-                    <th scope="col" style="width: 20%">Specialization</th>
-                    <th scope="col" style="width: 25%">Username</th>
-                    <th scope="col" class="text-center"> Actions </th>
+                    <th scope="col" style="width: 5%" class="text-center">#</th>
+                    <th scope="col" style="width: 15%" class="text-center">Name</th>
+                    <th scope="col" style="width: 20%" class="text-center">Contact</th>
+                    <th scope="col" style="width: 25%" class="text-center">Role</th>
+                    <th scope="col" class="text-center" class="text-center">Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr *ngFor="let emp of employees">
-                    <th scope="row">{{emp.id}}</th>
-                    <td>{{emp.name}}</td>
-                    <td>{{emp.doctorSpecialization}}</td>
-                    <td>{{emp.user.username}}</td>
-                    <td> <button class="btn btn-info bn-small">View Schedule</button>
-                      &nbsp;&nbsp;&nbsp;
-                        <button class="btn btn-danger bn-small">Archive</button> 
+                    <th scope="row" class="text-center">{{emp.id}}</th>
+                    <td class="text-center">{{emp.name}}</td>
+                    <td class="text-center">{{emp.contact}}</td>
+                    <td class="text-center">{{emp.jobRole}}</td>
+                    <td class="text-center"> <span>
+                      <!-- <button [routerLink]="['/delete/', emp.id]" class="btn btn-danger bn-small" (click)="delete(emp.id)">Mark Inactive / Delete</button>  -->
+                        <button class="btn btn-danger bn-small" (click)="delete(emp.id)">Mark Inactive / Delete</button> 
                         &nbsp;&nbsp;&nbsp;
-                        <button class="btn btn-secondary bn-small">edit</button>
+                        <button [routerLink]="['/employee/edit/',emp.id]" class="btn btn-secondary bn-small">Edit</button>
+                    </span>
                     </td>
                   </tr>
                    
                 </tbody>
               </table>
-             
+
+                           <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                  <li class="page-item">
+                    <button class="page-link"  [disabled]="first == true" (click)="onPrev()"> Prev</button>
+                  </li>
+                  <span *ngFor="let n of numArry">
+                    <button class="page-link"   (click)="onPageNumberClick(n)"> {{n+1}}</button>
+                  </span>
+                  
+                   
+                  <li class="page-item">
+                    <button class="page-link"  [disabled]="last == true" (click)="onNext()"> Next</button>
+                  </li>
+                </ul>
+              </nav>
   
-    </div>
-    <div class="col-sm-3">
-      
     </div>
   </div>

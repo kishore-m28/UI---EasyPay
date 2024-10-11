@@ -1,0 +1,52 @@
+<app-hr-recruit-navbar></app-hr-recruit-navbar>
+<div class="container mt-4" style= "position: fixed; top: 110px; left: 250px; right: 0; z-index: 1030; height: 60px;">
+    <div class="row ">
+        <div class="col-sm-3 mt-4"></div>
+        <div class="col-md-6">
+            <div class="card fixed-card">
+                <div class="card-header text-center" >
+                    HR ScoreSheet
+                </div>
+                <div class="card-body">
+                  <!-- <div class="alert alert-dark" role="alert" *ngIf="successMsg">
+                         {{successMsg}}
+                      </div>
+                      <div class="alert alert-primary" role="alert" *ngIf="errorMsg">
+                        {{errorMsg}}
+                      </div> --> 
+                    <div>
+                        <label>Job Title: </label>
+                        <input class="form-control" type="text" [(ngModel)]="jobTitle">
+                    </div>
+                    <div>
+                        <label>ProblemSolvingScore: </label>
+                        <select class="form-control" [(ngModel)]="communicationScore">
+                            <option *ngFor="let score of scores " value={{score}}> {{score}}</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>CommunicationScore </label>
+                        <select class="form-control" [(ngModel)]="attitudeScore">
+                            <option *ngFor="let score of scores " value="{{score}}"> {{score}}</option>
+                        </select>
+                    </div>
+                    <div> 
+                        <label>CodingSkillScore </label>
+                        <select class="form-control" [(ngModel)]="interpersonalScore">
+                            <option *ngFor="let score of scores " value="{{score}}"> {{score}} </option>
+                        </select>
+                    </div>
+                    <div> 
+                        <label>TechnicalKnowledgeScore: </label>
+                        <select class="form-control" [(ngModel)]="adaptabilityScore">
+                            <option *ngFor="let score of scores " value="{{score}}"> {{score}} </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="card-footer text-center">
+                    <button type="button" class="btn btn-success">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>

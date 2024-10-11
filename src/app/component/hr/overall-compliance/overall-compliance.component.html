@@ -1,0 +1,83 @@
+<div class="row mb-2">
+  <app-hr-brand-navbar></app-hr-brand-navbar>
+</div>
+<br><br><br>
+<div class="row">
+  <div class="col-sm-2">
+    <app-navbar></app-navbar>
+  </div>
+  <div class="col-md-8">
+
+    <div class="row mt-2">
+      <div class="col-md-5">
+        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+          <input type="radio" class="btn-check" routerLink="/overall-compliance" name="btnradio1" id="btnradio1"
+            autocomplete="off" checked>
+          <label class="btn btn-outline-primary" for="btnradio1">Overall Compliance</label>
+
+          <input type="radio" class="btn-check" routerLink="/detailed-compliance" name="btnradio1" id="btnradio2"
+            autocomplete="off">
+          <label class="btn btn-outline-primary" for="btnradio2">Detailed Compliance</label>
+
+        </div>
+      </div>
+    </div>
+    <br>
+    <div>
+      <h5><strong>Compliance Summary</strong></h5>
+    </div>
+    <div>
+      <div class="row row-cols-1 row-cols-md-4 g-4">
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Total Employees</h5>
+              <p class="card-text">{{totalActiveEmployees}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Gratuity Compliance</h5>
+              <p class="card-text">95 %</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Minimum Wage Compliance</h5>
+              <p class="card-text"><strong>{{minimumWageCompliance}} % </strong></p>
+            </div>
+          </div>
+
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Bonus Compliance</h5>
+              <p class="card-text">100 %</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- <br> -->
+    <div class="container-fluid mt-4">
+      <div class="row">
+        <div class="col-lg-8">
+
+          <div class="card">
+            <p><strong>&nbsp;&nbsp;Gratuity Compliance</strong></p>
+            <p-chart type="bar" [data]="aptData" [options]="barOptions" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-2">
+
+  </div>
+</div>

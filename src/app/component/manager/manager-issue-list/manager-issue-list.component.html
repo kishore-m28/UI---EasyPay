@@ -9,7 +9,6 @@
                             <th class="text-center">Employee Name</th>
                             <th class="text-center">Description</th>
                             <th class="text-center">Date</th>
-                            <th class="text-center">Status</th>
                             <th class="text-center">Action</th>
                         </tr>
                     </thead>
@@ -19,15 +18,25 @@
                           <td class="text-center">{{ issue.employeeName }}</td>
                           <td class="text-center">{{ issue.description }}</td>
                           <td class="text-center">{{ issue.date }}</td>
-                          <td class="text-center">{{ issue.status }}</td>
                           <td class="text-center">
-                            <button type="button" class="btn btn-success btn-sm">Note</button> 
-                             &nbsp;&nbsp;&nbsp;
-                            <button type="button" class="btn btn-danger btn-sm">Reject</button>
+                            <button type="button" class="btn btn-success btn-sm" (click)="onClick(issue.id)">Reply</button>                            
                           </td>
                         </tr>
                     </tbody>   
                 </table>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                      <li class="page-item">
+                        <button class="page-link"  [disabled]="first == true" (click)="onPrev()"> Prev</button>
+                      </li>
+                      <span *ngFor="let n of numArry">
+                        <button class="page-link"   (click)="onPageNumberClick(n)"> {{n+1}}</button>
+                      </span>
+                      <li class="page-item">
+                        <button class="page-link"  [disabled]="last == true" (click)="onNext()"> Next</button>
+                      </li>
+                    </ul>
+                </nav>
         </div>
     </div>
 </div>

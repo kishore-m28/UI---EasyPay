@@ -1,0 +1,9 @@
+.status-pending {
+    background-color: rgb(255, 145, 0);
+    color: black;
+  }
+  
+  .status-completed {
+    background-color: rgb(90, 238, 90);
+    color: black;
+  }
