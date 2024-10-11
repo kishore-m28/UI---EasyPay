@@ -20,6 +20,10 @@ import { ManagerEmployeeListComponent } from './component/manager/manager-employ
 import { LogoutComponent } from './component/auth/logout/logout.component';
 import { LeaveRequestsComponent } from './component/manager/leave-requests/leave-requests.component';
 import { ManagerIssueListComponent } from './component/manager/manager-issue-list/manager-issue-list.component';
+import { JobDescriptionComponent } from './component/jobseeker/job-description/job-description.component';
+import { EmployeeSalaryListComponent } from './component/salary-computation/employee-salary-list/employee-salary-list.component';
+import { ComputeComponent } from './component/salary-computation/compute/compute.component';
+import { ReviewPayrollComponent } from './component/salary-computation/review-payroll/review-payroll.component';
 import { AssignWorkComponent } from './component/manager/assign-work/assign-work.component';
 import { RecruitDashboardComponent } from './component/manager/recruitment/recruit-dashboard/recruit-dashboard.component';
 import { ManagerMainpageComponent } from './component/manager/manager-mainpage/manager-mainpage.component';
@@ -152,6 +156,18 @@ export const routes: Routes = [
     },
     {
         "path": "reply/:id", component:ManagerIssueReplyComponent
+    },
+    { 
+        "path": 'payroll/review', component:ReviewPayrollComponent
+    },
+    { 
+        "path": 'salary/compute', component:ComputeComponent
+    },
+    { 
+        "path": 'run-payroll', component:EmployeeSalaryListComponent
+    },
+    { 
+        "path": 'job-details/:jobId', component:JobDescriptionComponent
     },
     {
         "path":"logout",component:LogoutComponent

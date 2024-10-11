@@ -1,20 +1,55 @@
 <app-jobseeker-navbar></app-jobseeker-navbar>
-<div class="container-fluid mt-4">
-    <div class="row">
-        <div class="col-sm-3"></div>
-        <div class="col-md-6">
-            <div *ngFor="let j of job" class="card mb-3 shadow-sm">
-                <div class="card-header font-weight-bold bg-light">
-                  {{ j.tile }}
-                </div>
-                <div class="card-body">
-                  <p><strong>Location:</strong> {{ j.location }}</p>
-                  <p><strong>Job Type:</strong> {{ j.jobType }}</p>
-                  <p><strong>Posting Date:</strong> {{ j.postingDate }}</p>
-                  <button class="btn btn-primary" >View Details</button> <!-- View Button -->
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-3"></div>
+<div class="container">
+  <div class="row">
+    <p></p>
+    <div class="col-sm-2"></div>
+    <div class="col-md-10">
+      <nav class="navbar navbar-light bg-light">
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Location" aria-label="Search">
+          <input class="form-control me-2" type="search" placeholder="Job Title" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </nav>
     </div>
+  </div>
+  <div class="row">
+    <p></p>
+    <div class="col-sm-2"></div>
+    <div class="col-md-6">
+      <div *ngFor="let j of job" class="card mb-3 shadow-sm">
+        <div class="card-header font-weight-bold bg-light">
+         <strong>{{ j.jobTitle}}</strong> 
+        </div>
+        <div class="card-body">
+          <p><strong>Location:</strong> {{ j.location }}</p>
+          <p><strong>Job Type:</strong> {{ j.jobType }}</p>
+          <p><strong>Posting Date:</strong> {{ j.postingDate }}</p>
+          <button class="btn btn-primary" (click)="onClick(j.id)">View Details</button>
+        </div>
+    </div>    
+    </div>
+  </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
