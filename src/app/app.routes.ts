@@ -98,7 +98,7 @@ export const routes: Routes = [
         "path":"recruitment/hr-round-status",component:HrRoundStatusComponent
     },
     {
-        "path":"recruitment/schedule-hr-interview/:id", component:HrScoresheetComponent
+        "path":"recruitment/schedule-hr-interview/:id", component:ScheduleHrInterviewComponent
     },
     {
         "path" : "compliance" , component:OverallComplianceComponent

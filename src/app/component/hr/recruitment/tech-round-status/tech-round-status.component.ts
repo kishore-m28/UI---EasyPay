@@ -4,11 +4,12 @@ import { NgFor } from '@angular/common';
 import { Router } from '@angular/router';
 import { ManagerService } from '../../../../service/manager.service';
 import { HrService } from '../../../../service/hr.service';
+import { HrRecruitNavbarComponent } from "../hr-recruit-navbar/hr-recruit-navbar.component";
 
 @Component({
   selector: 'app-tech-round-status',
   standalone: true,
-  imports: [HrRoundStatusComponent, NgFor],
+  imports: [HrRoundStatusComponent, NgFor, HrRecruitNavbarComponent],
   templateUrl: './tech-round-status.component.html',
   styleUrl: './tech-round-status.component.css'
 })
