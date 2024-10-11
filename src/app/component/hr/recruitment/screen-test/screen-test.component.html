@@ -23,7 +23,7 @@
                           <td class="text-center">
                             <button type="button" class="btn btn-success btn-sm" [disabled]="details.screenTestStatus === 'CLEARED' || details.screenTestStatus === 'REJECTED'" (click)="OnScreenTest(details.applicationId)">Perform Screen Test</button>
                             &nbsp;&nbsp;&nbsp;&nbsp; 
-                            <button type="button" class="btn btn-info btn-sm" [disabled]="details.screenTestStatus === 'REJECTED' || details.techStatus === 'CLEARED' || details.techStatus === 'REJECTED'"(click)="onTechInterview()">Schedule Tech Interview</button>                        
+                            <button type="button" class="btn btn-info btn-sm" [disabled]="details.screenTestStatus === 'REJECTED' || details.techStatus === 'CLEARED' || details.techStatus === 'REJECTED'"(click)="onTechInterview(details.applicationId)">Schedule Tech Interview</button>                        
                           </td>
                         </tr>
                     </tbody>  

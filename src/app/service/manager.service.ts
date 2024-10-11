@@ -82,6 +82,17 @@ export class ManagerService {
     })
   }
 
+  getInterviews():Observable<any>{
+    return this.http.get('http://localhost:8081/tech-interview/all', {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token')) 
+    })
+  }
+
+  updateScoreSheet(id:any, obj:any):Observable<any>{
+    return this.http.post('http://localhost:8081/tech-scoresheet/update/'+id, obj, {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+    })
+  }
 
 
 

@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { HrRecruitNavbarComponent } from "../hr-recruit-navbar/hr-recruit-navbar.component";
+import { NgFor } from '@angular/common';
 import { Router } from '@angular/router';
 import { HrService } from '../../../../service/hr.service';
-import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-schedule-interview',
+  selector: 'app-screen-test',
   standalone: true,
   imports: [HrRecruitNavbarComponent, NgFor],
-  templateUrl: './schedule-interview.component.html',
-  styleUrl: './schedule-interview.component.css'
+  templateUrl: './screen-test.component.html',
+  styleUrl: './screen-test.component.css'
 })
-export class ScheduleInterviewComponent implements OnInit{
+export class ScreenTestComponent implements OnInit{
 
   jobSeekerDetails:any[];
 
@@ -52,11 +52,10 @@ export class ScheduleInterviewComponent implements OnInit{
     })
   }
   
-  onTechInterview() {
-    this.router.navigateByUrl("/recruitment/schedule-tech-interview");
+  onTechInterview(id:any) {
+    this.router.navigateByUrl("/recruitment/schedule-tech-interview/"+id);
   }
-  onHrInterview() {
-    this.router.navigateByUrl("/recruitment/schedule-hr-interview");
-  }
+ 
+
 
 }

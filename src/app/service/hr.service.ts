@@ -71,4 +71,41 @@ export class HrService {
       headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
     })
   }
+
+  postTechInterview(appid:any, recruiterid:any, obj:any):Observable<any>{
+    return this.http.post('http://localhost:8081/tech-interview/schedule/'+appid+'/'+recruiterid, obj,{
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+    })
+  }
+
+  getTechStatus():Observable<any>{
+    return this.http.get('http://localhost:8081/tech-scoresheet/status/all', {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+    })
+  }
+
+  postHrInterview(id:any, obj:any):Observable<any>{
+    return this.http.post('http://localhost:8081/hr-interview/schedule/'+id, obj,{
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+    })
+  }
+
+  getHrInterviews():Observable<any>{
+    return this.http.get('http://localhost:8081/hr-interview/all', {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+    })
+  }
+
+  updateScoreSheet(id:any, obj:any):Observable<any>{
+    return this.http.post('http://localhost:8081/hr-scoresheet/update/'+id, obj,{
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+    })
+  }
+
+  getHrStatus():Observable<any>{
+    return this.http.get('http://localhost:8081/hr-scoresheet/status/all', {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+    })
+  }
+
 }
