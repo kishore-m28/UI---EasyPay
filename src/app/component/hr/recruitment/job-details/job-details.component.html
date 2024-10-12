@@ -1,0 +1,36 @@
+<app-hr-recruit-navbar></app-hr-recruit-navbar>
+<div class="container mt-4" style= "position: fixed; top: 70px; left: 200px; right: 0; z-index: 1030; height: 60px;">
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-md-6">
+            <div class="card" *ngIf="jobDetails">
+                <div class="card-body">
+                    <h5 class="card-title">{{ jobDetails.jobTitle }} ({{ jobDetails.jobType }})</h5>
+
+                    <h6 class="mt-4">Job Description</h6>
+                    <p class="card-text">{{ jobDetails.description }}</p>
+
+                    <h6 class="mt-4">Requirements</h6>
+                    <p class="card-text">{{ jobDetails.requirements }}</p>
+
+                    <p class="card-text"><strong>Location:</strong> {{ jobDetails.location }}</p>
+                    <p class="card-text"><strong>CTC Provided:</strong> ₹ {{ jobDetails.ctc }}</p>
+                    <p class="card-text"><strong>Experience Required:</strong> {{ jobDetails.experienceRequired }} years</p>
+                    <p class="card-text"><strong>Start Date:</strong> {{ jobDetails.startDate }}</p>
+                    <p class="card-text"><strong>End Date:</strong> {{ jobDetails.endDate }}</p>
+
+                    <h6 class="mt-4">Skills Required</h6>
+                    <ul>
+                        <li>{{ jobDetails.skill1 }}</li>
+                        <li>{{ jobDetails.skill2 }}</li>
+                        <li>{{ jobDetails.skill3 }}</li>
+                    </ul>                       
+                </div>
+                <div class="card-footer" >
+                    <button type="button" class="btn btn-info btn-sm" (click)="onBack()">Back</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+ </div>

@@ -11,37 +11,25 @@
                     <thead>
                         <tr>
                             <th class="text-center">Job Title</th>
-                            <th class="text-center">Job Type</th>
-                            <th class="text-center">Description</th>
-                            <th class="text-center">Requirements</th>
                             <th class="text-center">Start Date</th>
                             <th class="text-center">End Date</th>
                             <th class="text-center">Location</th>
                             <th class="text-center">CTC</th>
-                            <th class="text-center">Experience Required</th>
-                            <th class="text-center">Skill 1</th>
-                            <th class="text-center">Skill 2</th>
-                            <th class="text-center">Skill 3</th>
                             <th class="text-center">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr *ngFor="let job of jobs">
                             <td class="text-center">{{job.jobTitle}}</td>
-                            <td class="text-center">{{job.jobType}}</td>
-                            <td class="text-center">{{job.description}}</td>
-                            <td class="text-center">{{job.requirements}}</td>
                             <td class="text-center">{{job.startDate}}</td>
                             <td class="text-center">{{job.endDate}}</td>
                             <td class="text-center">{{job.location}}</td>
                             <td class="text-center">{{job.ctc}}</td>
-                            <td class="text-center">{{job.experienceRequired}}</td>
-                            <td class="text-center">{{job.skill1}}</td>
-                            <td class="text-center">{{job.skill2}}</td>
-                            <td class="text-center">{{job.skill3}}</td>
-                          <td class="text-center">
-                            <button type="button" class="btn btn-primary btn-sm" (click)="onEdit(job.id)">Edit</button> 
-                          </td>
+                            <td class="text-center">
+                                <button type="button" class="btn btn-info btn-sm" (click)="onViewDetails(job.id)">View Details</button>
+                                &nbsp; &nbsp; &nbsp; &nbsp;
+                                <button type="button" class="btn btn-primary btn-sm" (click)="onEdit(job.id)">Edit</button>
+                            </td>
                         </tr>
                     </tbody>   
                 </table>

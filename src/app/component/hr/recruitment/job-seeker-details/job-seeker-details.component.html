@@ -1,0 +1,37 @@
+<app-hr-recruit-navbar></app-hr-recruit-navbar>
+<div class="container mt-4" style= "position: fixed; top: 20px; left: 200px; right: 0; z-index: 1030; height: 60px;">
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-md-6">
+            <div class="card" *ngIf="jobSeekerDetails">
+                <div class="card-body">
+                    <h5 class="card-title">{{ jobSeekerDetails.name }} ({{ jobSeekerDetails.gender }})</h5>
+                    <p class="card-text"><strong>Current CTC:</strong> ₹{{ jobSeekerDetails.currentCtc }}</p>
+                    <p class="card-text"><strong>Experience:</strong> {{ jobSeekerDetails.experience }} years</p>
+                    <p class="card-text"><strong>Certifications:</strong></p>
+                    <ul>
+                        <li>{{ jobSeekerDetails.resume.certification1 }}</li>
+                        <li>{{ jobSeekerDetails.resume.certification2 }}</li>
+                    </ul>
+                    <p class="card-text"><strong>Project:</strong> {{ jobSeekerDetails.resume.project }}</p>
+                    <p class="card-text"><strong>Skills:</strong></p>
+                    <ul>
+                        <li>{{ jobSeekerDetails.resume.skill1 }}</li>
+                        <li>{{ jobSeekerDetails.resume.skill2 }}</li>
+                        <li>{{ jobSeekerDetails.resume.skill3 }}</li>
+                    </ul>
+
+                    <h6 class="mt-4">Education</h6>
+                    <p class="card-text"><strong>CGPA:</strong> {{ jobSeekerDetails.resume.cgpa }}</p>
+                    <p class="card-text"><strong>HSC:</strong> {{ jobSeekerDetails.resume.hsc }}%</p>
+                    <p class="card-text"><strong>SSLC:</strong> {{ jobSeekerDetails.resume.sslc }}%</p> 
+                                      
+                </div>
+                <div class="card-footer" >
+                    <button type="button" class="btn btn-info btn-sm" (click)="onBack()">Back</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+ </div>

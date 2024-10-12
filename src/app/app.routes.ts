@@ -40,6 +40,8 @@ import { AddJobComponent } from './component/hr/recruitment/add-job/add-job.comp
 import { ScreenTestComponent } from './component/hr/recruitment/screen-test/screen-test.component';
 import { TechRoundStatusComponent } from './component/hr/recruitment/tech-round-status/tech-round-status.component';
 import { HrRoundStatusComponent } from './component/hr/recruitment/hr-round-status/hr-round-status.component';
+import { JobDetailsComponent } from './component/hr/recruitment/job-details/job-details.component';
+import { JobSeekerDetailsComponent } from './component/hr/recruitment/job-seeker-details/job-seeker-details.component';
 
 
 export const routes: Routes = [
@@ -78,6 +80,12 @@ export const routes: Routes = [
     },
     {
         "path" : "hr/edit-job/:id" , component:EditJobComponent
+    },
+    {
+        "path" : "hr/job-details/:id" , component:JobDetailsComponent
+    },
+    {
+        "path" : "recruitment/job-seeker-details/:id" , component:JobSeekerDetailsComponent
     },
     {
         "path": "recruitment/hr-interview", component:HrInterviewComponent

@@ -61,7 +61,7 @@ export class HrService {
   }
 
   getJobSeekerDetails():Observable<any>{
-    return this.http.get('http://localhost:8081/hr/jobseeker/status', {
+    return this.http.get('http://localhost:8081/jobseeker/application/all', {
       headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
     })
   }
@@ -104,6 +104,12 @@ export class HrService {
 
   getHrStatus():Observable<any>{
     return this.http.get('http://localhost:8081/hr-scoresheet/status/all', {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+    })
+  }
+
+  getApplicantDetailsByApplicationId(id:any):Observable<any>{
+    return this.http.get('http://localhost:8081/jobseeker/details/'+id, {
       headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
     })
   }

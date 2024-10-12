@@ -41,4 +41,8 @@ export class JobsListComponent implements OnInit{
     this.router.navigateByUrl("/hr/edit-job/"+id)
   }
 
+  onViewDetails(id: any) {
+    this.router.navigateByUrl("/hr/job-details/"+id)
+  }
+
 }

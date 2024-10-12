@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HrRecruitNavbarComponent } from "../hr-recruit-navbar/hr-recruit-navbar.component";
 import { NgFor } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { HrService } from '../../../../service/hr.service';
 
 @Component({
@@ -24,6 +24,7 @@ export class ScreenTestComponent implements OnInit{
   fetchData(){
     this.hrService.getJobSeekerDetails().subscribe({
       next:(data)=>{
+        console.log(data);
         this.jobSeekerDetails = data;
       },
       error:(err)=>{
@@ -50,6 +51,10 @@ export class ScreenTestComponent implements OnInit{
         console.log(err);
       }
     })
+  }
+
+  onJobSeekerClick(id:any) {
+    this.router.navigateByUrl("/recruitment/job-seeker-details/"+id)
   }
   
   onTechInterview(id:any) {
