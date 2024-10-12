@@ -37,13 +37,13 @@ export class ScreenTestComponent implements OnInit{
     this.hrService.performScreenTest(id).subscribe({
       next:(data)=>{
         console.log(data);
-        const job = this.jobSeekerDetails.find(e => e.applicationId === id);
+        const job = this.jobSeekerDetails.find(e => e.id === id);
         if(job){
           if(data.status=="CLEARED"){
-            job.screenTestStatus="CLEARED"
+            job.status="CLEARED"
          }
          if(data.status=="REJECTED"){
-           job.screenTestStatus="REJECTED"
+           job.status="REJECTED"
         } 
         }    
       },
