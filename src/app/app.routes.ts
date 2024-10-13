@@ -34,6 +34,10 @@ import { ScheduleHrInterviewComponent } from './component/hr/recruitment/schedul
 import { ViewWorkStatusComponent } from './component/manager/view-work-status/view-work-status.component';
 import { JobsListComponent } from './component/hr/recruitment/jobs-list/jobs-list.component';
 import { AddJobComponent } from './component/hr/recruitment/add-job/add-job.component';
+import { ProjectListComponent } from './component/project/project-list/project-list.component';
+import { ProjectAddComponent } from './component/project/project-add/project-add.component';
+import { ProjectDetailsComponent } from './component/project/project-details/project-details.component';
+import { AssignEmpFormComponent } from './component/project/assign-emp-form/assign-emp-form.component';
 
 
 export const routes: Routes = [
@@ -64,6 +68,19 @@ export const routes: Routes = [
     {
         "path" : "detailed-compliance/other" , component:OtherComponent
     },
+    {
+        "path" : "project-list" , component:ProjectListComponent
+    },
+    {
+        "path" : "add-project" , component:ProjectAddComponent
+    },
+    { 
+        path: 'project/:id', component: ProjectDetailsComponent
+    },
+    { 
+        path: 'assign-emp/:id', component: AssignEmpFormComponent
+    },
+
     {
         "path" : "recruitment/jobs-list" , component:JobsListComponent
     },

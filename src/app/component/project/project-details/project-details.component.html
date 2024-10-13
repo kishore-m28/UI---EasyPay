@@ -1,0 +1,26 @@
+<div>
+    <app-brand-navbar></app-brand-navbar>
+</div>
+<br><br><br>
+<div class="row mt-2">
+    <div class="col-sm-2">
+        <app-navbar></app-navbar>
+    </div>
+    <div class="col-lg-10">
+        <div class="bg-light p-5 rounded-lg m-3">
+            <h1 class="display-4">{{project.name}}</h1>
+            <p class="lead">{{project.projectDescription}}</p>
+            <p><strong>Type:</strong> {{ project.projectType }}</p>
+            <p><strong>Status:</strong> {{ project.status }}</p>
+            <hr class="my-4">
+
+            <h3>Assigned Employees</h3>
+            <ul>
+                <li *ngFor="let employee of assignedEmployees">
+                    {{ employee.name }} ({{ employee.jobRole }})
+                </li>
+            </ul>
+            <button class="btn btn-primary btn-lg" routerLink="/projects">Go Back to Projet Dashboard</button>
+        </div>
+    </div>
+</div>

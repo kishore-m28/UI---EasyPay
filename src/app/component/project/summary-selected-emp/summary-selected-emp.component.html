@@ -1,0 +1,20 @@
+<div class="card mt-4">
+    <div class="card-header">
+        Selected Employee(s)
+    </div>
+    <div class="card-body">
+        <div>
+            <label>Selected Employee(s)</label>
+            <select class="form-control" [(ngModel)]="employees">
+                <option *ngFor="let e of employees" value="{{e}}">
+                    {{e}}
+                </option>
+            </select>
+
+        </div>
+        <p></p>
+        <p></p>
+        <p></p>
+    </div>
+
+</div>
