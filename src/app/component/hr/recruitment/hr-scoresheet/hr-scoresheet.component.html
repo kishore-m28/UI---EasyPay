@@ -5,46 +5,62 @@
         <div class="col-md-6">
             <div class="card fixed-card">
                 <div class="card-header text-center" >
-                    HR ScoreSheet
+                    Hr ScoreSheet
                 </div>
-                <div class="card-body">
-                  <!-- <div class="alert alert-dark" role="alert" *ngIf="successMsg">
+                <div class="card-body" >
+                   <div class="alert alert-info" role="alert" *ngIf="successMsg">
                          {{successMsg}}
                       </div>
-                      <div class="alert alert-primary" role="alert" *ngIf="errorMsg">
+                      <div class="alert alert-warning" role="alert" *ngIf="errorMsg">
                         {{errorMsg}}
-                      </div> --> 
+                    </div> 
                     <div>
-                        <label>Job Title: </label>
-                        <input class="form-control" type="text" [(ngModel)]="jobTitle">
-                    </div>
-                    <div>
-                        <label>ProblemSolvingScore: </label>
+                        <label>Communication Score: </label>
                         <select class="form-control" [(ngModel)]="communicationScore">
-                            <option *ngFor="let score of scores " value={{score}}> {{score}}</option>
+                            <option value="" disabled>Select a score</option>
+                            <option value="5">5</option>
+                            <option value="4">4</option>
+                            <option value="3">3</option>
+                            <option value="2">2</option>
+                            <option value="1">1</option>
                         </select>
-                    </div>
+                      </div>                      
                     <div>
-                        <label>CommunicationScore </label>
+                        <label>Attitude Score: </label>
                         <select class="form-control" [(ngModel)]="attitudeScore">
-                            <option *ngFor="let score of scores " value="{{score}}"> {{score}}</option>
+                            <option value="" disabled>Select a score</option>
+                            <option value="5">5</option>
+                            <option value="4">4</option>
+                            <option value="3">3</option>
+                            <option value="2">2</option>
+                            <option value="1">1</option>
                         </select>
                     </div>
                     <div> 
-                        <label>CodingSkillScore </label>
-                        <select class="form-control" [(ngModel)]="interpersonalScore">
-                            <option *ngFor="let score of scores " value="{{score}}"> {{score}} </option>
-                        </select>
-                    </div>
-                    <div> 
-                        <label>TechnicalKnowledgeScore: </label>
+                        <label>Adaptability Score: </label>
                         <select class="form-control" [(ngModel)]="adaptabilityScore">
-                            <option *ngFor="let score of scores " value="{{score}}"> {{score}} </option>
+                            <option value="" disabled>Select a score</option>
+                            <option value="5">5</option>
+                            <option value="4">4</option>
+                            <option value="3">3</option>
+                            <option value="2">2</option>
+                            <option value="1">1</option>
+                        </select>
+                    </div>
+                    <div> 
+                        <label>Interpersoanl Score: </label>
+                        <select class="form-control" [(ngModel)]="interpersonalScore">
+                            <option value="" disabled>Select a score</option>
+                            <option value="5">5</option>
+                            <option value="4">4</option>
+                            <option value="3">3</option>
+                            <option value="2">2</option>
+                            <option value="1">1</option>
                         </select>
                     </div>
                 </div>
                 <div class="card-footer text-center">
-                    <button type="button" class="btn btn-success">Submit</button>
+                    <button type="button" class="btn btn-success" (click)="onClick()">Submit</button>
                 </div>
             </div>
         </div>

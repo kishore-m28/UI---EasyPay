@@ -1,0 +1,98 @@
+<div class="row">
+    <app-brand-navbar></app-brand-navbar>
+</div>
+<br><br><br>
+<div class="row mt-2">
+    <div class="col-sm-2">
+        <app-navbar></app-navbar>
+    </div>
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-md-8">
+            <nav class="navbar navbar-light bg-light">
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Designation" aria-label="Search">
+                    <input class="form-control me-2" type="search" placeholder="Department" aria-label="Search">
+                    <input class="form-control me-2" type="search" placeholder="Location" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </nav>
+        </div>
+    </div>
+    <div class="row">
+        <p></p>
+        <p></p>
+        <div class="col-sm-2"></div>
+        <div class="col-md-8">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Department</th>
+                        <th scope="col">Designation</th>
+                        <th scope="col">Working Days</th>
+                        <th scope="col">Leave</th>
+                        <th scope="col">LOP Days</th>
+                        <th scope="col">Action</th>                    
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>IT</td>
+                        <td>Developer</td>                        
+                        <td>22</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td><button class="btn btn-primary btn-sm" (click)="onCompute()">Compute</button></td>
+                    </tr>
+                    <tr>
+                        <td>Jane Smith</td>
+                        <td>IT</td>
+                        <td>Developer</td>
+                        <td>21</td>
+                        <td>3</td>
+                        <td>6</td>
+                        <td><button class="btn btn-primary btn-sm">Compute</button></td>
+                    </tr>
+                    <tr>
+                        <td>Michael Brown</td>
+                        <td>IT</td>
+                        <td>Developer</td>
+                        <td>23</td>
+                        <td>1</td>
+                        <td>5</td>
+                        <td><button class="btn btn-primary btn-sm">Compute</button></td>
+                    </tr>
+                    <tr>
+                        <td>Emily Davis</td>
+                        <td>IT</td>
+                        <td>Developer</td>
+                        <td>20</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td><button class="btn btn-primary btn-sm">Compute</button></td>
+                    </tr>
+                    <tr>
+                        <td>Chris Johnson</td>
+                        <td>IT</td>
+                        <td>Developer</td>
+                        <td>22</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td><button class="btn btn-primary btn-sm">Compute</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <p></p>
+        <p></p>
+        <div class="col-sm-3"></div>
+        <div class="col-md-6"></div>
+        <div class="col-sm-3">
+            <button type="button" class="btn btn-warning" (click)="onReview()">Review Payroll </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+.table {
+    border-collapse: collapse;
+}
+
+.table,
+.table tbody,
+.table thead {
+    border: 1px solid rgb(80, 79, 79);
+}

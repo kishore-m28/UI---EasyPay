@@ -5,27 +5,27 @@
                 <table id="example" class="table table-striped" style="width:100%">
                     <thead>
                         <tr>
-                            <th class="text-center">Interview ID</th>
-                            <th class="text-center">Applicant ID</th>
+                            <th class="text-center">Application ID</th>
                             <th class="text-center">Applicant Name</th>
                             <th class="text-center">JobTitle</th>
                             <th class="text-center">Interview Date</th>
-                            <th class="text-center">Interview Time</th>
+                            <th class="text-center">Start Time</th>
+                            <th class="text-center">End Time</th>
                             <th class="text-center">Interview Link</th>
                             <th class="text-center">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr >
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>      
+                        <tr *ngFor="let i of techInterviews">
+                          <td class="text-center">{{i.jobApplication.id}}</td>
+                          <td class="text-center">{{i.jobApplication.jobSeeker.name}}</td>
+                          <td class="text-center">{{i.jobApplication.job.jobTitle}}</td>
+                          <td class="text-center">{{i.date}}</td>
+                          <td class="text-center">{{i.fromTime}}</td>
+                          <td class="text-center">{{i.toTime}}</td>
+                          <td class="text-center">{{i.interviewLink}}</td>      
                           <td class="text-center">
-                            <button type="button" class="btn btn-success btn-sm" (click)="onScoreSheetClick()">Tech ScoreSheet</button>                            
+                            <button type="button" class="btn btn-success btn-sm" (click)="onScoreSheetClick(i.jobApplication.id)">Tech ScoreSheet</button>                            
                           </td>
                         </tr>
                     </tbody>   

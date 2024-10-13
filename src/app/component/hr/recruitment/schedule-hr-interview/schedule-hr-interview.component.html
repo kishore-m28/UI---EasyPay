@@ -8,27 +8,31 @@
                     HR Interview
                 </div>
                 <div class="card-body">
-                  <!-- <div class="alert alert-dark" role="alert" *ngIf="successMsg">
+                   <div class="alert alert-info" role="alert" *ngIf="successMsg">
                          {{successMsg}}
                       </div>
-                      <div class="alert alert-primary" role="alert" *ngIf="errorMsg">
+                      <div class="alert alert-warning" role="alert" *ngIf="errorMsg">
                         {{errorMsg}}
-                      </div> --> 
-                    <div>
+                      </div> 
+                      <div>
                         <label>Interview Date: </label>
-                        <input class="form-control" type="date" [(ngModel)]="interviewDate">
+                        <input class="form-control" type="date" [(ngModel)]="interviewDate" (change)="resetmsg()">
                     </div>
                     <div>
-                        <label>Interview Time: </label>
-                        <input class="form-control" type="text" [(ngModel)]="interviewTime">
+                        <label>Start Time: </label>
+                        <input class="form-control" type="time" [(ngModel)]="fromTime" (change)="resetmsg()">
+                    </div>
+                    <div>
+                        <label>End Time: </label>
+                        <input class="form-control" type="time" [(ngModel)]="toTime" (change)="resetmsg()">
                     </div>
                     <div> 
-                        <label>Interview Link </label>
-                        <input class="form-control" type="text" [(ngModel)]="interviewLink">
+                        <label>Interview Link: </label>
+                        <input class="form-control" type="text" [(ngModel)]="interviewLink" (change)="resetmsg()">
                     </div>
                 </div>
                 <div class="card-footer text-center">
-                    <button type="button" class="btn btn-success">Schedule Interview</button>
+                    <button type="button" class="btn btn-success" (click)="onClick()">Schedule Interview</button>
                 </div>
             </div>
         </div>

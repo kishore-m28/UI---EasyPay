@@ -20,6 +20,10 @@ import { ManagerEmployeeListComponent } from './component/manager/manager-employ
 import { LogoutComponent } from './component/auth/logout/logout.component';
 import { LeaveRequestsComponent } from './component/manager/leave-requests/leave-requests.component';
 import { ManagerIssueListComponent } from './component/manager/manager-issue-list/manager-issue-list.component';
+import { JobDescriptionComponent } from './component/jobseeker/job-description/job-description.component';
+import { EmployeeSalaryListComponent } from './component/salary-computation/employee-salary-list/employee-salary-list.component';
+import { ComputeComponent } from './component/salary-computation/compute/compute.component';
+import { ReviewPayrollComponent } from './component/salary-computation/review-payroll/review-payroll.component';
 import { AssignWorkComponent } from './component/manager/assign-work/assign-work.component';
 import { RecruitDashboardComponent } from './component/manager/recruitment/recruit-dashboard/recruit-dashboard.component';
 import { ManagerMainpageComponent } from './component/manager/manager-mainpage/manager-mainpage.component';
@@ -28,7 +32,6 @@ import { TechnicalInterviewComponent } from './component/manager/recruitment/tec
 import { HrMainPageComponent } from './component/hr/hr-main-page/hr-main-page.component';
 import { HrInterviewComponent } from './component/hr/recruitment/hr-interview/hr-interview.component';
 import { HrScoresheetComponent } from './component/hr/recruitment/hr-scoresheet/hr-scoresheet.component';
-import { ScheduleInterviewComponent } from './component/hr/recruitment/schedule-interview/schedule-interview.component';
 import { ScheduleTechInterviewComponent } from './component/hr/recruitment/schedule-tech-interview/schedule-tech-interview.component';
 import { ScheduleHrInterviewComponent } from './component/hr/recruitment/schedule-hr-interview/schedule-hr-interview.component';
 import { ViewWorkStatusComponent } from './component/manager/view-work-status/view-work-status.component';
@@ -38,6 +41,11 @@ import { ProjectListComponent } from './component/project/project-list/project-l
 import { ProjectAddComponent } from './component/project/project-add/project-add.component';
 import { ProjectDetailsComponent } from './component/project/project-details/project-details.component';
 import { AssignEmpFormComponent } from './component/project/assign-emp-form/assign-emp-form.component';
+import { ScreenTestComponent } from './component/hr/recruitment/screen-test/screen-test.component';
+import { TechRoundStatusComponent } from './component/hr/recruitment/tech-round-status/tech-round-status.component';
+import { HrRoundStatusComponent } from './component/hr/recruitment/hr-round-status/hr-round-status.component';
+import { JobDetailsComponent } from './component/hr/recruitment/job-details/job-details.component';
+import { JobSeekerDetailsComponent } from './component/hr/recruitment/job-seeker-details/job-seeker-details.component';
 
 
 export const routes: Routes = [
@@ -91,19 +99,31 @@ export const routes: Routes = [
         "path" : "hr/edit-job/:id" , component:EditJobComponent
     },
     {
+        "path" : "hr/job-details/:id" , component:JobDetailsComponent
+    },
+    {
+        "path" : "recruitment/job-seeker-details/:id" , component:JobSeekerDetailsComponent
+    },
+    {
         "path": "recruitment/hr-interview", component:HrInterviewComponent
     },
     {
-        "path": "recruitment/hr-scoresheet", component:HrScoresheetComponent
+        "path": "recruitment/hr-scoresheet/:id", component:HrScoresheetComponent
     },
     {
-        "path":"recruitment/schedule-interview", component:ScheduleInterviewComponent
+        "path":"recruitment/screen-test", component:ScreenTestComponent
     },
     {
-        "path":"recruitment/schedule-tech-interview", component:ScheduleTechInterviewComponent
+        "path":"recruitment/schedule-tech-interview/:id", component:ScheduleTechInterviewComponent
     },
     {
-        "path":"recruitment/schedule-hr-interview", component:ScheduleHrInterviewComponent
+        "path":"recruitment/tech-round-status",component:TechRoundStatusComponent
+    },
+    {
+        "path":"recruitment/hr-round-status",component:HrRoundStatusComponent
+    },
+    {
+        "path":"recruitment/schedule-hr-interview/:id", component:ScheduleHrInterviewComponent
     },
     {
         "path" : "compliance" , component:OverallComplianceComponent
@@ -130,13 +150,10 @@ export const routes: Routes = [
         "path":"manager/main-page", component:ManagerMainpageComponent
     },
     {
-        "path":"manager/recruitment/dashboard",component:RecruitDashboardComponent
-    },
-    {
         "path":"recruitment/technical-interview",component:TechnicalInterviewComponent
     },
     {
-        "path":"recruitment/technical-scoresheet",component:TechnicalScoresheetComponent
+        "path":"recruitment/technical-scoresheet/:id",component:TechnicalScoresheetComponent
     },
     {
         "path":"manager/dashboard",component:ManagerDashboardComponent
@@ -164,6 +181,18 @@ export const routes: Routes = [
     },
     {
         "path": "reply/:id", component:ManagerIssueReplyComponent
+    },
+    { 
+        "path": 'payroll/review', component:ReviewPayrollComponent
+    },
+    { 
+        "path": 'salary/compute', component:ComputeComponent
+    },
+    { 
+        "path": 'run-payroll', component:EmployeeSalaryListComponent
+    },
+    { 
+        "path": 'job-details/:jobId', component:JobDescriptionComponent
     },
     {
         "path":"logout",component:LogoutComponent

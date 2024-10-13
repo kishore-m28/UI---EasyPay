@@ -18,7 +18,7 @@ export class ManagerMainpageComponent {
     this.router.navigateByUrl("/manager/dashboard");
   }
   OnRecruitClick() {
-    this.router.navigateByUrl("/manager/recruitment/dashboard")
+    this.router.navigateByUrl("/recruitment/technical-interview")
   }
 
 }

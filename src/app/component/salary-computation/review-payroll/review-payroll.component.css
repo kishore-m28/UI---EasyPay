@@ -1,0 +1,15 @@
+.table {
+    border-collapse: collapse;
+}
+
+.table,
+.table tbody,
+.table thead {
+    border: 1px solid rgb(44, 43, 43);
+}
+
+.custom-alert {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 14px; /* Adjust font size if needed */
+}
