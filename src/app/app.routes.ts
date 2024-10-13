@@ -46,6 +46,7 @@ import { TechRoundStatusComponent } from './component/hr/recruitment/tech-round-
 import { HrRoundStatusComponent } from './component/hr/recruitment/hr-round-status/hr-round-status.component';
 import { JobDetailsComponent } from './component/hr/recruitment/job-details/job-details.component';
 import { JobSeekerDetailsComponent } from './component/hr/recruitment/job-seeker-details/job-seeker-details.component';
+import { DashboardComponent } from './component/employee/dashboard/dashboard.component';
 
 
 export const routes: Routes = [
@@ -193,6 +194,9 @@ export const routes: Routes = [
     },
     { 
         "path": 'job-details/:jobId', component:JobDescriptionComponent
+    },
+    { 
+        "path": 'employee/dashboard', component:DashboardComponent
     },
     {
         "path":"logout",component:LogoutComponent
