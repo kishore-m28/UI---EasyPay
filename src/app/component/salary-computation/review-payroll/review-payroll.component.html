@@ -1,4 +1,4 @@
-<div class="row mb-4">
+<div class="row mb-2">
    <app-brand-navbar></app-brand-navbar>
 </div>
 <br>
@@ -10,12 +10,12 @@
         <div class="col-sm-3"></div>
         <div class="col-md-2">
             <div class="alert alert-warning custom-alert" role="alert">
-                Pay Status: Pending 13
+                <strong>Status :</strong>Pending
             </div>
         </div>
         <div class="col-md-3">
             <div class="alert alert-warning custom-alert" role="alert">
-                Month-Year: October-2024
+                <strong>Month-Year:</strong>October-2024
             </div>
         </div>      
     </div>
@@ -30,61 +30,19 @@
                         <th scope="col">Department</th>
                         <th scope="col">Gross Pay</th>
                         <th scope="col">Deductions</th>
-                        <th scope="col">Tax</th>
                         <th scope="col">Net Pay</th>
                         <th scope="col">Status</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><input type="checkbox"></td>
-                        <td>John Doe</td>
-                        <td>IT</td>
-                        <td>₹50,000</td>
-                        <td>₹5,000</td>
-                        <td>₹3,000</td>
-                        <td>₹42,000</td>
-                        <td>Pending</td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox"></td>
-                        <td>Jane Smith</td>
-                        <td>Finance</td>
-                        <td>₹60,000</td>
-                        <td>₹4,000</td>
-                        <td>₹6,000</td>
-                        <td>₹50,000</td>
-                        <td>Pending</td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox"></td>
-                        <td>Michael Brown</td>
-                        <td>HR</td>
-                        <td>₹55,000</td>
-                        <td>₹5,500</td>
-                        <td>₹4,500</td>
-                        <td>₹45,000</td>
-                        <td>Pending</td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox"></td>
-                        <td>Emily Davis</td>
-                        <td>IT</td>
-                        <td>₹53,000</td>
-                        <td>₹4,000</td>
-                        <td>₹3,500</td>
-                        <td>₹45,500</td>
-                        <td>Pending</td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox"></td>
-                        <td>Chris Johnson</td>
-                        <td>Marketing</td>
-                        <td>₹52,000</td>
-                        <td>₹3,500</td>
-                        <td>₹2,500</td>
-                        <td>₹46,000</td>
-                        <td>Pending</td>
+                    <tr *ngFor="let s of salary">
+                        <td><input type="checkbox" (change)="toggleSelection(s.id)"></td>
+                        <td>{{s.name}}</td>
+                        <td>{{s.department}}</td>
+                        <td>{{s.grossPay}}</td>
+                        <td>{{s.deduction}}</td>
+                        <td>{{s.netPay}}</td>
+                        <td>{{s.status}}</td>
                     </tr>
                 </tbody>
             </table>    
@@ -93,8 +51,8 @@
     <div class="row">
         <p></p>
         <p></p>
-        <div class="col-sm-3"></div>
-        <div class="col-md-7">
+        <div class="col-sm-5"></div>
+        <div class="col-md-4">
             <nav aria-label="Page navigation example">
                 <ul class="pagination">
                   <li class="page-item"><a class="page-link" href="#">Previous</a></li>
@@ -106,7 +64,13 @@
               </nav>
         </div>
         <div class="col-sm-2">
-            <button type="button" class="btn btn-success">Run Payroll</button>
+            <button type="button" class="btn btn-success" (click)="onRunPayroll()">Run Payroll</button>
+        </div>
+        <div class="row">
+            <div class="col-md-9"></div>
+            <div class="col-md-2">
+                <button type="button" class="btn btn-warning" (click)="onGoToRunPayroll()">Go to Run Payroll Tab</button>
+            </div>
         </div>
     </div>
 </div>

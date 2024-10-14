@@ -1,17 +1,27 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, numberAttribute } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HrService {
 
+  getProjectById(pid: any) {
+    return null;
+  }
+
 
   constructor(private http: HttpClient) { }
 
   getAllEmployees(page: number, size: number): Observable<any> {
     return this.http.get<any>('http://localhost:8081/employee/all?page=' + page + '&size=' + size, {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+    });
+  }
+  getAllProjects(page: number, size: number): Observable<any> {
+    console.log("get all projects api called");
+    return this.http.get<any>('http://localhost:8081/project/all?page=' + page + '&size=' + size, {
       headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
     });
   }
@@ -22,15 +32,15 @@ export class HrService {
     });
   }
 
-  getCountOfEmployees() {
-    console.log("api called")
-    return this.http.get<any>('http://localhost:8081/employee/active-count', {
+  updateStatus(pid: number) {
+    return this.http.put<any>('http://localhost:8081/project/set/status/completed/' + pid, {
       headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
     });
   }
 
-  getAllProjects(page: number, size: number): Observable<any> {
-    return this.http.get<any>('http://localhost:8081/project/all?page=' + page + '&size=' + size, {
+  getCountOfEmployees() {
+    console.log("api called")
+    return this.http.get<any>('http://localhost:8081/employee/active-count', {
       headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
     });
   }
@@ -72,6 +82,11 @@ export class HrService {
     })
   }
 
+  empList$= new BehaviorSubject< number[] >([]);
+
+  setEmpList(employees:any[]):void{
+    this.empList$.next(employees);
+}
   postTechInterview(appid:any, recruiterid:any, obj:any):Observable<any>{
     return this.http.post('http://localhost:8081/tech-interview/schedule/'+appid+'/'+recruiterid, obj,{
       headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))

@@ -1,0 +1,47 @@
+<div>
+    <app-brand-navbar></app-brand-navbar>
+</div>
+<br><br><br>
+<div class="row mt-2">
+    <div class="col-sm-2">
+        <app-navbar></app-navbar>
+    </div>
+    <div class="col-md-6">
+        <div class="card mt-4">
+            <div class="card-header">
+                Assign Employees
+            </div>
+            <div class="card-body">
+                <div>
+                    <label>Title</label>
+                    <input type="text" class="form-control" disabled>
+                </div>
+                <div>
+                    <label>Manager</label>
+                    <input type="text" class="form-control" disabled>
+                </div>
+                <div>
+                    <Label>Select Employee(s) to assign</Label>
+                    <select class="form-control" [(ngModel)]="employees" multiple>
+                        <option value="volvo">Aakash</option>
+                        <option value="saab">Balaji</option>
+                        <option value="opel">Chandru</option>
+                        <option value="audi">Dinesh</option>
+                        <option value="bmw">Ganesh</option>
+                        <option>Hrithik</option>
+                        <option>Jaya Prakash</option>
+                        <option>Krishna</option>
+                    </select>
+                </div>
+                <p>Hold down the Ctrl (windows) or Command (Mac) button to select multiple options.</p>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-primary">Assign</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <app-summary-selected-emp></app-summary-selected-emp>
+    </div>
+
+</div>

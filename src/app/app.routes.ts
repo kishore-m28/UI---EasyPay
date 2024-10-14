@@ -37,11 +37,18 @@ import { ScheduleHrInterviewComponent } from './component/hr/recruitment/schedul
 import { ViewWorkStatusComponent } from './component/manager/view-work-status/view-work-status.component';
 import { JobsListComponent } from './component/hr/recruitment/jobs-list/jobs-list.component';
 import { AddJobComponent } from './component/hr/recruitment/add-job/add-job.component';
+import { ProjectListComponent } from './component/project/project-list/project-list.component';
+import { ProjectAddComponent } from './component/project/project-add/project-add.component';
+import { ProjectDetailsComponent } from './component/project/project-details/project-details.component';
+import { AssignEmpFormComponent } from './component/project/assign-emp-form/assign-emp-form.component';
 import { ScreenTestComponent } from './component/hr/recruitment/screen-test/screen-test.component';
 import { TechRoundStatusComponent } from './component/hr/recruitment/tech-round-status/tech-round-status.component';
 import { HrRoundStatusComponent } from './component/hr/recruitment/hr-round-status/hr-round-status.component';
 import { JobDetailsComponent } from './component/hr/recruitment/job-details/job-details.component';
 import { JobSeekerDetailsComponent } from './component/hr/recruitment/job-seeker-details/job-seeker-details.component';
+import { DashboardComponent } from './component/employee/dashboard/dashboard.component';
+import { MyProfileComponent } from './component/employee/my-profile/my-profile.component';
+import { EmpLeaveComponent } from './component/employee/emp-leave/emp-leave.component';
 
 
 export const routes: Routes = [
@@ -73,7 +80,20 @@ export const routes: Routes = [
         "path" : "detailed-compliance/other" , component:OtherComponent
     },
     {
-        "path" : "recruitment/jobs-list" , component:JobsListComponent
+        "path" : "project-list" , component:ProjectListComponent
+    },
+    {
+        "path" : "add-project" , component:ProjectAddComponent
+    },
+    { 
+        path: 'project/:id', component: ProjectDetailsComponent
+    },
+    { 
+        path: 'assign-emp/:id', component: AssignEmpFormComponent
+    },
+
+    {
+        "path" : "hr/dashboard/recruitment/jobs-list" , component:JobsListComponent
     },
     {
         "path" : "hr/add-job" , component:AddJobComponent
@@ -169,13 +189,22 @@ export const routes: Routes = [
         "path": 'payroll/review', component:ReviewPayrollComponent
     },
     { 
-        "path": 'salary/compute', component:ComputeComponent
+        "path": 'salary/compute/:id', component:ComputeComponent
     },
     { 
         "path": 'run-payroll', component:EmployeeSalaryListComponent
     },
     { 
         "path": 'job-details/:jobId', component:JobDescriptionComponent
+    },
+    { 
+        "path": 'employee/dashboard', component:DashboardComponent
+    },
+    { 
+        "path": 'my-profile', component:MyProfileComponent
+    },
+    { 
+        "path": 'leave', component:EmpLeaveComponent
     },
     {
         "path":"logout",component:LogoutComponent

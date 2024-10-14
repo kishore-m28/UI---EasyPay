@@ -1,0 +1,74 @@
+<div>
+    <app-brand-navbar></app-brand-navbar>
+</div>
+<br><br><br>
+<div class="row mt-2">
+    <div class="col-sm-2">
+        <app-emp-navbar></app-emp-navbar>
+    </div>
+    <div class="col-lg-7 mt-2">
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            <div class="col">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title">Total No. of Tasks Today</h5>
+                  <p class="card-text">5</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title">Pending Tasks</h5>
+                  <p class="card-text">1</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title">Pending Leave request</h5>
+                  <!-- <p class="card-text"><strong>View</strong></p> -->
+                   <button class="btn btn-secondary">View</button>
+                </div>
+              </div>
+    
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title">Leave Summary</h5>
+                  <!-- <p class="card-text">View</p> -->
+                   <button class="btn btn-info">View</button>
+                </div>
+              </div>
+    
+            </div>
+          </div>
+          <br>
+        <div class="row-mt-3">
+            <div class="col-lg-12">
+                <app-emp-task-list></app-emp-task-list>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card mt-2">
+            <div class="card-header">
+                <h4>Projects</h4>
+            </div>
+            <div class="card-body">
+                <app-emp-proj-list></app-emp-proj-list>
+            </div>
+            <div class="card-footer">
+                
+            </div>
+        </div>
+        <br>
+        <div>
+          <p-chart type="doughnut" [data]="data" [options]="options" />
+        </div>
+        
+
+    </div>
+</div>
