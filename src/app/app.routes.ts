@@ -93,7 +93,7 @@ export const routes: Routes = [
     },
 
     {
-        "path" : "recruitment/jobs-list" , component:JobsListComponent
+        "path" : "hr/dashboard/recruitment/jobs-list" , component:JobsListComponent
     },
     {
         "path" : "hr/add-job" , component:AddJobComponent

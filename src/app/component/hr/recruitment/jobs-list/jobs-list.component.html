@@ -1,5 +1,5 @@
 <app-hr-recruit-navbar></app-hr-recruit-navbar>
-<div class="container-fluid " style= "position: fixed; top: 70px; left: 250px; right: 0; z-index: 1030; height: 60px;">
+<div class="container-fluid " style="position: fixed; top: 70px; left: 250px; right: 0; z-index: 1030; height: 60px;">
     <div class="row">
         <div class="col-sm-3">
             <button type="button" class="btn btn-warning" (click)="onAddJob()">+ Add New Job</button>
@@ -7,32 +7,33 @@
     </div>
     <div class="row">
         <div class="col-md-10 mt-2">
-                <table id="example" class="table table-striped" style="width:100%">
-                    <thead>
-                        <tr>
-                            <th class="text-center">Job Title</th>
-                            <th class="text-center">Start Date</th>
-                            <th class="text-center">End Date</th>
-                            <th class="text-center">Location</th>
-                            <th class="text-center">CTC</th>
-                            <th class="text-center">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let job of jobs">
-                            <td class="text-center">{{job.jobTitle}}</td>
-                            <td class="text-center">{{job.startDate}}</td>
-                            <td class="text-center">{{job.endDate}}</td>
-                            <td class="text-center">{{job.location}}</td>
-                            <td class="text-center">{{job.ctc}}</td>
-                            <td class="text-center">
-                                <button type="button" class="btn btn-info btn-sm" (click)="onViewDetails(job.id)">View Details</button>
-                                &nbsp; &nbsp; &nbsp; &nbsp;
-                                <button type="button" class="btn btn-primary btn-sm" (click)="onEdit(job.id)">Edit</button>
-                            </td>
-                        </tr>
-                    </tbody>   
-                </table>
+            <table id="example" class="table table-striped" style="width:100%">
+                <thead>
+                    <tr>
+                        <th class="text-center">Job Title</th>
+                        <th class="text-center">Start Date</th>
+                        <th class="text-center">End Date</th>
+                        <th class="text-center">Location</th>
+                        <th class="text-center">CTC</th>
+                        <th class="text-center">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let job of jobs">
+                        <td class="text-center">{{job.jobTitle}}</td>
+                        <td class="text-center">{{job.startDate}}</td>
+                        <td class="text-center">{{job.endDate}}</td>
+                        <td class="text-center">{{job.location}}</td>
+                        <td class="text-center">{{job.ctc}}</td>
+                        <td class="text-center">
+                            <button type="button" class="btn btn-info btn-sm" (click)="onViewDetails(job.id)">View
+                                Details</button>
+                            &nbsp; &nbsp; &nbsp; &nbsp;
+                            <button type="button" class="btn btn-primary btn-sm" (click)="onEdit(job.id)">Edit</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

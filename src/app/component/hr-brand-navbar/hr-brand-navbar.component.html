@@ -4,7 +4,11 @@
 
   <!-- Log Out Button -->
   <!-- <a routerLink="/logout" class="logout">Log Out</a> -->
-  <button class="btn btn-outline-success btn-md" (click)="onLogout()">Logout</button>
+  <div class="user-info">
+    <button class="btn btn-info btn-md" routerLink="recruitment/jobs-list">Go to Recruitment</button>
+    <button class="btn btn-success btn-md" (click)="onLogout()">Logout</button>
+  </div>
+
 </div>
 
 <style>
@@ -15,17 +19,20 @@
 
   /* Navigation bar styles */
   .navbar {
-    background-color: #242475;  /* Dark blue background */
-    overflow: hidden;  /* Ensure no content overflows */
+    background-color: #242475;
+    /* Dark blue background */
+    overflow: hidden;
+    /* Ensure no content overflows */
     display: flex;
-    justify-content: space-between;  /* Space between logo and logout */
+    justify-content: space-between;
+    /* Space between logo and logout */
     align-items: center;
     padding: 10px 20px;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 
   /* Styling for links */
@@ -41,9 +48,18 @@
     font-weight: bold;
   }
 
+  /* User info container */
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* Space between username and logout button */
+  }
+
   /* Log out button styling */
   .navbar a.logout {
-    background-color: #f44336;  /* Red background */
+    background-color: #f44336;
+    /* Red background */
     color: white;
     padding: 10px 15px;
     border-radius: 5px;
@@ -54,6 +70,7 @@
     .navbar {
       flex-direction: column;
     }
+
     .navbar a.logout {
       margin-top: 10px;
     }

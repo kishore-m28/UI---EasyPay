@@ -17,7 +17,7 @@ export class HrMainPageComponent {
     this.router.navigateByUrl("/hr/dashboard");
   }
   OnRecruitClick() {
-    this.router.navigateByUrl("/recruitment/jobs-list")
+    this.router.navigateByUrl("/hr/dashboard/recruitment/jobs-list")
   }
 
 }
