@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row mb-2">
     <app-brand-navbar></app-brand-navbar>
 </div>
 <br><br><br>
@@ -7,22 +7,33 @@
         <app-navbar></app-navbar>
     </div>
     <div class="row">
-        <div class="col-sm-2"></div>
+        <div class="col-sm-3"></div>
         <div class="col-md-8">
             <nav class="navbar navbar-light bg-light">
                 <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Designation" aria-label="Search">
-                    <input class="form-control me-2" type="search" placeholder="Department" aria-label="Search">
-                    <input class="form-control me-2" type="search" placeholder="Location" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    <select class="form-control me-2" [(ngModel)]="designation" name="designation">
+                        <option value="">Select Designation</option>
+                        <option *ngFor="let des of designations" [value]="des">{{des}}</option>
+                    </select>
+
+                    <!-- Department Dropdown -->
+                    <select class="form-control me-2" [(ngModel)]="department" name="department">
+                        <option value="">Select Department</option>
+                        <option *ngFor="let dept of departments" [value]="dept">{{dept}}</option>
+                    </select>
+
+                    <!-- City/Location Dropdown -->
+                    <select class="form-control me-2" [(ngModel)]="city" name="city">
+                        <option value="">Select Location</option>
+                        <option *ngFor="let city of cities" [value]="city">{{city}}</option>
+                    </select>
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="fetch()">Search</button>
                 </form>
             </nav>
         </div>
     </div>
     <div class="row">
-        <p></p>
-        <p></p>
-        <div class="col-sm-2"></div>
+        <div class="col-sm-3"></div>
         <div class="col-md-8">
             <table class="table table-striped">
                 <thead>
@@ -32,67 +43,28 @@
                         <th scope="col">Designation</th>
                         <th scope="col">Working Days</th>
                         <th scope="col">Leave</th>
-                        <th scope="col">LOP Days</th>
                         <th scope="col">Action</th>                    
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>John Doe</td>
-                        <td>IT</td>
-                        <td>Developer</td>                        
-                        <td>22</td>
-                        <td>2</td>
-                        <td>3</td>
-                        <td><button class="btn btn-primary btn-sm" (click)="onCompute()">Compute</button></td>
-                    </tr>
-                    <tr>
-                        <td>Jane Smith</td>
-                        <td>IT</td>
-                        <td>Developer</td>
-                        <td>21</td>
-                        <td>3</td>
-                        <td>6</td>
-                        <td><button class="btn btn-primary btn-sm">Compute</button></td>
-                    </tr>
-                    <tr>
-                        <td>Michael Brown</td>
-                        <td>IT</td>
-                        <td>Developer</td>
-                        <td>23</td>
-                        <td>1</td>
-                        <td>5</td>
-                        <td><button class="btn btn-primary btn-sm">Compute</button></td>
-                    </tr>
-                    <tr>
-                        <td>Emily Davis</td>
-                        <td>IT</td>
-                        <td>Developer</td>
-                        <td>20</td>
-                        <td>4</td>
-                        <td>4</td>
-                        <td><button class="btn btn-primary btn-sm">Compute</button></td>
-                    </tr>
-                    <tr>
-                        <td>Chris Johnson</td>
-                        <td>IT</td>
-                        <td>Developer</td>
-                        <td>22</td>
-                        <td>2</td>
-                        <td>1</td>
-                        <td><button class="btn btn-primary btn-sm">Compute</button></td>
+                    <!-- Iterating over employee list -->
+                    <tr *ngFor="let e of employee">
+                        <td>{{ e.name }}</td>
+                        <td>{{ e.department }}</td>
+                        <td>{{ e.designation }}</td>                        
+                        <td>{{ e.workingDays }}</td>
+                        <td>{{ e.leave }}</td>
+                        <td><button class="btn btn-primary btn-sm" (click)="onCompute(e.id)" *ngIf="show==true" [disabled]="isComputed(e.id)">Compute</button></td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
     <div class="row">
-        <p></p>
-        <p></p>
         <div class="col-sm-3"></div>
         <div class="col-md-6"></div>
         <div class="col-sm-3">
-            <button type="button" class="btn btn-warning" (click)="onReview()">Review Payroll </button>
+            <button type="button" class="btn btn-warning" (click)="onReview()">Review Payroll</button>
         </div>
     </div>
 </div>

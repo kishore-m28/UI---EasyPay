@@ -8,7 +8,7 @@ import { ChartModule } from 'primeng/chart';
 @Component({
   selector: 'app-overall-compliance',
   standalone: true,
-  imports: [HrBrandNavbarComponent, NavbarComponent, RouterModule, ChartModule],
+  imports: [HrBrandNavbarComponent, NavbarComponent, RouterModule,ChartModule],
   templateUrl: './overall-compliance.component.html',
   styleUrl: './overall-compliance.component.css'
 })

@@ -1,4 +1,4 @@
- <div class="row mb-4">
+ <div class="row mb-2">
       <app-hr-brand-navbar></app-hr-brand-navbar>
   </div>
   <br>
@@ -14,38 +14,37 @@
                     <div class="card-body">
                       <div class="row">
                         <div class="col-md-4">
-                          <p><strong>Employee ID</strong><br>0891</p>
+                          <p><strong>Employee ID</strong><br>{{employee?.id}}</p> <!-- Employee ID -->
                         </div>
                         <div class="col-md-4">
-                          <p><strong>Employee Name</strong><br>John Doe</p>
+                          <p><strong>Employee Name</strong><br>{{ employee?.name }}</p> <!-- Employee Name -->
                         </div>
                         <div class="col-md-4">
-                          <p><strong>Designation</strong><br>Senior Developer</p>
+                          <p><strong>Designation</strong><br>{{ employee?.designation }}</p> <!-- Employee Designation -->
                         </div>
                       </div>
                       <div class="row mt-3">
-                        <div class="col-md-3">
-                          <div class="badge bg-success text-wrap badge-custom">Employee CTC: ₹1,200,000</div>
+                        <div class="col-md-4">
+                          <div class="badge bg-success text-wrap badge-custom">Employee CTC :{{salary?.annualCTC}}</div>
                         </div>
-                        <div class="col-md-3">
-                          <div class="badge bg-success text-wrap badge-custom">Monthly CTC: ₹100,000</div>
+                        <div class="col-md-4">
+                          <div class="badge bg-success text-wrap badge-custom">Annual NetPay :{{salary?.annualNetPay}}</div>
                         </div>
-                        <div class="col-md-3">
-                          <div class="badge bg-success text-wrap badge-custom">Deduction: ₹20,000</div>
-                        </div>
-                        <div class="col-md-3">
-                          <div class="badge bg-success text-wrap badge-custom">Net Payable: ₹80,000</div>
+                        <div class="col-md-4">
+                          <div class="badge bg-success text-wrap badge-custom">Status : {{salary?.status}}</div>
                         </div>
                       </div>
                       <div class="row mt-3">
-                        <div class="col-md-3">
-                          <div class="badge bg-success text-wrap badge-custom">TDS Rule: 10%</div>
+                        <div class="col-md-4">
+                          <div class="badge bg-success text-wrap badge-custom">Monthly NetPay :{{salary?.monthlyNetPay}}</div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="badge bg-success text-wrap badge-custom">Computed Date :{{salary?.createdAt}}</div>
                         </div>
                       </div>
                     </div>
                     <div class="card-footer">
-                      <button class="btn btn-warning me-2">COMPUTE</button>
-                      <button class="btn btn-warning" (click)="onSave()">SAVE</button>
+                      <button class="btn btn-warning" (click)="onSave(employee?.id)">SAVE</button>
                     </div>
                   </div>
               </div>
