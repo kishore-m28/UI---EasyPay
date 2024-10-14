@@ -1,0 +1,61 @@
+<div>
+    <app-brand-navbar></app-brand-navbar>
+</div>
+<br><br><br>
+<div class="row mt-2">
+    <div class="col-sm-3">
+        <app-emp-navbar></app-emp-navbar>
+    </div>
+    <div class="col-md-6">
+        <div class="card mt-2">
+            <div class="card-header">
+                <h3>Leave Application</h3>
+            </div>
+            <div class="card-body">
+                <div class="mb-2">
+                    <label>Employee Id</label>
+                    <input class="form-control" disabled>
+                </div>
+                <div class="mb-2">
+                    <label>Name</label>
+                    <input class="form-control" disabled>
+                </div>
+                <div class="mb-2">
+                    <label>Email</label>
+                    <input class="form-control" disabled>
+                </div>
+
+
+                <div class="mb-2">
+                    <label>From Date</label>
+                    <input type="date" class="form-control">
+                </div>
+                <div class="mb-2">
+                    <label>To Date</label>
+                    <input type="date" class="form-control">
+                </div>
+                <div class="mb-2">
+                    <label>Submitted Date</label>
+                    <input type="date" class="form-control" disabled [value]="todaydate">
+                </div>
+                <div class="mb-2">
+                    <label>Reason</label>
+                    <input class="form-control">
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-primary">Apply Leave</button>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="col-sm-3">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h3>Leave Status</h3>
+        <div class="flex-container">
+            <h5>Manager Approval : </h5>
+            <button class="btn btn-success">Approved</button>
+        </div>
+
+    </div>
+</div>

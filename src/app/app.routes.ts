@@ -47,6 +47,8 @@ import { HrRoundStatusComponent } from './component/hr/recruitment/hr-round-stat
 import { JobDetailsComponent } from './component/hr/recruitment/job-details/job-details.component';
 import { JobSeekerDetailsComponent } from './component/hr/recruitment/job-seeker-details/job-seeker-details.component';
 import { DashboardComponent } from './component/employee/dashboard/dashboard.component';
+import { MyProfileComponent } from './component/employee/my-profile/my-profile.component';
+import { EmpLeaveComponent } from './component/employee/emp-leave/emp-leave.component';
 
 
 export const routes: Routes = [
@@ -197,6 +199,12 @@ export const routes: Routes = [
     },
     { 
         "path": 'employee/dashboard', component:DashboardComponent
+    },
+    { 
+        "path": 'my-profile', component:MyProfileComponent
+    },
+    { 
+        "path": 'leave', component:EmpLeaveComponent
     },
     {
         "path":"logout",component:LogoutComponent
