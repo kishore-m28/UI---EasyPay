@@ -5,25 +5,25 @@
                 <table id="example" class="table table-striped" style="width:100%">
                     <thead>
                         <tr>
-                            <th class="text-center">Application ID</th>
                             <th class="text-center">Applicant Name</th>
                             <th class="text-center">JobTitle</th>
                             <th class="text-center">Applied Date</th>
                             <th class="text-center">Screen Test Status</th>
+                            <th class="text-center">Details</th>
                             <th class="text-center">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr *ngFor="let details of jobSeekerDetails">
-                          <td class="text-center">{{details.applicationId}}</td>
-                          <td class="text-center">{{details.applicantName}}</td>
-                          <td class="text-center">{{details.jobTitle}}</td>
+                          <td class="text-center">{{details.jobSeeker.name}}</td>
+                          <td class="text-center">{{details.job.jobTitle}}</td>
                           <td class="text-center">{{details.applyDate}}</td>
-                          <td class="text-center">{{details.screenTestStatus}}</td>
+                          <td class="text-center">{{details.status}}</td>
+                          <td class="text-center" (click)="onJobSeekerClick(details.id)">Click to see more details</td>
                           <td class="text-center">
-                            <button type="button" class="btn btn-success btn-sm" [disabled]="details.screenTestStatus === 'CLEARED' || details.screenTestStatus === 'REJECTED'" (click)="OnScreenTest(details.applicationId)">Perform Screen Test</button>
+                            <button type="button" class="btn btn-success btn-sm" [disabled]="details.status === 'CLEARED' || details.status === 'REJECTED'" (click)="OnScreenTest(details.id)">Perform Screen Test</button>
                             &nbsp;&nbsp;&nbsp;&nbsp; 
-                            <button type="button" class="btn btn-info btn-sm" [disabled]="details.screenTestStatus === 'REJECTED' || details.techStatus === 'CLEARED' || details.techStatus === 'REJECTED'"(click)="onTechInterview()">Schedule Tech Interview</button>                        
+                            <button type="button" class="btn btn-info btn-sm" [disabled]="details.status === 'REJECTED' "(click)="onTechInterview(details.id)">Schedule Tech Interview</button>                        
                           </td>
                         </tr>
                     </tbody>  

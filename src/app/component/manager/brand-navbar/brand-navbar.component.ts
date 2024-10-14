@@ -10,4 +10,6 @@ import { RouterLink } from '@angular/router';
 })
 export class BrandNavbarComponent {
 
+  username:any=localStorage.getItem('username');
+
 }

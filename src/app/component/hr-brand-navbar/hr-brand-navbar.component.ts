@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class HrBrandNavbarComponent {
 
-  username:any;
+  username:any=localStorage.getItem('username');
 
   constructor(private router : Router){
     this.username = window.localStorage.getItem('username');

@@ -17,7 +17,8 @@ export class AssignWorkComponent implements OnInit{
   id:number;
   employeeName:string='';
   jobRole:string='';
-  project:string='';
+  projectName:string='';
+  projectDescription:string='';
   projectType:string=''
   work:string='';
 
@@ -34,10 +35,13 @@ export class AssignWorkComponent implements OnInit{
   fetchData(id:number){
     this.managerService.getEmployeeProjectByEmployeeId(id).subscribe({
       next:(data)=>{
+        console.log(data);
         this.employeeName=data.employee.name;
         this.jobRole=data.employee.jobRole;
         this.projectType=data.project.projectType;
-        this.project=data.project.projectDetails;
+        this.projectName=data.project.name;
+        this.projectDescription=data.project.projectDescription;
+
       },
       error:(err)=>{
         console.log(err);

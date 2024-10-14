@@ -3,16 +3,19 @@ import { HrBrandNavbarComponent } from "../../hr-brand-navbar/hr-brand-navbar.co
 import { NavbarComponent } from "../../hr-navbar/navbar.component";
 import { NgFor } from '@angular/common';
 import { HrService } from '../../../service/hr.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-project-list',
   standalone: true,
-  imports: [HrBrandNavbarComponent, NavbarComponent, NgFor],
+  imports: [HrBrandNavbarComponent, NavbarComponent, NgFor,RouterLink],
   templateUrl: './project-list.component.html',
   styleUrl: './project-list.component.css'
 })
 export class ProjectListComponent {
+assignEmployees(arg0: any) {
+throw new Error('Method not implemented.');
+}
 
   projects: any[]=[];
 
@@ -20,7 +23,7 @@ export class ProjectListComponent {
   numArry: number[] = [];
   counter: number = 0;
   page: number = 0;
-  size: number = 3;
+  size: number = 5;
   last: boolean = false;
   first: boolean = true;
 
@@ -72,6 +75,10 @@ export class ProjectListComponent {
 
    
   markstart(arg0: any) {
+    throw new Error('Method not implemented.');
+  }
+
+  markCompleted(pid : number){
     throw new Error('Method not implemented.');
   }
 

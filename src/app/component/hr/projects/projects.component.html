@@ -45,16 +45,27 @@
             </div>
         </div>
         <br>
-        <div>
-            <p><strong>Projects</strong></p>
-            <div>
-                <app-project-list></app-project-list>
-            </div>
-            
-        </div>
+        
     </div>
     <div class="col-sm-2 mt-2">
         <br>
-        <button class="btn btn-outline-primary">Add New Project</button>
+        <button class="btn btn-primary" routerLink="/add-project">Add New Project</button>
     </div>
+</div>
+<div class="row">
+    <div class="col-sm-2">
+
+    </div>
+    <div class="col-lg-10">
+        <div>
+            <p><strong>Projects</strong></p>
+            <!-- <div>
+                <button class="btn btn-secondary" routerLink="/project-list">View Project List</button>
+                
+            </div> -->
+            <app-project-list></app-project-list>
+            
+        </div>
+    </div>
+
 </div>

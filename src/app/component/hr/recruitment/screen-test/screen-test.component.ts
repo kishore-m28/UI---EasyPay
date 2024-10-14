@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { HrRecruitNavbarComponent } from "../hr-recruit-navbar/hr-recruit-navbar.component";
-import { Router } from '@angular/router';
-import { HrService } from '../../../../service/hr.service';
 import { NgFor } from '@angular/common';
+import { Router, RouterLink } from '@angular/router';
+import { HrService } from '../../../../service/hr.service';
 
 @Component({
-  selector: 'app-schedule-interview',
+  selector: 'app-screen-test',
   standalone: true,
   imports: [HrRecruitNavbarComponent, NgFor],
-  templateUrl: './schedule-interview.component.html',
-  styleUrl: './schedule-interview.component.css'
+  templateUrl: './screen-test.component.html',
+  styleUrl: './screen-test.component.css'
 })
-export class ScheduleInterviewComponent implements OnInit{
+export class ScreenTestComponent implements OnInit{
 
   jobSeekerDetails:any[];
 
@@ -24,6 +24,7 @@ export class ScheduleInterviewComponent implements OnInit{
   fetchData(){
     this.hrService.getJobSeekerDetails().subscribe({
       next:(data)=>{
+        console.log(data);
         this.jobSeekerDetails = data;
       },
       error:(err)=>{
@@ -36,13 +37,13 @@ export class ScheduleInterviewComponent implements OnInit{
     this.hrService.performScreenTest(id).subscribe({
       next:(data)=>{
         console.log(data);
-        const job = this.jobSeekerDetails.find(e => e.applicationId === id);
+        const job = this.jobSeekerDetails.find(e => e.id === id);
         if(job){
           if(data.status=="CLEARED"){
-            job.screenTestStatus="CLEARED"
+            job.status="CLEARED"
          }
          if(data.status=="REJECTED"){
-           job.screenTestStatus="REJECTED"
+           job.status="REJECTED"
         } 
         }    
       },
@@ -51,12 +52,15 @@ export class ScheduleInterviewComponent implements OnInit{
       }
     })
   }
+
+  onJobSeekerClick(id:any) {
+    this.router.navigateByUrl("/recruitment/job-seeker-details/"+id)
+  }
   
-  onTechInterview() {
-    this.router.navigateByUrl("/recruitment/schedule-tech-interview");
+  onTechInterview(id:any) {
+    this.router.navigateByUrl("/recruitment/schedule-tech-interview/"+id);
   }
-  onHrInterview() {
-    this.router.navigateByUrl("/recruitment/schedule-hr-interview");
-  }
+ 
+
 
 }
