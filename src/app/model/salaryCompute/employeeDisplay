@@ -1,0 +1,8 @@
+export class employeeDisplay{
+    id?:number;
+    name?:string;
+    department?:string;
+    designation?:string;
+    workingDays?:number;
+    leave?:number;
+}

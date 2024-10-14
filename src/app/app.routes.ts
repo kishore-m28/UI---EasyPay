@@ -156,7 +156,7 @@ export const routes: Routes = [
         "path": 'payroll/review', component:ReviewPayrollComponent
     },
     { 
-        "path": 'salary/compute', component:ComputeComponent
+        "path": 'salary/compute/:id', component:ComputeComponent
     },
     { 
         "path": 'run-payroll', component:EmployeeSalaryListComponent
