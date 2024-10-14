@@ -55,7 +55,7 @@ export class AddJobComponent {
       "skill3":this.skill3
     }).subscribe({
       next:(data)=>{
-        this.successMsg="Job added",
+        this.successMsg="New Job posted",
         this.errorMsg=undefined;
       },
       error:(err)=>{

@@ -94,6 +94,19 @@ export class ManagerService {
     })
   }
 
+  getProjects():Observable<any>{
+    return this.http.get('http://localhost:8081/manager/project', {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+    })
+  }
+
+  getProjectStats():Observable<any>{
+    return this.http.get('http://localhost:8081/manager/project/employee/stat', {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+    })
+
+  }
+
 
 
 }

@@ -1,22 +1,25 @@
 <app-brand-navbar></app-brand-navbar>
-<div class="welcome-container mt-4" style= "position: fixed; top: 100px; left: 450px; right: 0; z-index: 1030; height: 60px;">
-    <div class="card fixed-card" style="width:650px; height: 400px;">
-        <div class="card-body" style="background-color: bisque;">
-            <div class="welcome-header">
-                <h1>Welcome, Manager!</h1>
-                <p>Manage your team or recruit new talents efficiently.</p>
-              </div>
-                  
-                <div class="mt-4" >
-                    <button type="button" class="btn btn-primary btn-lg" (click)="OnRecruitClick()">Go to Recruitment</button>
-                  <p>Start a new recruitment process, schedule interviews, and update scoresheets</p>
+
+<div class="welcome-container mt-5" style="position: fixed; top: 150px; left: 450px; right: 0; z-index: 1030; height: 60px;">
+    <div class="card shadow-lg border-0" style="width: 700px; background-color: #f8f9fa; border-radius: 15px;">
+        <div class="card-body p-5" style="background-color: #fff; border-radius: 15px;">
+            <div class="text-center">
+                <h1 class="display-4" style="font-weight: 700; color: #343a40;">Welcome, Manager!</h1>
+                <p class="lead mt-3" style="color: #6c757d;">Manage recruitment, job postings, and payroll with ease.</p>
+            </div>
+
+            <div class="mt-5 d-flex justify-content-around">
+                <div class="text-center">
+                    <button type="button" class="btn btn-outline-primary btn-lg" (click)="OnRecruitClick()" style="width: 200px;">Recruitment</button>
+                    <p class="mt-3" style="color: #6c757d;">Start a new recruitment process, schedule interviews, and update scoresheets.</p>
                 </div>
-            
-                <div class="mt-4" >
-                    <button type="button" class="btn btn-primary btn-lg" (click)="OnDashboardClick()">Go to Dashboard</button>
-                  <p>View your team, manage tasks, approve leave requests, and track performance.</p>
+
+                <div class="text-center">
+                    <button type="button" class="btn btn-outline-success btn-lg" (click)="OnDashboardClick()" style="width: 200px;">Dashboard</button>
+                    <p class="mt-3" style="color: #6c757d;">View your team, manage tasks, approve leave requests, and track performance.
+                    </p>
                 </div>
-        
+            </div>
+        </div>
     </div>
 </div>
-  
