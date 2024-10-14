@@ -5,7 +5,8 @@
   <!-- Username and Log Out Container -->
   <div class="user-info">
     <p>Welcome : {{username}}</p>
-    <a routerLink="/logout" class="logout">Log Out</a>
+    <button class="btn btn-outline-info btn-sm" (click)="onClick()">Go to Recruitment</button>
+    <button class="btn btn-outline-info btn-sm" (click)="onLogOut()">Logout</button>
   </div>
 </div>
 
@@ -58,7 +59,7 @@
 
   /* Log out button styling */
   .navbar a.logout {
-    background-color: #f44336;  /* Red background */
+    background-color: #48c4da;  /* Red background */
     color: white;
     padding: 10px 15px;
     border-radius: 5px;

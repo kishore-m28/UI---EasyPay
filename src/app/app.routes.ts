@@ -91,7 +91,6 @@ export const routes: Routes = [
     { 
         path: 'assign-emp/:id', component: AssignEmpFormComponent
     },
-
     {
         "path" : "hr/dashboard/recruitment/jobs-list" , component:JobsListComponent
     },
@@ -157,9 +156,6 @@ export const routes: Routes = [
     },
     {
         "path":"recruitment/technical-scoresheet/:id",component:TechnicalScoresheetComponent
-    },
-    {
-        "path":"manager/dashboard",component:ManagerDashboardComponent
     },
     {
         "path":"manager/dashboard",component:ManagerDashboardComponent
