@@ -2,7 +2,7 @@
 <div class="container-fluid " style= "position: fixed; top: 110px; left: 250px; right: 0; z-index: 1030; height: 60px;">
     <div class="row">
         <div class="col-md-10">
-                <table id="example" class="table table-striped" style="width:100%">
+                <table id="example" class="table" style="width:100%">
                     <thead>
                         <tr>
                             <th class="text-center">Application ID</th>
@@ -23,7 +23,7 @@
                           <td class="text-center">{{i.date}}</td>
                           <td class="text-center">{{i.fromTime}}</td>
                           <td class="text-center">{{i.toTime}}</td>
-                          <td class="text-center">{{i.interviewLink}}</td>      
+                          <td class="text-center"><a class="Link">{{i.interviewLink}}</a></td>      
                           <td class="text-center">
                             <button type="button" class="btn btn-success btn-sm" (click)="onScoreSheetClick(i.jobApplication.id)">Tech ScoreSheet</button>                            
                           </td>

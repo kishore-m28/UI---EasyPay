@@ -24,9 +24,11 @@
                     <i class="fal fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse justify-content-start" id="navbarSupportedContent">
-                    <a><strong>Welcome Recruiter: {{username}}</strong></a>
+                    <a><strong>Welcome: {{username}}</strong></a>
                 </div>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <button class="btn btn-outline-info btn-sm" (click)="onClick()">Go to Dashboard</button>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
                     <button class="btn btn-outline-success btn-sm" (click)="onLogout()">Logout</button>
                 </div>
             </div>

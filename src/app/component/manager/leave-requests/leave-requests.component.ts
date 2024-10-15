@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ManagerNavbarComponent } from "../manager-navbar/manager-navbar.component";
 import { ManagerService } from '../../../service/manager.service';
 import { Router } from '@angular/router';
@@ -11,18 +11,21 @@ import { NgFor } from '@angular/common';
   templateUrl: './leave-requests.component.html',
   styleUrl: './leave-requests.component.css'
 })
-export class LeaveRequestsComponent {
+export class LeaveRequestsComponent implements OnInit{
 
   leaveRequests:any[]=[];
   totalPages : number =0;  
   numArry:number[]=[];
   counter: number=0;
   page:number =0;
-  size:number =2; 
+  size:number =4; 
   last:boolean=false; 
   first:boolean=false;
 
   constructor(private managerService:ManagerService, private router:Router){
+  }
+
+  ngOnInit(): void {
     this.fetchData();
   }
 

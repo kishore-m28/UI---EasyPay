@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-brand-navbar',
@@ -11,5 +11,15 @@ import { RouterLink } from '@angular/router';
 export class BrandNavbarComponent {
 
   username:any=localStorage.getItem('username');
+
+  constructor(private router:Router){}
+
+  onClick() {
+    this.router.navigateByUrl("/recruitment/technical-interview")
+  }
+
+  onLogOut() {
+    this.router.navigateByUrl("/logout")
+  }
 
 }

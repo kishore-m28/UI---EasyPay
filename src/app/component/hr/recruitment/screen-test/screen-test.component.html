@@ -2,7 +2,7 @@
 <div class="container-fluid " style= "position: fixed; top: 110px; left: 250px; right: 0; z-index: 1030; height: 60px;">
     <div class="row">
         <div class="col-md-10">
-                <table id="example" class="table table-striped" style="width:100%">
+                <table id="example" class="table " style="width:100%">
                     <thead>
                         <tr>
                             <th class="text-center">Applicant Name</th>
@@ -21,9 +21,9 @@
                           <td class="text-center">{{details.status}}</td>
                           <td class="text-center" (click)="onJobSeekerClick(details.id)">Click to see more details</td>
                           <td class="text-center">
-                            <button type="button" class="btn btn-success btn-sm" [disabled]="details.status === 'CLEARED' || details.status === 'REJECTED'" (click)="OnScreenTest(details.id)">Perform Screen Test</button>
+                            <button type="button" class="btn btn-sm" [disabled]="details.status === 'CLEARED' || details.status === 'REJECTED'" (click)="OnScreenTest(details.id)" style="background-color: #fb8cd8; border: none;">Perform Screen Test</button>
                             &nbsp;&nbsp;&nbsp;&nbsp; 
-                            <button type="button" class="btn btn-info btn-sm" [disabled]="details.status === 'REJECTED' "(click)="onTechInterview(details.id)">Schedule Tech Interview</button>                        
+                            <button type="button" class="btn btn-sm" [disabled]="details.status === 'applied'|| details.status === 'REJECTED' "(click)="onTechInterview(details.id)" style="background-color: #f69b4c; border: none;">Schedule Tech Interview</button>                        
                           </td>
                         </tr>
                     </tbody>  

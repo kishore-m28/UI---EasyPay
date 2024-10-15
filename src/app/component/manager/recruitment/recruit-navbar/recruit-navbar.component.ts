@@ -14,6 +14,10 @@ export class RecruitNavbarComponent {
   
   constructor(private router:Router){}
 
+  onClick() {
+    this.router.navigateByUrl("/manager/dashboard")
+  }
+
   onLogout() {
     this.router.navigateByUrl("/logout")
   }

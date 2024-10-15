@@ -87,10 +87,10 @@ export const routes: Routes = [
         "path" : "add-project" , component:ProjectAddComponent
     },
     { 
-        path: 'project/:id', component: ProjectDetailsComponent
+        "path" : 'project/:id', component: ProjectDetailsComponent
     },
     { 
-        path: 'assign-emp/:id', component: AssignEmpFormComponent
+       "path" : 'assign-emp/:id', component: AssignEmpFormComponent
     },
     { 
         path: 'completed-list', component: CompletedListComponent
@@ -99,7 +99,7 @@ export const routes: Routes = [
 
 
     {
-        "path" : "hr/dashboard/recruitment/jobs-list" , component:JobsListComponent
+        "path" : "recruitment/jobs-list" , component:JobsListComponent
     },
     {
         "path" : "hr/add-job" , component:AddJobComponent
@@ -163,9 +163,6 @@ export const routes: Routes = [
     },
     {
         "path":"recruitment/technical-scoresheet/:id",component:TechnicalScoresheetComponent
-    },
-    {
-        "path":"manager/dashboard",component:ManagerDashboardComponent
     },
     {
         "path":"manager/dashboard",component:ManagerDashboardComponent
