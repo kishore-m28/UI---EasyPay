@@ -16,6 +16,10 @@ export class HrBrandNavbarComponent {
     this.username = window.localStorage.getItem('username');
   }
 
+  onClick() {
+    this.router.navigateByUrl("/recruitment/jobs-list")
+  }
+
   onLogout(){
     this.router.navigateByUrl('/logout');
   }

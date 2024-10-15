@@ -1,11 +1,9 @@
 <div class="navbar mb-2">
   <!-- Logo -->
-  <a routerLink="/home" class="logo">EasyPay</a>
+  <a routerLink="/home" class="logo">Payroll and Resource Management</a>
 
-  <!-- Log Out Button -->
-  <!-- <a routerLink="/logout" class="logout">Log Out</a> -->
   <div class="user-info">
-    <button class="btn btn-info btn-md" routerLink="recruitment/jobs-list">Go to Recruitment</button>
+    <button class="btn btn-info btn-md" (click)="onClick()">Go to Recruitment</button>
     <button class="btn btn-success btn-md" (click)="onLogout()">Logout</button>
   </div>
 

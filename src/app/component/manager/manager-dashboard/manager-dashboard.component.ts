@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { HrBrandNavbarComponent } from "../../hr-brand-navbar/hr-brand-navbar.component";
 import { ManagerNavbarComponent } from "../manager-navbar/manager-navbar.component";
 import { ManagerService } from '../../../service/manager.service';
-import { CommonModule, NgFor } from '@angular/common';
+import { NgFor } from '@angular/common';
 import { ChartModule } from 'primeng/chart';
-import { dateTimestampProvider } from 'rxjs/internal/scheduler/dateTimestampProvider';
+
 
 @Component({
   selector: 'app-manager-dashboard',
@@ -17,6 +17,8 @@ export class ManagerDashboardComponent implements OnInit{
 
   numberOfEmployees:number;
   numberOfLeaveRequests:number;
+  numberOfPresent:number;
+  numberOfAbsent:number;
   projects:any[];
   statsData:any;
   pieOptions:any;
@@ -38,6 +40,8 @@ export class ManagerDashboardComponent implements OnInit{
     this.fetchEmployeeCount();
     this.fetchLeaveRequestsCount();
     this.fetchProjects();
+    this.fetchPresentCount();
+    this.fetchAbsentCount();
 
     this.managerService.getProjectStats().subscribe({
       next:(res)=>{
@@ -119,6 +123,28 @@ export class ManagerDashboardComponent implements OnInit{
     this.managerService.getProjects().subscribe({
       next:(data)=>{
         this.projects=data;
+      },
+      error:(err)=>{
+        console.log(err);
+      }
+    })
+  }
+
+  fetchPresentCount(){
+    this.managerService.getPresentCount().subscribe({
+      next:(data)=>{
+        this.numberOfPresent=data;
+      },
+      error:(err)=>{
+        console.log(err);
+      }
+    })
+  }
+
+  fetchAbsentCount(){
+    this.managerService.getAbsentCount().subscribe({
+      next:(data)=>{
+        this.numberOfAbsent=data;
       },
       error:(err)=>{
         console.log(err);

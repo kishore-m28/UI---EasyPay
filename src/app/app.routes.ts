@@ -86,13 +86,13 @@ export const routes: Routes = [
         "path" : "add-project" , component:ProjectAddComponent
     },
     { 
-        path: 'project/:id', component: ProjectDetailsComponent
+        "path" : 'project/:id', component: ProjectDetailsComponent
     },
     { 
-        path: 'assign-emp/:id', component: AssignEmpFormComponent
+       "path" : 'assign-emp/:id', component: AssignEmpFormComponent
     },
     {
-        "path" : "hr/dashboard/recruitment/jobs-list" , component:JobsListComponent
+        "path" : "recruitment/jobs-list" , component:JobsListComponent
     },
     {
         "path" : "hr/add-job" , component:AddJobComponent

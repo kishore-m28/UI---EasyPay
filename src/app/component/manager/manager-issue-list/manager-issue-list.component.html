@@ -5,7 +5,6 @@
                 <table id="example" class="table" style="width:100%">
                     <thead>
                         <tr>
-                            <th class="text-center">ID</th>
                             <th class="text-center">Employee Name</th>
                             <th class="text-center">Description</th>
                             <th class="text-center">Date</th>
@@ -14,7 +13,6 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let issue of issues">
-                          <td class="text-center">{{ issue.id }}</td>
                           <td class="text-center">{{ issue.employeeName }}</td>
                           <td class="text-center">{{ issue.description }}</td>
                           <td class="text-center">{{ issue.date }}</td>

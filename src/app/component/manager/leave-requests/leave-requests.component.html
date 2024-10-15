@@ -5,7 +5,6 @@
                 <table id="example" class="table" style="width:100%">
                     <thead>
                         <tr>
-                            <th class="text-center">ID</th>
                             <th class="text-center">Employee Name</th>
                             <th class="text-center">Apply Date</th>
                             <th class="text-center">Start Date</th>
@@ -17,7 +16,6 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let leaveRequest of leaveRequests">
-                          <td class="text-center">{{ leaveRequest.id }}</td>
                           <td class="text-center">{{ leaveRequest.name }}</td>
                           <td class="text-center">{{ leaveRequest.applyDate }}</td>
                           <td class="text-center">{{ leaveRequest.startDate }}</td>
