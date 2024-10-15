@@ -49,4 +49,10 @@ export class JobDescriptionComponent implements OnInit {
       this.router.navigateByUrl('/job/allJobs')
     }
 
+    onApplyClick(id:any){
+      this.jobService.setJobId(id);
+      localStorage.setItem('jobId', id);
+      this.router.navigateByUrl('jobSeeker/signUp')
+    }
+
 }

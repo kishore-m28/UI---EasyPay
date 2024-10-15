@@ -3,7 +3,7 @@ export class Job{
     id:number;
     jobTitle:string;
     jobType:string;
-    postingDate:Date;
+    startDate:Date;
     endDate:Date;
     location:string;
     ctc:number;

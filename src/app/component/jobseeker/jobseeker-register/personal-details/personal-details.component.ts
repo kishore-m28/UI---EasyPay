@@ -5,6 +5,8 @@ import { JobseekerNavbarComponent } from "../../jobseeker-navbar/jobseeker-navba
 import { NgFor, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Resume } from '../../../../model/jobseeker/resume.model';
+import { ActivatedRoute, Router } from '@angular/router';
+import { JobService } from '../../../../service/job.service';
 
 @Component({
   selector: 'app-personal-details',
@@ -19,8 +21,13 @@ export class PersonalDetailsComponent implements OnInit {
   successMsg:string=undefined;
   errorMsg:string=undefined;
   gender:string[]=['MALE','FEMALE'];
+  show:boolean=false;
+  id:any;
+ 
+  
 
-  constructor(private jobseekerService:JobseekerService){}
+
+  constructor(private jobseekerService:JobseekerService,private router:Router){}
   
   ngOnInit(): void {
     this.jobseeker=new Jobseeker();
@@ -34,6 +41,7 @@ export class PersonalDetailsComponent implements OnInit {
         this.successMsg='Registered Successfully'
         this.errorMsg=undefined;
         console.log(data)
+        this.show=true;
       },
       error:(err)=>{
         this.successMsg=undefined;
@@ -46,6 +54,11 @@ export class PersonalDetailsComponent implements OnInit {
   resetmsg(){
     this.successMsg = undefined;
     this.errorMsg=undefined;
+  }
+
+  applyJob(){
+    let jobId=localStorage.getItem('jobId')
+    this.router.navigateByUrl('/job/apply/'+jobId);
   }
 
 }
