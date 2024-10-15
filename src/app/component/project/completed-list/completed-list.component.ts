@@ -1,22 +1,20 @@
 import { Component } from '@angular/core';
-import { HrBrandNavbarComponent } from "../../hr-brand-navbar/hr-brand-navbar.component";
-import { NavbarComponent } from "../../hr-navbar/navbar.component";
-import { NgFor, NgIf } from '@angular/common';
 import { HrService } from '../../../service/hr.service';
-import { Router, RouterLink } from '@angular/router';
 import { ProjectService } from '../../../service/project.service';
+import { Router, RouterLink } from '@angular/router';
+import { NgFor, NgIf } from '@angular/common';
+import { BrandNavbarComponent } from "../../manager/brand-navbar/brand-navbar.component";
+import { NavbarComponent } from "../../hr-navbar/navbar.component";
+import { HrBrandNavbarComponent } from "../../hr-brand-navbar/hr-brand-navbar.component";
 
 @Component({
-  selector: 'app-project-list',
+  selector: 'app-completed-list',
   standalone: true,
-  imports: [HrBrandNavbarComponent, NavbarComponent, NgFor,RouterLink, NgIf],
-  templateUrl: './project-list.component.html',
-  styleUrl: './project-list.component.css'
+  imports: [NgFor, NgIf, RouterLink, BrandNavbarComponent, NavbarComponent, HrBrandNavbarComponent],
+  templateUrl: './completed-list.component.html',
+  styleUrl: './completed-list.component.css'
 })
-export class ProjectListComponent {
-assignEmployees(arg0: any) {
-throw new Error('Method not implemented.');
-}
+export class CompletedListComponent {
 
   projects: any[]=[];
 
@@ -35,7 +33,7 @@ throw new Error('Method not implemented.');
   }
 
   fetchData() {
-    this.hrservice.getAllProjects(this.page, this.size).subscribe({
+    this.hrservice.getCompletedProjects(this.page, this.size).subscribe({
       next: (data) => {
         this.projects = data.content;
         this.totalPages = data.totalPages;
@@ -119,4 +117,5 @@ throw new Error('Method not implemented.');
       }
     })
   }
+
 }

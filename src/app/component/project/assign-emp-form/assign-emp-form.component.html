@@ -10,38 +10,44 @@
         <div class="card mt-4">
             <div class="card-header">
                 Assign Employees
+                <div class="alert alert-success mt-2" *ngIf="successMsg">
+                    {{successMsg}}
+                </div>
             </div>
             <div class="card-body">
-                <div>
-                    <label>Title</label>
-                    <input type="text" class="form-control" disabled>
+                <div class="mb-2">
+                    <label>Project Title</label>
+                    <input type="text" class="form-control" disabled [(ngModel)]="title">
                 </div>
-                <div>
+                <div class="mb-2">
                     <label>Manager</label>
-                    <input type="text" class="form-control" disabled>
+                    <input type="text" class="form-control" disabled [(ngModel)]="manager">
                 </div>
-                <div>
+                <div class="mb-2">
                     <Label>Select Employee(s) to assign</Label>
                     <select class="form-control" [(ngModel)]="employees" multiple>
-                        <option value="volvo">Aakash</option>
-                        <option value="saab">Balaji</option>
-                        <option value="opel">Chandru</option>
-                        <option value="audi">Dinesh</option>
-                        <option value="bmw">Ganesh</option>
-                        <option>Hrithik</option>
-                        <option>Jaya Prakash</option>
-                        <option>Krishna</option>
+                        <option *ngFor="let employee of allEmployees" [value]="employee.id">{{employee.name}}</option>
                     </select>
                 </div>
                 <p>Hold down the Ctrl (windows) or Command (Mac) button to select multiple options.</p>
             </div>
             <div class="card-footer">
-                <button class="btn btn-primary">Assign</button>
+                <button class="btn btn-primary" (click)="assignEmployees()">Assign</button>
             </div>
         </div>
     </div>
     <div class="col-sm-4">
-        <app-summary-selected-emp></app-summary-selected-emp>
+        <!-- <app-summary-selected-emp></app-summary-selected-emp> -->
+
+        <h4 class="mt-4">Assigned Employees</h4>
+        <div class="alert alert-dark" *ngIf="emptyMsg">
+            No employees assigned yet
+        </div>
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let employee of assignedEmployees">
+                {{ employee.name }} (ID: {{ employee.id }})
+            </li>
+        </ul>
     </div>
 
 </div>

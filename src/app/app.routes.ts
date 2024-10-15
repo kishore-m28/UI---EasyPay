@@ -49,6 +49,7 @@ import { JobSeekerDetailsComponent } from './component/hr/recruitment/job-seeker
 import { DashboardComponent } from './component/employee/dashboard/dashboard.component';
 import { MyProfileComponent } from './component/employee/my-profile/my-profile.component';
 import { EmpLeaveComponent } from './component/employee/emp-leave/emp-leave.component';
+import { CompletedListComponent } from './component/project/completed-list/completed-list.component';
 
 
 export const routes: Routes = [
@@ -91,6 +92,11 @@ export const routes: Routes = [
     { 
         path: 'assign-emp/:id', component: AssignEmpFormComponent
     },
+    { 
+        path: 'completed-list', component: CompletedListComponent
+    },
+
+
 
     {
         "path" : "hr/dashboard/recruitment/jobs-list" , component:JobsListComponent

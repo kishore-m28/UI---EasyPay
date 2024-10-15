@@ -16,9 +16,9 @@
             <td class="text-center">{{proj.status}}</td>
             <td class="text-center"> <span>
                     <!-- <button [routerLink]="['/delete/', emp.id]" class="btn btn-danger bn-small" (click)="delete(emp.id)">Mark Inactive / Delete</button>  -->
-                    <button class="btn btn-danger bn-small" (click)="markstart(proj.id)">Start</button>
+                    <button class="btn btn-danger bn-small" (click)="markOngoing(proj.id)" *ngIf="proj.status==='UPCOMING' ">Start</button>
                     &nbsp;&nbsp;&nbsp;
-                    <button (click)="markCompleted(proj.id)" class="btn btn-secondary bn-small">Mark as
+                    <button (click)="markCompleted(proj.id)" class="btn btn-secondary bn-small" *ngIf="proj.status==='IN_PROGRESS' || proj.status==='UPCOMING' ">Mark as
                         Completed</button>
                     &nbsp;&nbsp;&nbsp;
                     <button [routerLink]="['/assign-emp',proj.id]" class="btn btn-info bn-small">Assign Employees</button>

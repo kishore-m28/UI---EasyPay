@@ -13,7 +13,7 @@
                 <div class="card h-100">
                     <div class="card-body">
                         <h5 class="card-title">Active Projects</h5>
-                        <p class="card-text">10</p>
+                        <p class="card-text">{{activeCount}}</p>
                     </div>
                 </div>
             </div>
@@ -21,7 +21,7 @@
                 <div class="card h-100">
                     <div class="card-body">
                         <h5 class="card-title">Completed Projects</h5>
-                        <p class="card-text">27</p>
+                        <p class="card-text">{{completedCount}}</p>
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                 <div class="card h-100">
                     <div class="card-body">
                         <h5 class="card-title">Upcoming Projects</h5>
-                        <p class="card-text">3</p>
+                        <p class="card-text">{{upcomingCount}}</p>
                     </div>
                 </div>
 
@@ -38,7 +38,7 @@
                 <div class="card h-100">
                     <div class="card-body">
                         <h5 class="card-title">Overdue Projects</h5>
-                        <p class="card-text">0</p>
+                        <p class="card-text">{{overdueCount}}</p>
                     </div>
                 </div>
 
@@ -50,6 +50,10 @@
     <div class="col-sm-2 mt-2">
         <br>
         <button class="btn btn-primary" routerLink="/add-project">Add New Project</button>
+        <div>
+            <br>
+            <button class="btn btn-info" routerLink="/completed-list">View Completed Projects</button>
+        </div>
     </div>
 </div>
 <div class="row">

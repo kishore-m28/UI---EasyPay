@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ManagerService {
+  
   getIdByUsername(username: any): any {
     throw new Error('Method not implemented.');
   }
@@ -105,6 +106,11 @@ export class ManagerService {
     })
   }
 
+  getAllManagers():Observable<any> {
+    return this.http.get('http://localhost:8081/manager/all', {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+    })
+  }
 
 
 }
