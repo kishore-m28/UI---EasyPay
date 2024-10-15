@@ -1,15 +1,12 @@
-<!-- As a heading -->
-<nav class="navbar navbar-light bg-light">
-    <div class="container-fluid">
-      <span class="navbar-brand mb-0 h1">EASY PAY</span>
-    </div>
-  </nav>
-
-  <div class="bg-light p-5 rounded-lg m-3">
-    <h1 class="display-4">Logged Out!!</h1>
-    <p class="lead">Dear User, You have been logged out of the system. 
-        You can login back anytime.
-    </p>
-    <hr class="my-4">
-    <button class="btn btn-primary btn-lg"  (click)="login()">Login</button>
+<nav class="navbar navbar-light bg-light shadow-sm">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">PAYROLL AND RESOURCE<br />MANAGEMENT</span>
   </div>
+</nav>
+
+<div class="bg-light p-5 rounded-lg m-3 shadow-lg text-center mt-4" style="background-image: linear-gradient(to right, #f0f2f5, #ffffff);">
+  <h1 class="display-4 text-danger font-weight-bold">Logged Out!!</h1>
+  <p class="lead">Dear User, You have been logged out of the system. You can login back anytime.</p>
+  <hr class="my-4">
+  <button class="btn btn-primary btn-lg rounded-pill px-5 py-3 shadow" (click)="login()">Login</button>
+</div>

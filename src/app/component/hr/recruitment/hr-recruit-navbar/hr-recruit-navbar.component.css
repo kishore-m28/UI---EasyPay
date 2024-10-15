@@ -1,3 +1,11 @@
+/* User info container */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  /* Space between username and logout button */
+}
+
 body {
     padding-bottom: 30px;
     position: relative;

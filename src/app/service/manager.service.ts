@@ -6,6 +6,10 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ManagerService {
+  
+  getIdByUsername(username: any): any {
+    throw new Error('Method not implemented.');
+  }
 
   constructor(private http:HttpClient) { }
 
@@ -14,6 +18,14 @@ export class ManagerService {
       headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
     });
   }
+
+  viewTask(username:string,page:number,size:number):Observable<any>{
+    console.log("view task api called")
+    return this.http.get('http://localhost:8081/work/view?username='+username+'&page='+page+'&size='+size, {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+    });
+  }
+
 
   getAllLeaveRequests(page:number, size:number):Observable<any>{
     return this.http.get('http://localhost:8081/leave/all?page='+page+'&size='+size,
@@ -94,6 +106,33 @@ export class ManagerService {
     })
   }
 
+  getAllManagers():Observable<any> {
+    return this.http.get('http://localhost:8081/manager/all', {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+    })
+  }
+  getProjects():Observable<any>{
+    return this.http.get('http://localhost:8081/manager/project', {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+    })
+  }
 
+  getProjectStats():Observable<any>{
+    return this.http.get('http://localhost:8081/manager/project/employee/stat', {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+    })
+  }
+
+  getPresentCount():Observable<any>{
+    return this.http.get('http://localhost:8081/employee/present', {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+    })
+  }
+
+  getAbsentCount():Observable<any>{
+    return this.http.get('http://localhost:8081/employee/absent', {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+    })
+  }
 
 }

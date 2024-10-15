@@ -50,6 +50,9 @@ import { DashboardComponent } from './component/employee/dashboard/dashboard.com
 import { JobFirstPageNavbarComponent } from './component/jobseeker/job-first-page-navbar/job-first-page-navbar.component';
 import { JobseekerSignUpComponent } from './component/jobseeker/jobseeker-sign-up/jobseeker-sign-up.component';
 import { ApplyJobComponent } from './component/jobseeker/apply-job/apply-job.component';
+import { MyProfileComponent } from './component/employee/my-profile/my-profile.component';
+import { EmpLeaveComponent } from './component/employee/emp-leave/emp-leave.component';
+import { CompletedListComponent } from './component/project/completed-list/completed-list.component';
 
 
 export const routes: Routes = [
@@ -90,10 +93,13 @@ export const routes: Routes = [
         "path" : "add-project" , component:ProjectAddComponent
     },
     { 
-        path: 'project/:id', component: ProjectDetailsComponent
+        "path" : 'project/:id', component: ProjectDetailsComponent
     },
     { 
-        path: 'assign-emp/:id', component: AssignEmpFormComponent
+       "path" : 'assign-emp/:id', component: AssignEmpFormComponent
+    },
+    { 
+        path: 'completed-list', component: CompletedListComponent
     },
     {
         "path" : "recruitment/jobs-list" , component:JobsListComponent
@@ -165,9 +171,6 @@ export const routes: Routes = [
         "path":"manager/dashboard",component:ManagerDashboardComponent
     },
     {
-        "path":"manager/dashboard",component:ManagerDashboardComponent
-    },
-    {
         "path":"logout",component:LogoutComponent
     },
     {
@@ -208,6 +211,12 @@ export const routes: Routes = [
     },
     { 
         "path": 'job/apply/:jobId', component:ApplyJobComponent
+    },
+    {
+        "path": 'my-profile', component:MyProfileComponent
+    },
+    { 
+        "path": 'leave', component:EmpLeaveComponent
     },
     {
         "path":"logout",component:LogoutComponent

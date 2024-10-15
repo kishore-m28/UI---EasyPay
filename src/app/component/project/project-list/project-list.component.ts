@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
 import { HrBrandNavbarComponent } from "../../hr-brand-navbar/hr-brand-navbar.component";
 import { NavbarComponent } from "../../hr-navbar/navbar.component";
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { HrService } from '../../../service/hr.service';
 import { Router, RouterLink } from '@angular/router';
+import { ProjectService } from '../../../service/project.service';
 
 @Component({
   selector: 'app-project-list',
   standalone: true,
-  imports: [HrBrandNavbarComponent, NavbarComponent, NgFor,RouterLink],
+  imports: [HrBrandNavbarComponent, NavbarComponent, NgFor,RouterLink, NgIf],
   templateUrl: './project-list.component.html',
   styleUrl: './project-list.component.css'
 })
@@ -27,7 +28,7 @@ throw new Error('Method not implemented.');
   last: boolean = false;
   first: boolean = true;
 
-  constructor(private hrservice: HrService, private router: Router) {
+  constructor(private hrservice: HrService, private projectService : ProjectService,private router: Router) {
     this.fetchData();
 
     console.log(this.numArry)
@@ -74,12 +75,32 @@ throw new Error('Method not implemented.');
    }
 
    
-  markstart(arg0: any) {
-    throw new Error('Method not implemented.');
+   markOngoing(pid: any) {
+    this.projectService.updateProjectStatus(pid, 'IN_PROGRESS').subscribe({
+      next: () => {
+        console.log("updated status successfully")
+        // If the update is successful, remove the project from the displayed list
+        this.fetchData();
+        // this.projects = this.projects.filter(p => p.id !== pid);
+      },
+      error: (err) => {
+        console.error('Error updating project status:', err);
+      }
+    });
   }
 
   markCompleted(pid : number){
-    throw new Error('Method not implemented.');
+    this.projectService.updateProjectStatus(pid, 'COMPLETED').subscribe({
+      next: () => {
+        console.log("updated status successfully")
+        // If the update is successful, remove the project from the displayed list
+        this.fetchData();
+        // this.projects = this.projects.filter(p => p.id !== pid);
+      },
+      error: (err) => {
+        console.error('Error updating project status:', err);
+      }
+    });
   }
 
   delete(id: number) {
