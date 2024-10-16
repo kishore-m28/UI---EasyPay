@@ -1,0 +1,29 @@
+/* Adjust card width */
+.job-card {
+    max-width: 100%;
+    min-width: 100%;
+  }
+  
+  /* Align Location and Job Type on the same line */
+  .job-card .d-flex {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Adjust this value to control the distance between Location and Job Type */
+  }
+  
+  .job-card .card-body p {
+    margin-bottom: 0.3rem;
+  }
+  
+  /* Button width adjustment */
+  .job-card .card-body button {
+    width: auto; /* Keep button size normal */
+  }
+  
+  @media (max-width: 768px) {
+    /* Stack Location and Job Type vertically on smaller screens */
+    .job-card .d-flex {
+      flex-direction: column;
+    }
+  }
+  

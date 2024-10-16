@@ -1,0 +1,40 @@
+<nav class="navbar navbar-light py-2 shadow-sm bg-light">
+  <span class="navbar-brand mb-0 h1">PAYROLL AND RESOURCE MANAGEMENT</span>
+</nav>
+
+<div class="container">
+<div class="row mt-5">
+  <div class="col-md-4 offset-md-4">
+    <h2 class="text-center">Sign Up</h2>
+    <h4 class="text-center">To Apply for the Job</h4>
+    <form [formGroup]="userForm">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username (Email)</label>
+        <input type="email" formControlName="username" class="form-control" id="username" required>
+        <div *ngIf="userForm.controls['username'].invalid && userForm.controls['username'].touched" class="text-danger">
+          Please enter a valid email.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" formControlName="password" class="form-control" id="password" required>
+        <div *ngIf="userForm.controls['password'].invalid && userForm.controls['password'].touched" class="text-danger">
+          Password is required.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="reenterPassword" class="form-label">Re-enter Password</label>
+        <input type="password" formControlName="reenterPassword" class="form-control" id="reenterPassword" required>
+        <div *ngIf="userForm.controls['reenterPassword'].invalid && userForm.controls['reenterPassword'].touched" class="text-danger">
+          Passwords must match.
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary w-100" [disabled]="userForm.invalid" (click)="onSubmit()">Register</button>
+      <p><a class="link-opacity-100" href="/login">Login if already having an account</a></p><br/>
+      <div class="alert alert-success" role="alert" *ngIf="show==true">
+        Registered Successfully <a href="/login" class="alert-link">LOGIN</a>
+      </div>
+    </form>
+  </div>
+</div>
+</div>

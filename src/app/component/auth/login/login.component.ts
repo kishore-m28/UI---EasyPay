@@ -4,6 +4,7 @@ import { UserService } from '../../../service/user.service';
 import { NgIf } from '@angular/common';
 import { User } from '../../../model/user.model';
 import { ActivatedRoute,Router } from '@angular/router';
+import { JobService } from '../../../service/job.service';
  
  
 
@@ -20,8 +21,11 @@ export class LoginComponent {
   token:string='';
   loginErrMsg:string='';
   user:User;
+  id:any
 
-  constructor(private userService:UserService,private router:Router){
+  constructor(private userService:UserService,private router:Router,private jobService:JobService){
+   this.id=jobService.getJobId();
+   console.log(this.id)
      this.loginForm=new FormGroup({
         username:new FormControl('',[Validators.email,Validators.required]),
         password:new FormControl('',Validators.required)
@@ -42,7 +46,7 @@ export class LoginComponent {
                   localStorage.setItem('role',this.user.role);
                   switch(this.user.role){
                      case 'ROLE_JOBSEEKER':
-                        this.router.navigateByUrl('/jobseeker/dashboard')
+                        this.router.navigateByUrl('jobseeker/personalDetails')
                         break;
                      case 'ROLE_HR':
                         this.router.navigateByUrl('/hr/main-page')

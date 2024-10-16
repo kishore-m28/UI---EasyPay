@@ -1,0 +1,45 @@
+<div>
+    <app-brand-navbar></app-brand-navbar>
+</div>
+<br><br><br>
+<div class="row mt-2">
+    <div class="col-sm-2">
+        <app-emp-navbar></app-emp-navbar>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-md-6">
+        <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+            <div class="card-header text-center">
+              <h3>Recent Payslip Details</h3>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title text-center">{{employee.name}}</h5>
+              <p class="card-text text-center">Employee ID: {{employee.id}}</p>
+          
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Annual CTC:</strong> {{salary.AnnualCTC | currency: 'INR'}}</li>
+                <li class="list-group-item"><strong>Basic Salary:</strong> {{salary.basic | currency: 'INR'}}</li>
+                <li class="list-group-item"><strong>HRA:</strong> {{salary.hra | currency: 'INR'}}</li>
+                <li class="list-group-item"><strong>Medical Allowance (MA):</strong> {{salary.ma | currency: 'INR'}}</li>
+                <li class="list-group-item"><strong>Leave Travel Allowance (LTA):</strong> {{salary.lta | currency: 'INR'}}</li>
+                <li class="list-group-item"><strong>Dearness Allowance (DA):</strong> {{salary.da | currency: 'INR'}}</li>
+                <li class="list-group-item"><strong>Bonus:</strong> {{salary.bonus | currency: 'INR'}}</li>
+                <li class="list-group-item"><strong>Gross Pay:</strong> {{salary.grossPay | currency: 'INR'}}</li>
+                <li class="list-group-item"><strong>Tax Rate:</strong> {{salary.taxRate | percent}}</li>
+                <li class="list-group-item"><strong>Taxable Income:</strong> {{salary.taxableIncome | currency: 'INR'}}</li>
+                <li class="list-group-item"><strong>Professional Tax Rate:</strong> {{salary.proffesionalTaxRate | percent}}</li>
+                <li class="list-group-item"><strong>Annual Net Pay:</strong> {{salary.annualNetPay | currency: 'INR'}}</li>
+                <li class="list-group-item"><strong>Monthly Net Pay:</strong> {{salary.monthlyNetPay | currency: 'INR'}}</li>
+                <li class="list-group-item"><strong>Pay Period:</strong> {{salary.payPeriodStartDate | date}} to {{salary.payPeriodEndDate | date}}</li>
+                <li class="list-group-item"><strong>Status:</strong> {{salary.status}}</li>
+              </ul>
+            </div>
+            <div class="card-footer text-center">
+              <small class="text-muted">Generated on {{salary.createdAt | date}} | Last updated on {{salary.updatedAt | date}}</small>
+            </div>
+          </div>
+    </div>
+
+</div>

@@ -1,4 +1,6 @@
-<app-jobseeker-navbar></app-jobseeker-navbar>
+<nav class="navbar navbar-light py-2 shadow-sm">
+    <span class="navbar-brand mb-0 h1">PAYROLL AND RESOURCE MANAGEMENT</span>
+  </nav>
 <div class="container">
     <div class="row">
         <p></p>
@@ -46,7 +48,7 @@
 
                 <!-- Apply Button -->
                 <div class="card-footer text-center">
-                    <button class="btn btn-primary">Apply</button>
+                    <button class="btn btn-primary" (click)="onApplyClick(job.id)">Apply</button>
                 </div>
             </div>
         </div>
