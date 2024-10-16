@@ -47,13 +47,20 @@ import { HrRoundStatusComponent } from './component/hr/recruitment/hr-round-stat
 import { JobDetailsComponent } from './component/hr/recruitment/job-details/job-details.component';
 import { JobSeekerDetailsComponent } from './component/hr/recruitment/job-seeker-details/job-seeker-details.component';
 import { DashboardComponent } from './component/employee/dashboard/dashboard.component';
+import { JobFirstPageNavbarComponent } from './component/jobseeker/job-first-page-navbar/job-first-page-navbar.component';
+import { JobseekerSignUpComponent } from './component/jobseeker/jobseeker-sign-up/jobseeker-sign-up.component';
+import { ApplyJobComponent } from './component/jobseeker/apply-job/apply-job.component';
 import { MyProfileComponent } from './component/employee/my-profile/my-profile.component';
 import { EmpLeaveComponent } from './component/employee/emp-leave/emp-leave.component';
+import { CompletedListComponent } from './component/project/completed-list/completed-list.component';
 
 
 export const routes: Routes = [
     {
-        "path":"",component:LoginComponent
+        "path":"login",component:LoginComponent
+    },
+    {
+        "path":"",component:JobFirstPageNavbarComponent
     },
     {
         "path" : "hr/main-page" , component:HrMainPageComponent
@@ -90,6 +97,9 @@ export const routes: Routes = [
     },
     { 
        "path" : 'assign-emp/:id', component: AssignEmpFormComponent
+    },
+    { 
+        path: 'completed-list', component: CompletedListComponent
     },
     {
         "path" : "recruitment/jobs-list" , component:JobsListComponent
@@ -197,6 +207,12 @@ export const routes: Routes = [
         "path": 'employee/dashboard', component:DashboardComponent
     },
     { 
+        "path": 'jobSeeker/signUp', component:JobseekerSignUpComponent
+    },
+    { 
+        "path": 'job/apply/:jobId', component:ApplyJobComponent
+    },
+    {
         "path": 'my-profile', component:MyProfileComponent
     },
     { 

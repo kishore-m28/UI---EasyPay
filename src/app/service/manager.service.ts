@@ -102,6 +102,11 @@ export class ManagerService {
     })
   }
 
+  getAllManagers():Observable<any> {
+    return this.http.get('http://localhost:8081/manager/all', {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+    })
+  }
   getProjects():Observable<any>{
     return this.http.get('http://localhost:8081/manager/project', {
       headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))

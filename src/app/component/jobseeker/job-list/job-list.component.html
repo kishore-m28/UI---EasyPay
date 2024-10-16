@@ -1,4 +1,7 @@
-<app-jobseeker-navbar></app-jobseeker-navbar>
+<nav class="navbar navbar-light py-2 shadow-sm">
+  <span class="navbar-brand mb-0 h1">PAYROLL AND RESOURCE MANAGEMENT</span>
+</nav>
+
 <div class="container">
   <div class="row">
     <p></p>
@@ -13,43 +16,24 @@
       </nav>
     </div>
   </div>
+
   <div class="row">
     <p></p>
     <div class="col-sm-2"></div>
-    <div class="col-md-6">
-      <div *ngFor="let j of job" class="card mb-3 shadow-sm">
+    <div class="col-md-8">
+      <div *ngFor="let j of job" class="card mb-3 shadow-sm job-card">
         <div class="card-header font-weight-bold bg-light">
-         <strong>{{ j.jobTitle}}</strong> 
+          <strong>{{ j.jobTitle }}</strong>
         </div>
         <div class="card-body">
-          <p><strong>Location:</strong> {{ j.location }}</p>
-          <p><strong>Job Type:</strong> {{ j.jobType }}</p>
-          <p><strong>Posting Date:</strong> {{ j.postingDate }}</p>
+          <div class="d-flex align-items-center justify-content-start">
+            <p class="me-4"><strong>Location:</strong> {{ j.location }}</p>
+            <p><strong>Job Type:</strong> {{ j.jobType }}</p>
+          </div>
+          <p><strong>Posting Date:</strong> {{ j.startDate }}</p>
           <button class="btn btn-primary" (click)="onClick(j.id)">View Details</button>
         </div>
-    </div>    
+      </div>    
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 

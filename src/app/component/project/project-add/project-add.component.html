@@ -11,34 +11,47 @@
         <div class="card mt-2">
             <div class="card-header">
                 Add Project
+                <div class="alert alert-success mt-2" role="alert" *ngIf="successMsg">
+                    {{successMsg}}
+                  </div>
+                  <div class="alert alert-danger" role="alert" *ngIf="errorMsg">
+                    {{errorMsg}}
+                  </div>
             </div>
             <div class="card-body">
-                <div>
+                <div class="mb-2">
                     <label>Title</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" [(ngModel)]="title">
                 </div>
-                <div>
+                <div class="mb-2">
                     <label>Description</label>
-                    <textarea class="form-control"></textarea>
+                    <textarea class="form-control" [(ngModel)]="description"></textarea>
                 </div>
-                <div>
+                <div class="mb-2">
                     <label>Project Type</label>
-                    <select class="form-control">
-                        <option></option>
+                    <select class="form-control" [(ngModel)]="type">
+                        <option *ngFor="let type of projectType">{{type}}</option>
                     </select>
                 </div>
-                <div>
+                <div class="mb-2">
                     <label>Start Date</label>
-                    <input type="date" class="form-control">
+                    <input type="date" class="form-control" [(ngModel)]="startDate">
                 </div>
-                <div>
+                <div class="mb-2">
                     <label>Estimated End Date</label>
-                    <input type="date" class="form-control">
+                    <input type="date" class="form-control" [(ngModel)]="endDate">
+                </div>
+                <div class="mb-2">
+                    <label>Select Manager</label>
+                    <select class="form-control" [(ngModel)]="selectedManagerId">
+                        <option *ngFor="let mgr of managers" [value]="mgr.id">Id:{{mgr.id}}&nbsp;&nbsp;{{mgr.name}}</option>
+                    </select>
                 </div>
 
             </div>
             <div class="card-footer">
-                <button class="btn btn-primary">Add</button>
+                <button class="btn btn-primary" (click)="addProject()">Add</button>
+                &nbsp;&nbsp;&nbsp;<button class="btn btn-secondary" *ngIf="successMsg" routerLink="/projects">Back to Project List</button>
             </div>
 
         </div>

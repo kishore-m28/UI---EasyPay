@@ -7,6 +7,12 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class HrService {
 
+  getGenderStat() {
+    return this.http.get<any>('http://localhost:8081/employee/gender/stat', {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+    });
+  }
+
   getProjectById(pid: any) {
     return null;
   }
@@ -21,7 +27,14 @@ export class HrService {
   }
   getAllProjects(page: number, size: number): Observable<any> {
     console.log("get all projects api called");
-    return this.http.get<any>('http://localhost:8081/project/all?page=' + page + '&size=' + size, {
+    return this.http.get<any>('http://localhost:8081/project/all/in-progress?page=' + page + '&size=' + size, {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+    });
+  }
+
+  getCompletedProjects(page: number, size: number): Observable<any> {
+    console.log("get all projects api called");
+    return this.http.get<any>('http://localhost:8081/project/all/completed?page=' + page + '&size=' + size, {
       headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
     });
   }

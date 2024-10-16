@@ -14,7 +14,7 @@ export class JobseekerNavbarComponent {
   constructor(private router:Router){}
 
   onLogout(){
-    this.router.navigateByUrl("");
+    this.router.navigateByUrl("/login");
   }
 
 }
