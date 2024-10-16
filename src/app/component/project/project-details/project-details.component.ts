@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { HrService } from '../../../service/hr.service';
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { BrandNavbarComponent } from "../../manager/brand-navbar/brand-navbar.component";
 import { NavbarComponent } from "../../hr-navbar/navbar.component";
 
 @Component({
   selector: 'app-project-details',
   standalone: true,
-  imports: [NgFor, RouterLink, BrandNavbarComponent, NavbarComponent],
+  imports: [NgFor, RouterLink, BrandNavbarComponent, NavbarComponent,NgIf],
   templateUrl: './project-details.component.html',
   styleUrl: './project-details.component.css'
 })
@@ -26,7 +26,7 @@ export class ProjectDetailsComponent implements OnInit {
     this.hrService.getProjectById(this.pid).subscribe({
       next: (data) => {
         this.project = data;
-        this.assignedEmployees = data.assignedEmployees;
+        // this.assignedEmployees = data.assignedEmployees;
       },
       error: () => {
         console.log();

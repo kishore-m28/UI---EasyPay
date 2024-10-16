@@ -1,24 +1,23 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, ObservableInput } from 'rxjs';
+import { BehaviorSubject, Observable, ObservableInput } from 'rxjs';
 import { observableToBeFn } from 'rxjs/internal/testing/TestScheduler';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProjectService {
-  
-  
 
-  updateProjectStatus(pid: number, status: string) : Observable<any>{
-    return this.http.put('http://localhost:8081/project/update-status/'+pid+'?status='+status, {
-      headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
-    });
-  }
-  
+  assignedEmployees$ = new BehaviorSubject<any[]>([]);
+
   
 
   constructor(private http: HttpClient) { }
+
+  setAssignedEmployees(employees: any[]): void {
+    this.assignedEmployees$.next(employees);
+  }
+
 
   getProjectByEmployeeId(eid: number):Observable<any> {
     return this.http.get<any>('http://localhost:8081/project/employee/'+eid,{
@@ -91,6 +90,12 @@ export class ProjectService {
 
   getAllEmployeesByTitle(title: any): Observable<any> {
     return this.http.get<any>('http://localhost:8081/employees-by-title?title='+title ,{
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+    });
+  }
+
+  updateProjectStatus(pid: number, status: string) : Observable<any>{
+    return this.http.put('http://localhost:8081/project/update-status/'+pid+'?status='+status, {
       headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
     });
   }

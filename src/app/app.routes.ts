@@ -50,6 +50,7 @@ import { DashboardComponent } from './component/employee/dashboard/dashboard.com
 import { MyProfileComponent } from './component/employee/my-profile/my-profile.component';
 import { EmpLeaveComponent } from './component/employee/emp-leave/emp-leave.component';
 import { CompletedListComponent } from './component/project/completed-list/completed-list.component';
+import { AddEmpComponent } from './component/employee/add-emp/add-emp.component';
 
 
 export const routes: Routes = [
@@ -64,6 +65,9 @@ export const routes: Routes = [
     },
     {
         "path" : "projects" , component:ProjectsComponent
+    },
+    {
+        "path" : "employees" , component:AddEmpComponent
     },
     {
         "path" : "overall-compliance" , component:OverallComplianceComponent

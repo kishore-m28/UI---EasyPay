@@ -12,9 +12,11 @@ export class HrService {
       headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
     });
   }
-
-  getProjectById(pid: any) {
-    return null;
+  
+  getProjectById(pid: number) {
+    return this.http.get<any>('http://localhost:8081/project/'+pid, {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+    });
   }
 
 

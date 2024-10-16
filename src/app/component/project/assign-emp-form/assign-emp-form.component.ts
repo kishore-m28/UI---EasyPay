@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BrandNavbarComponent } from "../../manager/brand-navbar/brand-navbar.component";
 import { NavbarComponent } from "../../hr-navbar/navbar.component";
 import { FormsModule } from '@angular/forms';
@@ -12,14 +12,14 @@ import { errorContext } from 'rxjs/internal/util/errorContext';
 @Component({
   selector: 'app-assign-emp-form',
   standalone: true,
-  imports: [BrandNavbarComponent, NavbarComponent, FormsModule, SummarySelectedEmpComponent, NgFor,NgIf],
+  imports: [BrandNavbarComponent, NavbarComponent, FormsModule, SummarySelectedEmpComponent, NgFor, NgIf],
   templateUrl: './assign-emp-form.component.html',
   styleUrl: './assign-emp-form.component.css'
 })
 export class AssignEmpFormComponent implements OnInit {
 
   pid: any;
-  employees: number[]=[];
+  employees: number[] = [];
 
   title: string = '';
   manager: any;
@@ -28,15 +28,15 @@ export class AssignEmpFormComponent implements OnInit {
   allEmployeeIds: any[];
   allEmployees: { id: number, name: string }[] = [];
 
-  assignedEmployees : any[]=[];
+  assignedEmployees: any[] = [];
 
   msg: string = null;
 
-  emptyMsg: boolean =false;
+  emptyMsg: boolean = false;
 
-  successMsg:string = null;
+  successMsg: string = null;
 
-  constructor(private route: ActivatedRoute, private projectService: ProjectService, private hrService: HrService) {
+  constructor(private route: ActivatedRoute, private projectService: ProjectService, private hrService: HrService, private router: Router) {
     this.pid = route.snapshot.paramMap.get('id');
   }
 
@@ -45,22 +45,41 @@ export class AssignEmpFormComponent implements OnInit {
       next: (data) => {
         this.title = data.name;
         this.manager = data.manager.name;
-        this.username=data.manager.user.username;
+        this.username = data.manager.user.username;
 
         this.projectService.getAllEmployeesByTitle(this.title).subscribe({
           next: (data) => {
-            console.log("Username:"+this.username);
+            console.log("Username:" + this.username);
             console.log("Response data from API:", data);
-            this.assignedEmployees=data;
-            if(this.assignedEmployees.length === 0){
-              this.emptyMsg=true;
+            this.assignedEmployees = data;
+
+            if (this.assignedEmployees.length === 0) {
+              this.emptyMsg = true;
             }
-            console.log("Already working employees:"+this.assignedEmployees);
+            console.log("Already working employees:" + this.assignedEmployees);
+
+            this.hrService.getAllEmployees(0, 1000).subscribe({
+              next: (data) => {
+                console.log("entered next step of sub");
+                this.allEmployees = data.content.map((employee: any) => ({
+                  id: employee.id,
+                  name: employee.name
+                })).filter((employee: any) =>
+                  !this.assignedEmployees.some((assigned) => assigned.id === employee.id)
+                );
+                console.log("Employee Ids: " + this.allEmployeeIds);
+                console.log("Employees: " + this.allEmployees);
+              },
+              error: (err) => {
+                console.log("error in getting all employees");
+              }
+            });
           },
           error: (err) => {
-            console.log("error in ...");
+            console.log("error in getting assigned employees");
           }
-        })
+        });
+
 
       },
       error: () => {
@@ -68,29 +87,14 @@ export class AssignEmpFormComponent implements OnInit {
       }
     })
 
-    this.hrService.getAllEmployees(0, 1000).subscribe({
-      next: (data) => {
-        console.log("entered next step of sub")
-        this.allEmployees = data.content.map((employee: any) => ({
-          id: employee.id,
-          name: employee.name
-        }));
-        console.log("Employee Ids: " + this.allEmployeeIds);
-        console.log("Employees: " + this.allEmployees);
-      },
-      error: (err) => {
-        console.log("error in getting all employees")
-      }
-    })
-
-    
-
+    this.projectService.assignedEmployees$.subscribe(employees => {
+      this.assignedEmployees = employees;
+    });
   }
 
   assignEmployees() {
     if (this.employees.length === 0) {
       this.msg = "Select at least one employee";
-      return;
     }
 
     const assignEmployeeData = {
@@ -106,7 +110,7 @@ export class AssignEmpFormComponent implements OnInit {
       next: (data) => {
         console.log(data);
         console.log("assigned successfully")
-        this.successMsg="Assigned successfully";
+        this.successMsg = "Assigned successfully";
       },
       error: () => {
         console.log();
