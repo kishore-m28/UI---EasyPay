@@ -53,6 +53,8 @@ import { ApplyJobComponent } from './component/jobseeker/apply-job/apply-job.com
 import { MyProfileComponent } from './component/employee/my-profile/my-profile.component';
 import { EmpLeaveComponent } from './component/employee/emp-leave/emp-leave.component';
 import { CompletedListComponent } from './component/project/completed-list/completed-list.component';
+import { PayslipComponent } from './component/employee/payslip/payslip.component';
+import { IssuePostComponent } from './component/employee/issue-post/issue-post.component';
 
 
 export const routes: Routes = [
@@ -218,6 +220,12 @@ export const routes: Routes = [
     { 
         "path": 'leave', component:EmpLeaveComponent
     },
+    {
+         "path":'pay-slip/employee',component:PayslipComponent
+    },
+    {
+        "path":'issue/employee',component:IssuePostComponent
+   },
     {
         "path":"logout",component:LogoutComponent
     },
