@@ -18,7 +18,7 @@ export class LeaveRequestsComponent implements OnInit{
   numArry:number[]=[];
   counter: number=0;
   page:number =0;
-  size:number =4; 
+  size:number =5; 
   last:boolean=false; 
   first:boolean=false;
 
