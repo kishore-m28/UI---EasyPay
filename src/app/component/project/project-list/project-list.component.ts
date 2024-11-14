@@ -5,6 +5,7 @@ import { NgFor, NgIf } from '@angular/common';
 import { HrService } from '../../../service/hr.service';
 import { Router, RouterLink } from '@angular/router';
 import { ProjectService } from '../../../service/project.service';
+import { LoginComponent } from '../../auth/login/login.component';
 
 @Component({
   selector: 'app-project-list',
@@ -94,8 +95,9 @@ throw new Error('Method not implemented.');
       next: () => {
         console.log("updated status successfully")
         // If the update is successful, remove the project from the displayed list
+        
+        this.projects = this.projects.filter(p => p.id !== pid);
         this.fetchData();
-        // this.projects = this.projects.filter(p => p.id !== pid);
       },
       error: (err) => {
         console.error('Error updating project status:', err);
@@ -111,6 +113,8 @@ throw new Error('Method not implemented.');
           this.page--;
           this.counter--;
         }
+        this.projects = this.projects.filter(p => p.id !== id);
+      console.log("AFTER FILTER");
         this.fetchData();
       },
 

@@ -8,9 +8,10 @@
         <app-navbar></app-navbar>
     </div>
     <div class="col-lg-8">
+        <!-- <button class="btn btn-primary mt-2">Back</button> -->
         <div class="row row-cols-1 row-cols-md-4 g-4 mt-2">
             <div class="col">
-                <div class="card h-100">
+                <div class="card h-100 bg-primary text-white my-card">
                     <div class="card-body">
                         <h5 class="card-title">Active Projects</h5>
                         <p class="card-text">{{activeCount}}</p>
@@ -18,7 +19,7 @@
                 </div>
             </div>
             <div class="col">
-                <div class="card h-100">
+                <div class="card h-100 bg-success text-white">
                     <div class="card-body">
                         <h5 class="card-title">Completed Projects</h5>
                         <p class="card-text">{{completedCount}}</p>
@@ -26,7 +27,7 @@
                 </div>
             </div>
             <div class="col">
-                <div class="card h-100">
+                <div class="card h-100 bg-warning text-dark">
                     <div class="card-body">
                         <h5 class="card-title">Upcoming Projects</h5>
                         <p class="card-text">{{upcomingCount}}</p>
@@ -35,7 +36,7 @@
 
             </div>
             <div class="col">
-                <div class="card h-100">
+                <div class="card h-100 bg-danger text-white">
                     <div class="card-body">
                         <h5 class="card-title">Overdue Projects</h5>
                         <p class="card-text">{{overdueCount}}</p>
@@ -61,6 +62,7 @@
 
     </div>
     <div class="col-lg-10">
+        
         <div>
             <p><strong>Projects</strong></p>
             <!-- <div>

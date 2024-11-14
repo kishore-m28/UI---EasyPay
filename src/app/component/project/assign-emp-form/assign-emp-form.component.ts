@@ -12,7 +12,7 @@ import { errorContext } from 'rxjs/internal/util/errorContext';
 @Component({
   selector: 'app-assign-emp-form',
   standalone: true,
-  imports: [BrandNavbarComponent, NavbarComponent, FormsModule, SummarySelectedEmpComponent, NgFor, NgIf],
+  imports: [BrandNavbarComponent, NavbarComponent, FormsModule, SummarySelectedEmpComponent, NgFor, NgIf, Router],
   templateUrl: './assign-emp-form.component.html',
   styleUrl: './assign-emp-form.component.css'
 })
@@ -94,28 +94,30 @@ export class AssignEmpFormComponent implements OnInit {
 
   assignEmployees() {
     if (this.employees.length === 0) {
-      this.msg = "Select at least one employee";
+      this.msg = "Select employee(s)";
+      this.successMsg="";
+    }else{
+      this.msg="";
+      const assignEmployeeData = {
+        projectId: this.pid,
+        employeeIds: this.employees,
+        assignedDate: new Date()
+      };
+  
+      console.log(this.pid);
+      console.log(this.employees);
+  
+      this.projectService.assignEmployees(assignEmployeeData).subscribe({
+        next: (data) => {
+          console.log(data);
+          console.log("assigned successfully")
+          this.successMsg = "Assigned successfully";
+        },
+        error: () => {
+          console.log();
+        }
+      })
     }
-
-    const assignEmployeeData = {
-      projectId: this.pid,
-      employeeIds: this.employees,
-      assignedDate: new Date()
-    };
-
-    console.log(this.pid);
-    console.log(this.employees);
-
-    this.projectService.assignEmployees(assignEmployeeData).subscribe({
-      next: (data) => {
-        console.log(data);
-        console.log("assigned successfully")
-        this.successMsg = "Assigned successfully";
-      },
-      error: () => {
-        console.log();
-      }
-    })
   }
 
 

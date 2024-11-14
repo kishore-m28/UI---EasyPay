@@ -7,11 +7,15 @@
         <app-navbar></app-navbar>
     </div>
     <div class="col-md-6">
+        <button class="btn btn-secondary" routerLink="/projects">< Back</button>
         <div class="card mt-4">
             <div class="card-header">
-                Assign Employees
+                <h5>Assign Employees</h5>
                 <div class="alert alert-success mt-2" *ngIf="successMsg">
                     {{successMsg}}
+                </div>
+                <div class="alert alert-warning mt-2" *ngIf="msg">
+                    {{msg}}
                 </div>
             </div>
             <div class="card-body">

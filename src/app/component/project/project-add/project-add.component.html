@@ -6,6 +6,7 @@
 <div class="row">
     <div class="col-sm-4">
         <app-navbar></app-navbar>
+        <button routerLink="/projects">Back</button>
     </div>
     <div class="col-md-6">
         <div class="card mt-2">
@@ -51,10 +52,12 @@
             </div>
             <div class="card-footer">
                 <button class="btn btn-primary" (click)="addProject()">Add</button>
-                &nbsp;&nbsp;&nbsp;<button class="btn btn-secondary" *ngIf="successMsg" routerLink="/projects">Back to Project List</button>
+                <!-- &nbsp;&nbsp;&nbsp;<button class="btn btn-secondary" *ngIf="successMsg" routerLink="/projects">Back to Project List</button> -->
             </div>
-
+            
         </div>
+    <br>
+        <div class="text-center"><button class="btn btn-secondary" routerLink="/projects" >Go Back</button></div>
     </div>
     <div class="col-sm-2">
 

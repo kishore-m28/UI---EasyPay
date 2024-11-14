@@ -1,4 +1,4 @@
-<app-hr-brand-navbar></app-hr-brand-navbar>
+<!-- <app-hr-brand-navbar></app-hr-brand-navbar>
 <br><br><br>
 <div class="row">
     <div class="col-sm-2 mt-2">
@@ -115,4 +115,57 @@
         </div>
         
     </div>
+</div> -->
+
+<app-hr-brand-navbar></app-hr-brand-navbar>
+<br><br><br>
+<div class="row mt-2">
+    <div class="col-sm-3">
+        <app-navbar></app-navbar>
+    </div>
+    <div class="col-md-6">
+        <div class="card mt-2">
+            <div class="card-header">
+                <h5><b>Add Employee</b></h5>
+                <button class="btn btn-success" *ngIf="savedbasic">Onboarded Successfully</button>
+            </div>
+            <div class="card-body">
+                <div class="mt-2"> 
+                    <label>Name: </label>
+                    <input type="text" class="form-control" [(ngModel)]="name" (change)="onChange()">
+                </div>
+                <div class="mt-2">
+                    <label>Gender: </label>
+                    <input type="text" class="form-control" [(ngModel)]="gender" (change)="onChange()">
+                </div>
+                <div class="mt-2"> 
+                    <label>Email: </label>
+                    <input type="text" class="form-control" [(ngModel)]="contact" (change)="onChange()">
+                </div>
+                <div class="mt-2"> 
+                    <label>Department: </label>
+                    <input type="text" class="form-control" [(ngModel)]="dept" (change)="onChange()">
+                </div>
+                <div class="mt-2"> 
+                    <label>Designation: </label>
+                    <input type="text" class="form-control" [(ngModel)]="designation" (change)="onChange()">
+                </div>
+                <div class="mt-2"> 
+                    <label>Date Of Birth: </label>
+                    <input type="date" class="form-control" [(ngModel)]="dob" (change)="onChange()">
+                </div>
+                <div class="mt-2"> 
+                    <label>Date Of Joining: </label>
+                    <input type="date" class="form-control" [(ngModel)]="joiningdate" (change)="onChange()">
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-info" (click)="saveBasicInfo()"><h5>Add</h5></button>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+
+    </div>
+
 </div>

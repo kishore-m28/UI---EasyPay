@@ -71,4 +71,8 @@ export class AddEmpComponent implements OnInit{
       
     );
   }
+  onChange(){
+    this.employeeService.setBasicInfo(this.name,this.gender,this.contact,this.dept,this.designation,this.dob,this.joiningdate)
+  }
+
 }

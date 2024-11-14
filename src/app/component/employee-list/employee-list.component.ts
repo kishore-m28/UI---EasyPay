@@ -78,6 +78,7 @@ export class EmployeeListComponent {
           this.page--;
           this.counter--;
         }
+        this.employees = this.employees.filter(e => e.id !== id);
         this.fetchData();
       },
 
