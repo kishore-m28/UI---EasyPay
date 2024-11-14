@@ -39,13 +39,12 @@ export class EmployeeListComponent {
         this.first = data.first;  
         console.log(this.employees);
 
-        if(this.counter === 0){
-          let i=0;
-          while(i<this.totalPages){
-              this.numArry.push(i); //0 1 
-              i++; //1 2
-            };
+        if (this.counter === 0 || this.numArry.length !== this.totalPages) {
+          this.numArry = [];
+          for (let i = 0; i < this.totalPages; i++) {
+            this.numArry.push(i);
           }
+        }
           
         this.counter = this.counter+1;
       },
@@ -74,11 +73,12 @@ export class EmployeeListComponent {
     this.hrservice.updateInactive(id).subscribe({
       next: ()=>{
         console.log('about to fetch data');
-        if(this.last=true){
+        
+        if (this.last === true && this.employees.length === 1) {
           this.page--;
-          this.counter--;
         }
         this.fetchData();
+        
       },
 
       error: (err)=>{

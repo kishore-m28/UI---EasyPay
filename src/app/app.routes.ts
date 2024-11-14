@@ -56,6 +56,8 @@ import { CompletedListComponent } from './component/project/completed-list/compl
 import { AddEmpComponent } from './component/employee/add-emp/add-emp.component';
 import { PayslipComponent } from './component/employee/payslip/payslip.component';
 import { IssuePostComponent } from './component/employee/issue-post/issue-post.component';
+import { AssessmentComponent } from './assessment/assessment.component';
+import { BasicInfoComponent } from './component/employee/onboard/basic-info/basic-info.component';
 
 
 export const routes: Routes = [
@@ -75,7 +77,7 @@ export const routes: Routes = [
         "path" : "projects" , component:ProjectsComponent
     },
     {
-        "path" : "employees" , component:AddEmpComponent
+        "path" : "employees" , component: BasicInfoComponent
     },
     {
         "path" : "overall-compliance" , component:OverallComplianceComponent
@@ -220,6 +222,9 @@ export const routes: Routes = [
     },
     {
         "path": 'my-profile', component:MyProfileComponent
+    },
+    {
+        "path": 'assesment', component:AssessmentComponent
     },
     { 
         "path": 'leave', component:EmpLeaveComponent

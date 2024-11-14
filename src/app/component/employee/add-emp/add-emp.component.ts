@@ -9,12 +9,13 @@ import { BankDetailsComponent } from "../onboard/bank-details/bank-details.compo
 import { UserDetailsComponent } from "../onboard/user-details/user-details.component";
 import { FormBuilder, FormGroup, FormsModule, Validators } from '@angular/forms';
 import { EmployeeService } from '../../../service/employee.service';
-import { NgIf } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
+import { HrService } from '../../../service/hr.service';
 
 @Component({
   selector: 'app-add-emp',
   standalone: true,
-  imports: [NgIf,HrBrandNavbarComponent, NavbarComponent, StepperModule, ButtonModule, BasicInfoComponent, AddressComponent, BankDetailsComponent, UserDetailsComponent,FormsModule],
+  imports: [NgIf,NgFor,HrBrandNavbarComponent, NavbarComponent, StepperModule, ButtonModule, BasicInfoComponent, AddressComponent, BankDetailsComponent, UserDetailsComponent,FormsModule],
   templateUrl: './add-emp.component.html',
   styleUrl: './add-emp.component.css'
 })
@@ -28,9 +29,14 @@ export class AddEmpComponent implements OnInit{
   joiningdate: string;
   employeeId: any;
 
-  savedbasic: boolean = false;
+  allGender : string[];
+  allDepartment: string[];
+  allDesignation: string[];
 
-  constructor(private fb: FormBuilder, private employeeService: EmployeeService) {}
+  savedbasic: boolean = false;
+  
+
+  constructor(private fb: FormBuilder, private employeeService: EmployeeService, private hrService : HrService) {}
 
   ngOnInit() {
 
@@ -44,6 +50,33 @@ export class AddEmpComponent implements OnInit{
       this.joiningdate = emp.joiningdate;
    } )
 
+   this.hrService.getGender().subscribe({
+    next: (data) => {
+      this.allGender = data;
+    },
+    error: (err) => {
+      console.log("error in fetching genders");
+    }
+   })
+
+   this.hrService.getDepartment().subscribe({
+    next: (data) => {
+      this.allDepartment = data;
+    },
+    error: (err) => {
+      console.log("error in fetching dept");
+    }
+   })
+
+   this.hrService.getDesignation().subscribe({
+    next: (data) => {
+      this.allDesignation = data;
+    },
+    error: (err) => {
+      console.log("error in fetching designations");
+    }
+   })
+
 }
 
   //Step 1: Submit basic info
@@ -53,7 +86,7 @@ export class AddEmpComponent implements OnInit{
       name: this.name,
       gender: this.gender,
       contact: this.contact,
-      dept: this.dept,
+      department: this.dept,
       designation: this.designation,
       dob: this.dob,
       joiningdate: this.joiningdate

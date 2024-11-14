@@ -21,16 +21,7 @@ export class JobseekerProfileComponent implements OnInit{
    
 
   constructor(private jobseekerService:JobseekerService){
-    this.jobseekerService.appliedJobs()
-    .subscribe({
-      next:(data)=>{
-        this.jobs=data;
-        console.log(this.jobs);
-      },
-      error:(err)=>{
-        console.log(err.message)
-      }
-    })
+    
 
     this.jobseekerService.getHrRoundStatus()
     .subscribe({
@@ -60,6 +51,18 @@ export class JobseekerProfileComponent implements OnInit{
   ngOnInit(): void {
     this.getDetails();
     this.overAllStatus='';
+
+    this.jobseekerService.appliedJobs()
+    .subscribe({
+      next:(data)=>{
+        this.jobs=data;
+        console.log("No. of Applied Jobs:"+this.jobs.length);
+      },
+      error:(err)=>{
+        console.log("failed to get applied jobs")
+        console.log(err.message)
+      }
+    })
   }
 
   getDetails(){
