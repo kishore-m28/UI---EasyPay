@@ -1,45 +1,77 @@
-<div class="row mb-4">
-    <app-hr-brand-navbar></app-hr-brand-navbar>
-</div>
-<br>
-<div class="row mt-5">
-    <div class="col-sm-3 mt-2">
+<app-hr-brand-navbar></app-hr-brand-navbar>
+
+<br><br><br>
+<div class="row mt-2">
+    <div class="col-sm-3">
         <app-navbar></app-navbar>
     </div>
     <div class="col-md-6 mt-2">
         <div class="card">
             <div class="card-header">
-                Edit Employee Info
+                <h4>Edit Employee Info</h4>
+                <div class="alert alert-success" *ngIf="successMsg">
+                    {{successMsg}}
+                </div>
+                <div class="alert alert-danger" *ngIf="msg">
+                    {{msg}}
+                </div>
             </div>
             <div class="card-body">
-                <label>Enter Name:</label>
-                <input type="text" class="form-control">
-
-                <label>Enter Gender:</label>
-                <input type="text" class="form-control">
-
-                <label>Enter Contact:</label>
-                <input type="text" class="form-control">
-
-                <label>Enter Job Role:</label>
-                <input type="text" class="form-control">
-
-                <label>Enter Date of Birth:</label>
-                <input type="text" class="form-control">
-
-                <label>Enter Date of Joining:</label>
-                <input type="text" class="form-control">
+                <div class="mb-2">
+                    <label>Name:</label>
+                    <input type="text" class="form-control" [(ngModel)]="name">
+                </div>
+                <div class="mb-2">
+                    <label>Gender:</label>
+                    <select class="form-control" [(ngModel)]="gender">
+                        <option disabled selected>Select</option>
+                
+                        <option *ngFor="let g of allGender" [value]="g">
+                            {{ g }}
+                        </option>
+                    </select>
+                </div>
+                <div class="mb-2">
+                    <label>Email:</label>
+                    <input type="text" class="form-control" [(ngModel)]="contact">
+                </div>
+                <div class="mb-2">
+                    <label>Department:</label>
+                    <select class="form-control" [(ngModel)]="department">
+                        <option disabled selected>Select</option>
+                
+                        <option *ngFor="let dept of allDepartment" [value]="dept">
+                            {{ dept }}
+                        </option>
+                    </select>
+                </div>
+                <div class="mb-2">
+                    <label>Designation:</label>
+                    <select class="form-control" [(ngModel)]="designation">
+                        <option disabled selected>Select</option>
+                
+                        <option *ngFor="let d of allDesignation" [value]="d">
+                            {{ d }}
+                        </option>
+                    </select>
+                </div>
+                <div class="mb-2">
+                    <label>Date of Birth:</label>
+                    <input type="date" class="form-control" [(ngModel)]="dateOfBirth">
+                </div>
+                <div class="mb-2">
+                    <label>Date of Joining:</label>
+                    <input type="date" class="form-control" [(ngModel)]="dateOfJoining">
+                </div>
             </div>
             <div class="card-footer">
-                <button>Save</button>
+                <button class="btn btn-warning" (click)="updateInfo()">Save</button>
+                &nbsp;&nbsp;&nbsp;<button class="btn btn-info" routerLink="/hr/dashboard" *ngIf="successMsg">Go to Employee List</button>
             </div>
 
         </div>
 
 
-
-
-    
     </div>
 
     <div class="col-sm-3">
@@ -47,4 +79,3 @@
     </div>
 
 </div>
-

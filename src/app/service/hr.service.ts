@@ -1,12 +1,13 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, numberAttribute } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { observableToBeFn } from 'rxjs/internal/testing/TestScheduler';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HrService {
-
+  
   getGenderStat() {
     return this.http.get<any>('http://localhost:8081/employee/gender/stat', {
       headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
@@ -144,4 +145,34 @@ export class HrService {
     })
   }
 
+  getGender() : Observable<any>{
+    return this.http.get('http://localhost:8081/get/gender', {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+    })
+  }
+
+  getDepartment() : Observable<any> {
+    return this.http.get('http://localhost:8081/get/dept', {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+    })
+  }
+
+  getDesignation() :Observable<any> {
+    return this.http.get('http://localhost:8081/get/designation', {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+    })
+  }
+
+  getEmployeeDetailsById(empId: any) : Observable<any>{
+    return this.http.get('http://localhost:8081/employee/one/'+empId, {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+    })
+  }
+
+  updateInfo(empId : any ,obj: any) : Observable<any>{
+    console.log(obj.name);
+    return this.http.put('http://localhost:8081/employee/update/'+empId , obj, {
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+    })
+  }
 }

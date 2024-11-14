@@ -5,11 +5,12 @@ import { NavbarComponent } from "../../hr-navbar/navbar.component";
 import { salaryComputeService } from '../../../service/salaryCompute.service';
 import { FormsModule } from '@angular/forms';
 import { NgFor, NgIf } from '@angular/common';
+import { HrBrandNavbarComponent } from "../../hr-brand-navbar/hr-brand-navbar.component";
 
 @Component({
   selector: 'app-employee-salary-list',
   standalone: true,
-  imports: [BrandNavbarComponent, NavbarComponent,FormsModule,NgFor,NgIf],
+  imports: [BrandNavbarComponent, NavbarComponent, FormsModule, NgFor, NgIf, HrBrandNavbarComponent],
   templateUrl: './employee-salary-list.component.html',
   styleUrl: './employee-salary-list.component.css'
 })

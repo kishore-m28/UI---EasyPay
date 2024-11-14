@@ -12,10 +12,11 @@ import { errorContext } from 'rxjs/internal/util/errorContext';
 @Component({
   selector: 'app-assign-emp-form',
   standalone: true,
-  imports: [BrandNavbarComponent, NavbarComponent, FormsModule, SummarySelectedEmpComponent, NgFor, NgIf, Router],
+  imports: [BrandNavbarComponent, NavbarComponent, FormsModule, SummarySelectedEmpComponent, NgFor, NgIf],
   templateUrl: './assign-emp-form.component.html',
   styleUrl: './assign-emp-form.component.css'
 })
+
 export class AssignEmpFormComponent implements OnInit {
 
   pid: any;

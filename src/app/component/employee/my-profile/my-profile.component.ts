@@ -13,4 +13,6 @@ import { EmpNavbarComponent } from "../emp-navbar/emp-navbar.component";
 })
 export class MyProfileComponent {
 
+  constructor(){}
+
 }

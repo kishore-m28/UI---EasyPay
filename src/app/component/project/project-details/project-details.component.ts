@@ -4,11 +4,12 @@ import { HrService } from '../../../service/hr.service';
 import { NgFor, NgIf } from '@angular/common';
 import { BrandNavbarComponent } from "../../manager/brand-navbar/brand-navbar.component";
 import { NavbarComponent } from "../../hr-navbar/navbar.component";
+import { HrBrandNavbarComponent } from "../../hr-brand-navbar/hr-brand-navbar.component";
 
 @Component({
   selector: 'app-project-details',
   standalone: true,
-  imports: [NgFor, RouterLink, BrandNavbarComponent, NavbarComponent,NgIf],
+  imports: [NgFor, RouterLink, BrandNavbarComponent, NavbarComponent, NgIf, HrBrandNavbarComponent],
   templateUrl: './project-details.component.html',
   styleUrl: './project-details.component.css'
 })

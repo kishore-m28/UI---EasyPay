@@ -44,7 +44,8 @@
                             </ng-template>
                         </p-stepperPanel>
                         <p-stepperPanel header="Bank Account Details">
-                            <ng-template pTemplate="content" let-prevCallback="prevCallback" let-nextCallback="nextCallback" let-index="index">
+                            <ng-template pTemplate="content" let-prevCallback="prevCallback"
+                                let-nextCallback="nextCallback" let-index="index">
                                 <div class="flex flex-column h-12rem">
                                     <div
                                         class="border-2 border-dashed surface-border border-round surface-ground flex-auto flex justify-content-center align-items-center font-medium">
@@ -53,7 +54,8 @@
                                 </div>
                                 <div class="flex pt-4 justify-content-between">
                                     <p-button label="Back" icon="pi pi-arrow-left" (onClick)="prevCallback.emit()" />
-                                    <p-button label="Next" icon="pi pi-arrow-right" iconPos="right" (onClick)="nextCallback.emit()" />
+                                    <p-button label="Next" icon="pi pi-arrow-right" iconPos="right"
+                                        (onClick)="nextCallback.emit()" />
                                 </div>
                             </ng-template>
                         </p-stepperPanel>
@@ -62,7 +64,7 @@
                                 <div class="flex flex-column h-12rem">
                                     <div
                                         class="border-2 border-dashed surface-border border-round surface-ground flex-auto flex justify-content-center align-items-center font-medium">
-                                         <app-user-details></app-user-details>
+                                        <app-user-details></app-user-details>
                                     </div>
                                 </div>
                                 <div class="flex pt-4 justify-content-start">
@@ -76,46 +78,52 @@
         </div>
     </div>
     <div class="col-sm-3 mt-2">
-        
+
         <div class="card mt-2">
             <div class="card-header">
                 <h4>Summary</h4>
             </div>
             <div class="card-body">
-                <div class="mt-2"> 
+                <div class="mt-2">
                     <label>Name: </label>
                     <input type="text" class="form-control" [(ngModel)]="name">
                 </div>
                 <div class="mt-2">
                     <label>Gender: </label>
-                    <input type="text" class="form-control" [(ngModel)]="gender">
+                    <!-- <input type="text" class="form-control" [(ngModel)]="gender"> -->
+
+                    <!-- <select class="form-control" [(ngModel)]="gender">
+                        <option *ngFor="let g of allGender">
+                            {{g}}
+                        </option>
+                    </select>
                 </div>
-                <div class="mt-2"> 
+                <div class="mt-2">
                     <label>Email: </label>
                     <input type="text" class="form-control" [(ngModel)]="contact">
                 </div>
-                <div class="mt-2"> 
+                <div class="mt-2">
                     <label>Department: </label>
                     <input type="text" class="form-control" [(ngModel)]="dept">
                 </div>
-                <div class="mt-2"> 
+                <div class="mt-2">
                     <label>Designation: </label>
                     <input type="text" class="form-control" [(ngModel)]="designation">
                 </div>
-                <div class="mt-2"> 
+                <div class="mt-2">
                     <label>Date Of Birth: </label>
                     <input type="date" class="form-control" [(ngModel)]="dob">
                 </div>
-                <div class="mt-2"> 
+                <div class="mt-2">
                     <label>Date Of Joining: </label>
                     <input type="date" class="form-control" [(ngModel)]="joiningdate">
                 </div>
             </div>
 
         </div>
-        
+
     </div>
-</div> -->
+</div> --> -->
 
 <app-hr-brand-navbar></app-hr-brand-navbar>
 <br><br><br>
